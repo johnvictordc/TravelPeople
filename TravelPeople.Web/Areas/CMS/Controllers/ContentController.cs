@@ -86,6 +86,8 @@ namespace TravelPeople.Web.Areas.CMS.Controllers
         public ActionResult Details(long? id)
         {
 
+            // EDITED BY NEIL
+
             if (id == null)
             {
                 return HttpNotFound();
