@@ -1,0 +1,10 @@
+D:\Projects\Travel People\TravelPeople\TravelPeople.Commons\bin\Debug\TravelPeople.Commons.dll
+D:\Projects\Travel People\TravelPeople\TravelPeople.Commons\bin\Debug\TravelPeople.Commons.pdb
+D:\Projects\Travel People\TravelPeople\TravelPeople.Commons\obj\Debug\TravelPeople.Commons.csprojResolveAssemblyReference.cache
+D:\Projects\Travel People\TravelPeople\TravelPeople.Commons\obj\Debug\TravelPeople.Commons.dll
+D:\Projects\Travel People\TravelPeople\TravelPeople.Commons\obj\Debug\TravelPeople.Commons.pdb
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Commons\bin\Debug\TravelPeople.Commons.dll
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Commons\bin\Debug\TravelPeople.Commons.pdb
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Commons\obj\Debug\TravelPeople.Commons.csprojResolveAssemblyReference.cache
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Commons\obj\Debug\TravelPeople.Commons.dll
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Commons\obj\Debug\TravelPeople.Commons.pdb
