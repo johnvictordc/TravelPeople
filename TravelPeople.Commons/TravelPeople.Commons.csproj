@@ -45,6 +45,7 @@
     <Compile Include="Interfaces\INode.cs" />
     <Compile Include="Interfaces\IUser.cs" />
     <Compile Include="Objects\Content.cs" />
+    <Compile Include="Objects\Node.cs" />
     <Compile Include="Objects\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

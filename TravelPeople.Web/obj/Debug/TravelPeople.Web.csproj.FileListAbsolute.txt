@@ -58,3 +58,7 @@ C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Web\bin\Antlr3.Run
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Web\obj\Debug\TravelPeople.Web.csprojResolveAssemblyReference.cache
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Web\obj\Debug\TravelPeople.Web.dll
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Web\obj\Debug\TravelPeople.Web.pdb
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Web\bin\EntityFramework.dll
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Web\bin\EntityFramework.xml
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Web\bin\EntityFramework.SqlServer.xml

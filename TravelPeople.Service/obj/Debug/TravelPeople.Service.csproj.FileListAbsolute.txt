@@ -38,9 +38,6 @@ D:\Projects\Travel People\TravelPeople\TravelPeople.Service\bin\Dapper.xml
 D:\Projects\Travel People\TravelPeople\TravelPeople.Service\obj\Debug\TravelPeople.Service.csprojResolveAssemblyReference.cache
 D:\Projects\Travel People\TravelPeople\TravelPeople.Service\obj\Debug\TravelPeople.Service.dll
 D:\Projects\Travel People\TravelPeople\TravelPeople.Service\obj\Debug\TravelPeople.Service.pdb
-C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\obj\Debug\TravelPeople.Service.csprojResolveAssemblyReference.cache
-C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\obj\Debug\TravelPeople.Service.dll
-C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\obj\Debug\TravelPeople.Service.pdb
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\bin\TravelPeople.Service.dll.config
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\bin\TravelPeople.Service.dll
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\bin\TravelPeople.Service.pdb
@@ -78,3 +75,6 @@ C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\bin\System
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\bin\System.Web.WebPages.Razor.xml
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\bin\Antlr3.Runtime.pdb
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\bin\Dapper.xml
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\obj\Debug\TravelPeople.Service.csprojResolveAssemblyReference.cache
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\obj\Debug\TravelPeople.Service.dll
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\obj\Debug\TravelPeople.Service.pdb

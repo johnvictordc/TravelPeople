@@ -39,13 +39,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="RestSharp">
       <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -120,13 +125,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\CMS\CMSAreaRegistration.cs" />
     <Compile Include="Areas\CMS\Controllers\ContentController.cs" />
+    <Compile Include="Areas\CMS\Controllers\SampleContentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\LoginViewModel.cs" />
-    <Compile Include="Models\Node\ContentViewModel.cs" />
+    <Compile Include="Models\Nodes\ContentViewModel.cs" />
+    <Compile Include="Models\TravelPeopleWebContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -141,8 +148,16 @@
     <Content Include="Areas\CMS\Views\web.config" />
     <Content Include="Areas\CMS\Views\_ViewStart.cshtml" />
     <Content Include="Areas\CMS\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\CMS\Views\Content\Index.cshtml" />
     <Content Include="Areas\CMS\Views\Content\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\Content\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\SampleContent\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\SampleContent\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\SampleContent\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\SampleContent\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\SampleContent\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\Content\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\Content\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\Content\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

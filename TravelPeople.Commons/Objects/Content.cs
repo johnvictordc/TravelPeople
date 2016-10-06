@@ -7,65 +7,9 @@ using TravelPeople.Commons.Interfaces;
 
 namespace TravelPeople.Commons.Objects
 {
-    public class Content : INode, ICreator, IContent
+    public class Content : Node, IContent
     {
-        public Content()
-        {
-            this.date_created = new DateTime();
-        }
 
-        public DateTime date_created
-        {
-            get;
-
-            set;
-        }
-
-        public DateTime date_updated
-        {
-            get;
-
-            set;
-        }
-
-        public long created_by
-        {
-            get;
-
-            set;
-        }
-
-        public long updated_by
-        {
-            get;
-
-            set;
-        }
-
-        public string id
-        {
-            get;
-
-            set;
-        }
-
-        
-        public string name
-        {
-            get;
-
-            set;
-        }
-
-        
-        public bool enabled
-        {
-            get;
-
-            set;
-        }
-
-        
         public string content
         {
             get;

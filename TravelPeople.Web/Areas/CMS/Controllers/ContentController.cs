@@ -7,7 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using TravelPeople.Web.Models.Node;
+using TravelPeople.Web.Models.Nodes;
 
 namespace TravelPeople.Web.Areas.CMS.Controllers
 {
@@ -17,13 +17,32 @@ namespace TravelPeople.Web.Areas.CMS.Controllers
         // GET: /CMS/Content/
         public ActionResult Index()
         {
-            return View();
+            RestClient rest = new RestClient();
+            RestRequest request = new RestRequest();
+
+            rest.BaseUrl = new Uri(ConfigurationManager.AppSettings["base_url"].ToString());
+
+            request = new RestRequest("api/content/getcontents", Method.GET);
+            request.RequestFormat = DataFormat.Json;
+
+            var response = rest.Execute(request);
+
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                List<ContentViewModel> model = JsonConvert.DeserializeObject<List<ContentViewModel>>(response.Content);
+                return View(model);
+            }
+            else
+            {
+                return HttpNotFound();
+            }
         }
 
         public ActionResult Create()
         {
             return View();
         }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -64,5 +83,38 @@ namespace TravelPeople.Web.Areas.CMS.Controllers
             return View();
         }
 
+        public ActionResult Details(long? id)
+        {
+
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
+            RestClient rest = new RestClient();
+            RestRequest request = new RestRequest();
+
+            rest.BaseUrl = new Uri(ConfigurationManager.AppSettings["base_url"].ToString());
+
+
+            request = new RestRequest("api/content/getsingle", Method.GET);
+
+            request.AddParameter("id", id);
+
+            request.RequestFormat = DataFormat.Json;
+
+            var response = rest.Execute(request);
+
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                ContentViewModel model = JsonConvert.DeserializeObject<ContentViewModel>(response.Content);
+                return View(model);
+            }
+            else
+            {
+                return HttpNotFound();
+            }
+        }
 	}
+
 }

@@ -8,7 +8,7 @@ namespace TravelPeople.Commons.Interfaces
 {
     public interface INode
     {
-        string id { get; set; }
+        long id { get; set; }
 
         string name { get; set; }
 

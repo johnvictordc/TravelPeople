@@ -10,5 +10,11 @@ namespace TravelPeople.DAL.Interfaces
     interface IContentRepository
     {
         void Create(Content content);
+
+        List<Content> GetContents();
+
+        Content GetSingle(long id);
     }
+
+
 }

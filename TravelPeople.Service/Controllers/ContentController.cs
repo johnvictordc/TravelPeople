@@ -33,5 +33,35 @@ namespace TravelPeople.Service.Controllers
             }
         }
 
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        public IHttpActionResult GetContents()
+        {
+            try
+            {
+                return Ok(repo.GetContents());
+            }
+            catch (Exception ex)
+            {
+                log.Error("Error", ex);
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        public IHttpActionResult GetSingle(long id)
+        {
+            try
+            {
+                return Ok(repo.GetSingle(id));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Error", ex);
+                return BadRequest(ex.Message);
+            }
+        }
+
 	}
 }
