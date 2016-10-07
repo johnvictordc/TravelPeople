@@ -1,0 +1,3 @@
+﻿@model string
+
+@Html.TextBox(string.Empty, (Model == null ? string.Empty : Model), new { @class = "form-control", placeholder = ViewData.ModelMetadata.DisplayName })

@@ -1,0 +1,10 @@
+﻿@model bool?
+
+@if (Model.HasValue && Model.Value == true)
+{
+    <div class="checkbox-value">Yes</div>
+}
+else
+{
+    <div class="checkbox-value">No</div>
+}

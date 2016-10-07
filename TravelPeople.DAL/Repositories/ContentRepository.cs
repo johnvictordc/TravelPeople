@@ -12,13 +12,11 @@ using Dapper;
 
 namespace TravelPeople.DAL.Repositories
 {
-    public class ContentRepository : IContentRepository
+    public class ContentRepository : Repository, IContentRepository
     {
-        private readonly IDbConnection _db;
-
-        public ContentRepository()
+        public ContentRepository() : base()
         {
-            _db = new SqlConnection(ConfigurationManager.ConnectionStrings["TravelPeople"].ConnectionString);
+            
         }
 
         public void Create(Content content)

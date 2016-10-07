@@ -1,0 +1,9 @@
+﻿@using Magsaysay.Commons.Helpers
+@model DateTime?
+
+<div class="date-value">
+    @if (Model.HasValue == true)
+    {
+        @MiscHelpers.FormatDate((DateTime)Model, "MMMM - yyyy")
+    }
+</div>

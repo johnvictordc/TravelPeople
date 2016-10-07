@@ -11,13 +11,12 @@ using TravelPeople.Commons.Objects;
 
 namespace TravelPeople.DAL.Repositories
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository : Repository, IUserRepository
     {
-        private readonly IDbConnection _db;
 
-        public UserRepository()
+        public UserRepository() : base()
         {
-            _db = new SqlConnection(ConfigurationManager.ConnectionStrings["TravelPeople"].ConnectionString);
+
         }
         
         public List<User> GetAll()

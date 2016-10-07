@@ -13,8 +13,6 @@ namespace TravelPeople.Commons.Interfaces
 
         long type { get; set; }
 
-        string alias { get; set; }
-
         string meta_description { get; set; }
 
         string meta_tags { get; set; }

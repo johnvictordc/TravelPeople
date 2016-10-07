@@ -17,7 +17,7 @@ namespace TravelPeople.Web.Models.Nodes
         [DisplayName("Title")]
         [UIHint("TextBox")]
         [MaxLength(50)]
-        public string name
+        public new string name
         {
             get;
 
@@ -26,7 +26,7 @@ namespace TravelPeople.Web.Models.Nodes
 
         [DisplayName("Enabled")]
         [UIHint("CheckBox")]
-        public bool enabled
+        public new bool enabled
         {
             get;
 
@@ -35,6 +35,7 @@ namespace TravelPeople.Web.Models.Nodes
         
         [AllowHtml]
         [DisplayName("Content")]
+        [UIHint("CKEditor")]
         public string content
         {
             get;
