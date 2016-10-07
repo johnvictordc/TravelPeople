@@ -43,7 +43,6 @@ namespace TravelPeople.Web.Areas.CMS.Controllers
             return View();
         }
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(ContentViewModel model)
@@ -117,6 +116,6 @@ namespace TravelPeople.Web.Areas.CMS.Controllers
                 return HttpNotFound();
             }
         }
-	}
+    }
 
 }

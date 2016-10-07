@@ -10,6 +10,17 @@ namespace TravelPeople.Commons.Objects
     public class Menu : Node, IMenu
     {
 
+        public Menu()
+        {
+            this.items = new List<MenuItem>();
+        }
+
+        public string name
+        {
+            get;
+            set;
+        }
+
         public string alias
         {
             get;
@@ -23,6 +34,13 @@ namespace TravelPeople.Commons.Objects
         }
 
         public string header_text
+        {
+            get;
+            set;
+        }
+
+
+        public List<MenuItem> items
         {
             get;
             set;

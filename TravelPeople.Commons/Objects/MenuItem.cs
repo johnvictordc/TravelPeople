@@ -7,48 +7,30 @@ using TravelPeople.Commons.Interfaces;
 
 namespace TravelPeople.Commons.Objects
 {
-    public class Content : Node, IContent
+    public class MenuItem : Node, IMenuItem, ICreator
     {
-        public string name
+
+        public string text
         {
             get;
-
             set;
         }
 
-        public string content
+        public string link
         {
             get;
-
             set;
         }
 
-     
-        public long type
+        public long menu
         {
             get;
-
             set;
         }
 
-        public string alias
+        public bool authenticated
         {
             get;
-
-            set;
-        }
-
-        public string meta_description
-        {
-            get;
-
-            set;
-        }
-
-        public string meta_tags
-        {
-            get;
-
             set;
         }
     }

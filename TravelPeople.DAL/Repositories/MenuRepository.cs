@@ -29,8 +29,7 @@ namespace TravelPeople.DAL.Repositories
                     INSERT INTO menu (name, alias, position, created_by, date_created, updated_by, date_updated, enabled, header_text) 
                     VALUES(@name, @alias, @position, @created_by, @date_created, @updated_by, @date_updated, @enabled, @header_text);
 
-                    SELECT CAST(SCOPE_IDENTITY() as int)
-                ";
+                    SELECT CAST(SCOPE_IDENTITY() as int)";
 
                 return _db.Query<long>(sql, menu).Single();
             }
@@ -52,8 +51,7 @@ namespace TravelPeople.DAL.Repositories
                             date_updated = @date_updated, 
                             enabled = @enabled, 
                             header_text = @header_text 
-                    WHERE id = @id
-                ";
+                    WHERE id = @id";
 
                 _db.Execute(sql, menu);
                 return menu.id;
@@ -68,6 +66,8 @@ namespace TravelPeople.DAL.Repositories
         {
             try
             {
+                // DELETE ITEMS FIRST BEFORE DELETING THE MENU
+                DeleteItemByMenu(id);
                 _db.Execute("DELETE FROM menu WHERE id = @id", new { id = id });
             }
             catch (Exception ex)
@@ -80,7 +80,8 @@ namespace TravelPeople.DAL.Repositories
         {
             try
             {
-                _db.Execute("DELETE FROM menu WHERE id IN(@id)", new { id = id.ToArray() });
+                DeleteItemByMenu(id);
+                _db.Execute("DELETE FROM menu WHERE id IN @id", new { id = id.ToArray() });
             }
             catch (Exception ex)
             {
@@ -100,11 +101,55 @@ namespace TravelPeople.DAL.Repositories
             }
         }
 
+        public List<Menu> GetAll(bool withItems)
+        {
+            try
+            {
+                List<Menu> menus = _db.Query<Menu>("SELECT * FROM menu").ToList();
+
+                if (withItems == true)
+                {
+                    foreach (var menu in menus)
+                    {
+                        menu.items = GetItems(menu.id);
+                    }
+                }
+
+                return menus;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public List<Menu> GetByPosition(long position)
         {
             try
             {
                 return _db.Query<Menu>("SELECT * FROM menu WHERE position = @position", new { position = position }).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<Menu> GetByPosition(long position, bool withItems)
+        {
+            try
+            {
+                List<Menu> menus = _db.Query<Menu>("SELECT * FROM menu WHERE position = @position", new { position = position }).ToList();
+
+                if (withItems == true)
+                {
+                    foreach (var menu in menus)
+                    {
+                        menu.items = GetItems(menu.id);
+                    }
+                }
+
+                return menus;
             }
             catch (Exception ex)
             {
@@ -124,11 +169,175 @@ namespace TravelPeople.DAL.Repositories
             }
         }
 
+        public Menu GetById(long id, bool withItems)
+        {
+            try
+            {
+                Menu menu = _db.QuerySingleOrDefault<Menu>("SELECT * FROM menu WHERE id = @id", new { id = id });
+
+                if (withItems == true) 
+                {
+                    menu.items = GetItems(id);
+                }
+
+                return menu;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public Menu GetByAlias(string alias)
         {
             try
             {
                 return _db.QuerySingleOrDefault<Menu>("SELECT * FROM menu WHERE alias = @alias", new { alias = alias });
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Menu GetByAlias(string alias, bool withItems)
+        {
+            try
+            {
+                Menu menu = _db.QuerySingleOrDefault<Menu>("SELECT * FROM menu WHERE alias = @alias", new { alias = alias });
+
+                if (withItems == true) 
+                {
+                    menu.items = GetItems(menu.id);
+                }
+
+                return menu;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public long AddItem(MenuItem item)
+        {
+            try
+            {
+                string sql = @"
+                    INSERT INTO menuItems (text, link, menu, created_by, date_created, updated_by, date_updated, authenticated, enabled) 
+                    VALUES(@text, @link, @menu, @created_by, @date_created, @updated_by, @date_updated, @authenticated, @enabled);
+
+                    SELECT CAST(SCOPE_IDENTITY() as int)";
+
+                return _db.Query<long>(sql, item).Single();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public long UpdateItem(MenuItem item)
+        {
+            try
+            {
+                string sql = @"
+                    UPDATE menuItems SET 
+                            text = @text, 
+                            link = @link,
+                            menu = @menu,
+                            updated_by = @updated_by,
+                            date_updated = @date_updated,
+                            authenticated = @authenticated,
+                            enabled = @enabled
+                    WHERE id = @id";
+
+                _db.Execute(sql, item);
+                return item.id;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void DeleteItem(long id)
+        {
+            try
+            {
+                _db.Execute("DELETE FROM menuItems WHERE id = @id", new { id = id });
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void DeleteItem(IEnumerable<long> id)
+        {
+            try
+            {
+                _db.Execute("DELETE FROM menuItems WHERE id IN @id", new { id = id });
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void DeleteItemByMenu(long menu)
+        {
+            try
+            {
+                _db.Execute("DELETE FROM menuItems WHERE menu = @menu", new { menu = menu });
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void DeleteItemByMenu(IEnumerable<long> menus)
+        {
+            try
+            {
+                _db.Execute("DELETE FROM menuItems WHERE menu IN @menu", new { menu = menus });
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<MenuItem> GetItems(long menu)
+        {
+            try
+            {
+                return _db.Query<MenuItem>("SELECT * FROM menuItems WHERE menu = @menu", new { menu = menu }).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<MenuItem> GetItems(long menu, bool enabled, bool authenticated)
+        {
+            try
+            {
+                return _db.Query<MenuItem>("SELECT * FROM menuItems WHERE menu = @menu AND enabled = @enabled AND authenticated = @authenticated", new { menu = menu, enabled = enabled, authenticated = authenticated }).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<Menu> SelectMenu()
+        {
+            try
+            {
+                return _db.Query<Menu>("SELECT id, name FROM menu").ToList();
             }
             catch (Exception ex)
             {
