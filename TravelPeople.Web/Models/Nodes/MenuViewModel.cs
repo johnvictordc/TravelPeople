@@ -12,6 +12,21 @@ namespace TravelPeople.Web.Models.Nodes
     public class MenuViewModel : Menu
     {
 
+        public MenuViewModel()
+        {
+
+        }
+
+        public MenuViewModel(Menu menu)
+        {
+            menu.items = new List<MenuItemViewModel>();
+            foreach(var item in menu.items) 
+            {
+
+            }
+
+        }
+
         [Required(ErrorMessage = "This is required.")]
         [DisplayName("Title")]
         [UIHint("TextBox")]
@@ -27,7 +42,6 @@ namespace TravelPeople.Web.Models.Nodes
         public bool enabled
         {
             get;
-
             set;
         }
 

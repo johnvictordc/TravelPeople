@@ -48,8 +48,8 @@ namespace TravelPeople.Service.Controllers
         }
 
         [AcceptVerbs("POST")]
-        [HttpPost]
-        public IHttpActionResult Delete(long id)
+        [HttpDelete]
+        public IHttpActionResult Delete([FromBody] long id)
         {
             try
             {
@@ -65,7 +65,7 @@ namespace TravelPeople.Service.Controllers
 
         [AcceptVerbs("POST")]
         [HttpPost]
-        public IHttpActionResult Delete(long[] id)
+        public IHttpActionResult Delete([FromBody] long[] id)
         {
             try
             {

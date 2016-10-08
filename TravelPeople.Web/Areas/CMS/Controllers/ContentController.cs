@@ -7,14 +7,14 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using TravelPeople.Commons.Objects;
 using TravelPeople.Commons.Utils;
-using TravelPeople.Web.Models.Nodes;
 
 namespace TravelPeople.Web.Areas.CMS.Controllers
 {
     public class ContentController : Controller
     {
-        private ContentViewModel _GetContent(long id)
+        private Content _GetContent(long id)
         {
             RestClient rest = new RestClient();
             RestRequest request = new RestRequest();
@@ -28,11 +28,11 @@ namespace TravelPeople.Web.Areas.CMS.Controllers
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                return JsonConvert.DeserializeObject<ContentViewModel>(response.Content);
+                return JsonConvert.DeserializeObject<Content>(response.Content);
             }
             else 
             {
-                return new ContentViewModel();
+                return new Content();
             }
         }
 
@@ -52,7 +52,7 @@ namespace TravelPeople.Web.Areas.CMS.Controllers
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                List<ContentViewModel> model = JsonConvert.DeserializeObject<List<ContentViewModel>>(response.Content);
+                List<Content> model = JsonConvert.DeserializeObject<List<Content>>(response.Content);
                 return View(model);
             }
             else
@@ -68,7 +68,7 @@ namespace TravelPeople.Web.Areas.CMS.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ContentViewModel model)
+        public ActionResult Create(Content model)
         {
 
             try
@@ -112,7 +112,7 @@ namespace TravelPeople.Web.Areas.CMS.Controllers
                 return HttpNotFound();
             }
 
-            ContentViewModel model = _GetContent((long) id);
+            Content model = _GetContent((long)id);
             if (model.id != 0)
             {
                 return View(model);
@@ -130,7 +130,7 @@ namespace TravelPeople.Web.Areas.CMS.Controllers
                 return HttpNotFound();
             }
 
-            ContentViewModel model = _GetContent((long)id);
+            Content model = _GetContent((long)id);
             if (model.id != 0)
             {
                 return View(model);
@@ -143,7 +143,7 @@ namespace TravelPeople.Web.Areas.CMS.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(ContentViewModel model)
+        public ActionResult Edit(Content model)
         {
 
             try
@@ -187,8 +187,8 @@ namespace TravelPeople.Web.Areas.CMS.Controllers
                 return HttpNotFound();
             }
 
-            ContentViewModel model = _GetContent((long)id);
-            if (model.id == 0)
+            Content model = _GetContent((long)id);
+            if (model.id != 0)
             {
                 return View(model);
             }
@@ -200,7 +200,7 @@ namespace TravelPeople.Web.Areas.CMS.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(ContentViewModel model)
+        public ActionResult Delete(Content model)
         {
 
             try
