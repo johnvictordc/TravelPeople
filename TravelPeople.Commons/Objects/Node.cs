@@ -50,15 +50,6 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
-
-        public string name
-        {
-            get;
-
-            set;
-        }
-
-
         public bool enabled
         {
             get;

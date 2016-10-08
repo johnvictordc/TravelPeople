@@ -8,6 +8,7 @@ namespace TravelPeople.Commons.Interfaces
 {
     public interface IContent
     {
+        string name { get; set; }
 
         string content { get; set; }
 

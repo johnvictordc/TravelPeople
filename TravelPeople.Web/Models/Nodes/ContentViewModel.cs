@@ -10,14 +10,14 @@ using TravelPeople.Commons.Objects;
 
 namespace TravelPeople.Web.Models.Nodes
 {
-    public class ContentViewModel : Node, IContent
+    public class ContentViewModel : Content
     {
 
         [Required(ErrorMessage = "This is required.")]
         [DisplayName("Title")]
         [UIHint("TextBox")]
         [MaxLength(50)]
-        public new string name
+        public string name
         {
             get;
 
@@ -26,7 +26,7 @@ namespace TravelPeople.Web.Models.Nodes
 
         [DisplayName("Enabled")]
         [UIHint("CheckBox")]
-        public new bool enabled
+        public bool enabled
         {
             get;
 

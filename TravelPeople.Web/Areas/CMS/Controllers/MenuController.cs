@@ -12,15 +12,16 @@ using TravelPeople.Web.Models.Nodes;
 
 namespace TravelPeople.Web.Areas.CMS.Controllers
 {
-    public class ContentController : Controller
+    public class MenuController : Controller
     {
-        private ContentViewModel _GetContent(long id)
+        private MenuViewModel _GetMenu(long id)
         {
             RestClient rest = new RestClient();
             RestRequest request = new RestRequest();
 
             rest.BaseUrl = new Uri(ConfigurationManager.AppSettings["base_url"].ToString());
-            request = new RestRequest(APIURL.CONTENT_SINGLE, Method.GET);
+
+            request = new RestRequest(APIURL.MENU_GET_BY_ID, Method.GET);
             request.AddParameter("id", id);
             request.RequestFormat = DataFormat.Json;
 
@@ -28,16 +29,16 @@ namespace TravelPeople.Web.Areas.CMS.Controllers
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                return JsonConvert.DeserializeObject<ContentViewModel>(response.Content);
+                return JsonConvert.DeserializeObject<MenuViewModel>(response.Content);
             }
-            else 
+            else
             {
-                return new ContentViewModel();
+                return new MenuViewModel();
             }
         }
 
         //
-        // GET: /CMS/Content/
+        // GET: /CMS/Menu/
         public ActionResult Index()
         {
             RestClient rest = new RestClient();
@@ -45,14 +46,14 @@ namespace TravelPeople.Web.Areas.CMS.Controllers
 
             rest.BaseUrl = new Uri(ConfigurationManager.AppSettings["base_url"].ToString());
 
-            request = new RestRequest(APIURL.CONTENT_ALL, Method.GET);
+            request = new RestRequest(APIURL.MENU_GET_ALL, Method.GET);
             request.RequestFormat = DataFormat.Json;
 
             var response = rest.Execute(request);
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                List<ContentViewModel> model = JsonConvert.DeserializeObject<List<ContentViewModel>>(response.Content);
+                List<MenuViewModel> model = JsonConvert.DeserializeObject<List<MenuViewModel>>(response.Content);
                 return View(model);
             }
             else
@@ -61,182 +62,155 @@ namespace TravelPeople.Web.Areas.CMS.Controllers
             }
         }
 
+        //
+        // GET: /CMS/Menu/Details/5
+        public ActionResult Details(long id)
+        {
+            return View(_GetMenu(id));
+        }
+
+        //
+        // GET: /CMS/Menu/Create
         public ActionResult Create()
         {
             return View();
         }
 
+        //
+        // POST: /CMS/Menu/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ContentViewModel model)
+        public ActionResult Create(MenuViewModel model)
         {
-
             try
             {
-                if(ModelState.IsValid)
+                if (ModelState.IsValid)
                 {
                     RestClient rest = new RestClient();
                     RestRequest request = new RestRequest();
 
                     rest.BaseUrl = new Uri(ConfigurationManager.AppSettings["base_url"].ToString());
 
-                    request = new RestRequest(APIURL.CONTENT_CREATE, Method.POST);
-                    request.RequestFormat = DataFormat.Json;
+                    request = new RestRequest(APIURL.MENU_CREATE, Method.POST);
                     request.AddBody(model);
+                    request.RequestFormat = DataFormat.Json;
 
                     var response = rest.Execute(request);
 
                     if (response.StatusCode == HttpStatusCode.OK)
                     {
-                      
+                        long id = JsonConvert.DeserializeObject<long>(response.Content);
+                        return RedirectToAction("Details", new { id = id });
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", response.ErrorMessage);
+                    }
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex);
+            }
+
+            return View(model);
+
+        }
+
+        //
+        // GET: /CMS/Menu/Edit/5
+        public ActionResult Edit(long id)
+        {
+            return View(_GetMenu(id));
+        }
+
+        //
+        // POST: /CMS/Menu/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(MenuViewModel model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    RestClient rest = new RestClient();
+                    RestRequest request = new RestRequest();
+
+                    rest.BaseUrl = new Uri(ConfigurationManager.AppSettings["base_url"].ToString());
+
+                    request = new RestRequest(APIURL.MENU_UPDATE, Method.POST);
+                    request.AddBody(model);
+                    request.RequestFormat = DataFormat.Json;
+
+                    var response = rest.Execute(request);
+
+                    if (response.StatusCode == HttpStatusCode.OK)
+                    {
+                        long id = JsonConvert.DeserializeObject<long>(response.Content);
+                        return RedirectToAction("Details", new { id = id });
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", response.ErrorMessage);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex);
+            }
+
+            return View(model);
+        }
+
+        //
+        // GET: /CMS/Menu/Delete/5
+        public ActionResult Delete(long id)
+        {
+            return View(_GetMenu(id));
+        }
+
+        //
+        // POST: /CMS/Menu/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(MenuViewModel model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    RestClient rest = new RestClient();
+                    RestRequest request = new RestRequest();
+
+                    rest.BaseUrl = new Uri(ConfigurationManager.AppSettings["base_url"].ToString());
+
+                    request = new RestRequest(APIURL.MENU_DELETE, Method.POST);
+                    request.AddParameter("id", model.id);
+                    request.RequestFormat = DataFormat.Json;
+
+                    var response = rest.Execute(request);
+
+                    if (response.StatusCode == HttpStatusCode.OK)
+                    {
                         return RedirectToAction("Index");
                     }
                     else
                     {
-                        ModelState.AddModelError("", JsonConvert.DeserializeObject<Exception>(response.Content).Message);
+                        ModelState.AddModelError("", response.ErrorMessage);
                     }
                 }
+
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("", ex.Message);
+                ModelState.AddModelError("", ex);
             }
 
-            return View();
+            return View(model);
         }
-
-        public ActionResult Details(long? id)
-        {
-            if (id == null)
-            {
-                return HttpNotFound();
-            }
-
-            ContentViewModel model = _GetContent((long) id);
-            if (model.id != 0)
-            {
-                return View(model);
-            }
-            else
-            {
-                return HttpNotFound();
-            }
-        }
-
-        public ActionResult Edit(long? id)
-        {
-            if (id == null)
-            {
-                return HttpNotFound();
-            }
-
-            ContentViewModel model = _GetContent((long)id);
-            if (model.id != 0)
-            {
-                return View(model);
-            }
-            else
-            {
-                return HttpNotFound();
-            }
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(ContentViewModel model)
-        {
-
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    RestClient rest = new RestClient();
-                    RestRequest request = new RestRequest();
-
-                    rest.BaseUrl = new Uri(ConfigurationManager.AppSettings["base_url"].ToString());
-
-                    request = new RestRequest(APIURL.CONTENT_UPDATE, Method.POST);
-                    request.RequestFormat = DataFormat.Json;
-                    request.AddBody(model);
-
-                    var response = rest.Execute(request);
-
-                    if (response.StatusCode == HttpStatusCode.OK)
-                    {
-
-                        return RedirectToAction("Details", new { id = model.id });
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("", JsonConvert.DeserializeObject<Exception>(response.Content).Message);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError("", ex.Message);
-            }
-
-            return View();
-        }
-
-        public ActionResult Delete(long id)
-        {
-            if (id == null)
-            {
-                return HttpNotFound();
-            }
-
-            ContentViewModel model = _GetContent((long)id);
-            if (model.id == 0)
-            {
-                return View(model);
-            }
-            else
-            {
-                return HttpNotFound();
-            }
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(ContentViewModel model)
-        {
-
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    RestClient rest = new RestClient();
-                    RestRequest request = new RestRequest();
-
-                    rest.BaseUrl = new Uri(ConfigurationManager.AppSettings["base_url"].ToString());
-
-                    request = new RestRequest(APIURL.CONTENT_DELETE, Method.POST);
-                    request.RequestFormat = DataFormat.Json;
-                    request.AddBody(model);
-
-                    var response = rest.Execute(request);
-
-                    if (response.StatusCode == HttpStatusCode.OK)
-                    {
-
-                        return RedirectToAction("Details", new { id = model.id });
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("", JsonConvert.DeserializeObject<Exception>(response.Content).Message);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError("", ex.Message);
-            }
-
-            return View();
-        }
-
     }
-
 }
