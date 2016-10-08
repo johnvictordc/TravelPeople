@@ -2,7 +2,7 @@
 using System.Configuration;
 using System.Linq;
 
-namespace Magsaysay.Commons.Helpers
+namespace Llama.Helpers
 {
     /// <summary>
     /// Description of MiscHelpers.

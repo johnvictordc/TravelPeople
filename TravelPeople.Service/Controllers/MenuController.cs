@@ -253,7 +253,7 @@ namespace TravelPeople.Service.Controllers
         {
             try
             {
-                repo.DeleteItem(id);
+                repo.DeleteItems(id);
                 return Ok();
             }
             catch (Exception ex)

@@ -67,7 +67,7 @@ namespace TravelPeople.DAL.Repositories
             try
             {
                 // DELETE ITEMS FIRST BEFORE DELETING THE MENU
-                DeleteItemByMenu(id);
+                DeleteItemsByMenu(id);
                 _db.Execute("DELETE FROM menu WHERE id = @id", new { id = id });
             }
             catch (Exception ex)
@@ -80,7 +80,7 @@ namespace TravelPeople.DAL.Repositories
         {
             try
             {
-                DeleteItemByMenu(id);
+                DeleteItemsByMenus(id);
                 _db.Execute("DELETE FROM menu WHERE id IN @id", new { id = id.ToArray() });
             }
             catch (Exception ex)
@@ -273,7 +273,7 @@ namespace TravelPeople.DAL.Repositories
             }
         }
 
-        public void DeleteItem(IEnumerable<long> id)
+        public void DeleteItems(IEnumerable<long> id)
         {
             try
             {
@@ -285,7 +285,7 @@ namespace TravelPeople.DAL.Repositories
             }
         }
 
-        public void DeleteItemByMenu(long menu)
+        public void DeleteItemsByMenu(long menu)
         {
             try
             {
@@ -297,7 +297,7 @@ namespace TravelPeople.DAL.Repositories
             }
         }
 
-        public void DeleteItemByMenu(IEnumerable<long> menus)
+        public void DeleteItemsByMenus(IEnumerable<long> menus)
         {
             try
             {
