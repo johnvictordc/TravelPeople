@@ -14,7 +14,11 @@ namespace TravelPeople.DAL.Interfaces
         List<Content> GetContents();
 
         Content GetSingle(long id);
+
+        long Update(Content content);
+
+        void Delete(long id);
     }
 
 
-}
+} 

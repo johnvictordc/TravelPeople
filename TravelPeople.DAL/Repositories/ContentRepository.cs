@@ -74,5 +74,42 @@ namespace TravelPeople.DAL.Repositories
             }
 
         }
+
+        public long Update(Content content)
+        {
+            try
+            {
+                string sql = @"
+                    UPDATE content SET 
+                            name = @name, 
+                            content = @content, 
+                            updated_by = @updated_by, 
+                            date_updated = @date_updated, 
+                            meta_description = @meta_description,
+                            meta_tags = @meta_tags,
+                            enabled = @enabled, 
+                    WHERE id = @id
+                ";
+
+                _db.Execute(sql, content);
+                return content.id;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void Delete(long id)
+        {
+            try
+            {
+                _db.Execute("DELETE FROM content WHERE id = @id", new { id = id });
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

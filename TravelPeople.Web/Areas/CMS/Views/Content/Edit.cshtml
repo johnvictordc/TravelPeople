@@ -49,14 +49,6 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.alias, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.alias)
-                @Html.ValidationMessageFor(model => model.alias)
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.meta_description, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.meta_description)
@@ -69,38 +61,6 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.meta_tags)
                 @Html.ValidationMessageFor(model => model.meta_tags)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.date_created, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.date_created)
-                @Html.ValidationMessageFor(model => model.date_created)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.date_updated, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.date_updated)
-                @Html.ValidationMessageFor(model => model.date_updated)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.created_by, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.created_by)
-                @Html.ValidationMessageFor(model => model.created_by)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.updated_by, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.updated_by)
-                @Html.ValidationMessageFor(model => model.updated_by)
             </div>
         </div>
 
