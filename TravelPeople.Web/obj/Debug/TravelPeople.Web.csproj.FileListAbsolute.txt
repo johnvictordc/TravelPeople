@@ -62,3 +62,5 @@ C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Web\bin\EntityFram
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Web\bin\EntityFramework.SqlServer.dll
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Web\bin\EntityFramework.xml
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Web\bin\Llama.dll
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Web\bin\Llama.pdb

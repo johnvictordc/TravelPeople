@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPeople.Commons", "Tra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPeople.DAL", "TravelPeople.DAL\TravelPeople.DAL.csproj", "{767BD3F3-69DD-4CFA-843A-C53230351C83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Llama", "Llama\Llama\Llama.csproj", "{1E12D0F6-17FD-40D5-8D8F-A8BB6CBB3AC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{767BD3F3-69DD-4CFA-843A-C53230351C83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{767BD3F3-69DD-4CFA-843A-C53230351C83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{767BD3F3-69DD-4CFA-843A-C53230351C83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E12D0F6-17FD-40D5-8D8F-A8BB6CBB3AC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E12D0F6-17FD-40D5-8D8F-A8BB6CBB3AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E12D0F6-17FD-40D5-8D8F-A8BB6CBB3AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E12D0F6-17FD-40D5-8D8F-A8BB6CBB3AC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
