@@ -8,9 +8,8 @@ using TravelPeople.Commons.Objects;
 
 namespace TravelPeople.DAL.Interfaces
 {
-    public interface IMenuRepository
+    interface IMenuRepository
     {
-
         long Add(Menu menu);
 
         long Update(Menu menu);
