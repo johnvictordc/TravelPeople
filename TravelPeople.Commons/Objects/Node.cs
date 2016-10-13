@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,38 +20,35 @@ namespace TravelPeople.Commons.Objects
         public DateTime date_created
         {
             get;
-
             set;
         }
 
         public DateTime date_updated
         {
             get;
-
             set;
         }
 
         public long created_by
         {
             get;
-
             set;
         }
 
         public long updated_by
         {
             get;
-
             set;
         }
 
         public long id
         {
             get;
-
             set;
         }
 
+        [DisplayName("Enabled")]
+        [UIHint("CheckBox")]
         public bool enabled
         {
             get;

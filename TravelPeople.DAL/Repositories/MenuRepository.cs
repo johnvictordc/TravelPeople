@@ -7,6 +7,7 @@ using TravelPeople.Commons.Objects;
 using TravelPeople.DAL.Interfaces;
 using Dapper;
 using Llama.Helpers;
+using TravelPeople.Commons.Interfaces;
 
 namespace TravelPeople.DAL.Repositories
 {
@@ -64,28 +65,38 @@ namespace TravelPeople.DAL.Repositories
 
         public void Delete(long id)
         {
-            try
+            using (var tx = _db.BeginTransaction())
             {
-                // DELETE ITEMS FIRST BEFORE DELETING THE MENU
-                DeleteItemsByMenu(id);
-                _db.Execute("DELETE FROM menu WHERE id = @id", new { id = id });
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+                try
+                {
+                    // DELETE ITEMS FIRST BEFORE DELETING THE MENU
+                    DeleteItemsByMenu(id);
+                    _db.Execute("DELETE FROM menu WHERE id = @id", new { id = id });
+                    tx.Commit();
+                }
+                catch (Exception ex)
+                {
+                    tx.Rollback();
+                    throw ex;
+                }
             }
         }
 
         public void Delete(IEnumerable<long> id)
         {
-            try
+            using (var tx = _db.BeginTransaction())
             {
-                DeleteItemsByMenus(id);
-                _db.Execute("DELETE FROM menu WHERE id IN @id", new { id = id.ToArray() });
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+                try
+                {
+                    DeleteItemsByMenus(id);
+                    _db.Execute("DELETE FROM menu WHERE id IN @id", new { id = id.ToArray() });
+                    tx.Commit();
+                }
+                catch (Exception ex)
+                {
+                    tx.Rollback();
+                    throw ex;
+                }
             }
         }
 

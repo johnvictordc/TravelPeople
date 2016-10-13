@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using System.Configuration;
 using RestSharp;
-using TravelPeople.Web.Models;
 using System.Net;
 using Newtonsoft.Json;
 using TravelPeople.Commons.Objects;
@@ -28,7 +27,7 @@ namespace TravelPeople.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(LoginViewModel model)
+        public ActionResult Login(User model)
         {
 
             try

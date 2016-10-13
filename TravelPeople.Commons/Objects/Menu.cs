@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,11 +17,16 @@ namespace TravelPeople.Commons.Objects
             this.items = new List<MenuItem>();
         }
 
+        [Required(ErrorMessage = "This is required.")]
+        [DisplayName("Title")]
+        [UIHint("TextBox")]
+        [MaxLength(50)]
         public string name
         {
             get;
             set;
         }
+
 
         public string alias
         {
@@ -33,6 +40,10 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [Required(ErrorMessage = "This is required.")]
+        [DisplayName("Header Text")]
+        [UIHint("TextBox")]
+        [MaxLength(50)]
         public string header_text
         {
             get;

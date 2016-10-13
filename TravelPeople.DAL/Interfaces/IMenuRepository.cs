@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TravelPeople.Commons.Interfaces;
 using TravelPeople.Commons.Objects;
 
 namespace TravelPeople.DAL.Interfaces
 {
-    public interface IMenuRepository
+    interface IMenuRepository
     {
-
         long Add(Menu menu);
 
         long Update(Menu menu);
