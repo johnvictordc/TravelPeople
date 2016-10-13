@@ -5,45 +5,49 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TravelPeople.Commons.Interfaces;
 
 namespace TravelPeople.Commons.Objects
 {
-    public class Node : INode, ICreator
+    public class Node
     {
         public Node()
         {
-            this.date_created = DateTime.Now;
-            this.date_updated = DateTime.Now;
+            this.dateCreated = DateTime.Now;
+            this.dateUpdated = DateTime.Now;
         }
 
-        public DateTime date_created
+        public DateTime dateCreated
         {
             get;
+
             set;
         }
 
-        public DateTime date_updated
+        public DateTime dateUpdated
         {
             get;
+
             set;
         }
 
-        public long created_by
+        public long createdBy
         {
             get;
+
             set;
         }
 
-        public long updated_by
+        public long updatedBy
         {
             get;
+
             set;
         }
 
         public long id
         {
             get;
+
             set;
         }
 

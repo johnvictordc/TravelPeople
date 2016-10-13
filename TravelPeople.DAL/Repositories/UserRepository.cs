@@ -6,7 +6,6 @@ using System.Data.SqlClient;
 using System.Linq;
 using Dapper;
 using TravelPeople.DAL.Interfaces;
-using TravelPeople.Commons.Interfaces;
 using TravelPeople.Commons.Objects;
 
 namespace TravelPeople.DAL.Repositories

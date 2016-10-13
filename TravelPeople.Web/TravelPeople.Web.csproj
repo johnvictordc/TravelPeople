@@ -118,6 +118,10 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\CMS\Models\" />
+    <Folder Include="Areas\OBT\Models\" />
+    <Folder Include="Areas\OBT\Views\Booking\" />
+    <Folder Include="Areas\OBT\Views\Company\" />
+    <Folder Include="Areas\OBT\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -126,7 +130,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\CMS\CMSAreaRegistration.cs" />
     <Compile Include="Areas\CMS\Controllers\ContentController.cs" />
-    <Compile Include="Areas\CMS\Controllers\MenuController.cs" />
+    <Compile Include="Areas\CMS\Controllers\SliderController.cs" />
+    <Compile Include="Areas\OBT\Controllers\BookingController.cs" />
+    <Compile Include="Areas\OBT\Controllers\CompanyController.cs" />
+    <Compile Include="Areas\OBT\OBTAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -170,12 +177,8 @@
     <Content Include="Scripts\ckeditor\skins\moono\readme.md" />
     <Content Include="Scripts\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
     <Content Include="Scripts\ckfinder\userfiles\.htaccess" />
-    <Content Include="Areas\CMS\Views\Menu\Index.cshtml" />
-    <Content Include="Areas\CMS\Views\Menu\Create.cshtml" />
-    <Content Include="Areas\CMS\Views\Menu\Details.cshtml" />
-    <Content Include="Areas\CMS\Views\Menu\Edit.cshtml" />
-    <Content Include="Areas\CMS\Views\Menu\Delete.cshtml" />
-    <Content Include="Areas\CMS\Views\Menu\_MenuItem.cshtml" />
+    <Content Include="Areas\OBT\Views\web.config" />
+    <Content Include="Areas\CMS\Views\Slider\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />

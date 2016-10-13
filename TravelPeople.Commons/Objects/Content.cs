@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TravelPeople.Commons.Interfaces;
 
 namespace TravelPeople.Commons.Objects
 {
-    public class Content : Node, IContent
+    public class Content : Node
     {
         public string name
         {
@@ -38,14 +37,14 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
-        public string meta_description
+        public string metaDescription
         {
             get;
 
             set;
         }
 
-        public string meta_tags
+        public string metaTags
         {
             get;
 

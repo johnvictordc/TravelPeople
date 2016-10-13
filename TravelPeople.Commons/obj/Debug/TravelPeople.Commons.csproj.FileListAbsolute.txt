@@ -7,3 +7,13 @@ C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Commons\bin\Debug\
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Commons\bin\Debug\TravelPeople.Commons.pdb
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Commons\obj\Debug\TravelPeople.Commons.dll
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Commons\obj\Debug\TravelPeople.Commons.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Commons\obj\Debug\TravelPeople.Commons.csprojResolveAssemblyReference.cache
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Commons\bin\Debug\TravelPeople.Commons.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Commons\bin\Debug\TravelPeople.Commons.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Commons\obj\Debug\TravelPeople.Commons.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Commons\obj\Debug\TravelPeople.Commons.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Commons\bin\Debug\Dapper.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Commons\bin\Debug\DapperExtensions.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Commons\bin\Debug\Dapper.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Commons\bin\Debug\Dapper.xml
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Commons\bin\Debug\DapperExtensions.pdb

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TravelPeople.Web.Models.Nodes.ContentViewModel>
+﻿@model IEnumerable<TravelPeople.Commons.Objects.Content>
 
 @{
     ViewBag.Title = "Index";
@@ -27,10 +27,10 @@
             @Html.DisplayNameFor(model => model.alias)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.meta_description)
+            @Html.DisplayNameFor(model => model.metaDescription)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.meta_tags)
+            @Html.DisplayNameFor(model => model.metaTags)
         </th>
         <th></th>
     </tr>
@@ -53,10 +53,10 @@
             @Html.DisplayFor(modelItem => item.alias)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.meta_description)
+            @Html.DisplayFor(modelItem => item.metaDescription)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.meta_tags)
+            @Html.DisplayFor(modelItem => item.metaTags)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.id }) |

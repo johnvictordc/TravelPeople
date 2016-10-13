@@ -1,15 +1,29 @@
-﻿using TravelPeople.Commons.Interfaces;
-
+﻿
 namespace TravelPeople.Commons.Objects
 {
-    public class User : IUser
+    public class User
     {
 
-        public long id { get; set; }
+        public long id 
+        { 
+            get; 
 
-        public string username { get; set; }
+            set; 
+        }
 
-        public string password { get; set; }
+        public string username
+        {
+            get;
+
+            set;
+        }
+
+        public string password
+        {
+            get;
+
+            set;
+        }
 
     }
 }

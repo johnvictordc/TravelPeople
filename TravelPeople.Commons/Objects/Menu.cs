@@ -5,11 +5,10 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TravelPeople.Commons.Interfaces;
 
 namespace TravelPeople.Commons.Objects
 {
-    public class Menu : Node, IMenu
+    public class Menu : Node
     {
 
         public Menu()
@@ -24,6 +23,7 @@ namespace TravelPeople.Commons.Objects
         public string name
         {
             get;
+
             set;
         }
 
@@ -31,12 +31,14 @@ namespace TravelPeople.Commons.Objects
         public string alias
         {
             get;
+
             set;
         }
 
         public string position
         {
             get;
+
             set;
         }
 
@@ -44,9 +46,10 @@ namespace TravelPeople.Commons.Objects
         [DisplayName("Header Text")]
         [UIHint("TextBox")]
         [MaxLength(50)]
-        public string header_text
+        public string headerText
         {
             get;
+
             set;
         }
 
@@ -54,6 +57,7 @@ namespace TravelPeople.Commons.Objects
         public List<MenuItem> items
         {
             get;
+
             set;
         }
     }
