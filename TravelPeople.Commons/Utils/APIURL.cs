@@ -21,7 +21,7 @@ namespace TravelPeople.Commons.Utils
 
         public static string COMPANY_ALL = "api/company/getall";
 
-        public static string COMPANY_SINGLE = "api/company/get";
+        public static string COMPANY_SINGLE = "api/company/getsingle";
 
         public static string COMPANY_CREATE = "api/company/create";
 

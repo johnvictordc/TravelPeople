@@ -1,0 +1,75 @@
+﻿@model IEnumerable<TravelPeople.Commons.Objects.Company>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.companyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.otherName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.city)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stateProvince)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.zipPostal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.street)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.webSite)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.companyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.otherName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.city)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stateProvince)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.zipPostal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.street)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.webSite)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.companyID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.companyID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.companyID })
+        </td>
+    </tr>
+}
+
+</table>

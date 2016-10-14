@@ -22,7 +22,7 @@ namespace TravelPeople.DAL.Repositories
             this._db = new SqlConnection(ConfigurationManager.ConnectionStrings["TravelPeople"].ConnectionString);
         }
 
-        public long Insert(T entity)
+        public virtual long Insert(T entity)
         {
             return _db.Insert(entity);
         }

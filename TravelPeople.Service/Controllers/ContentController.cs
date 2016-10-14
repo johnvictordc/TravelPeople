@@ -22,7 +22,7 @@ namespace TravelPeople.Service.Controllers
         {
             try
             {
-                repo.Create(model);
+                repo.Insert(model);
                 return Ok();
             }
             catch (Exception ex)
@@ -38,7 +38,7 @@ namespace TravelPeople.Service.Controllers
         {
             try
             {
-                return Ok(repo.GetContents());
+                return Ok(repo.GetAll());
             }
             catch (Exception ex)
             {
@@ -53,7 +53,7 @@ namespace TravelPeople.Service.Controllers
         {
             try
             {
-                return Ok(repo.GetSingle(id));
+                return Ok(repo.GetByID(id));
             }
             catch (Exception ex)
             {
