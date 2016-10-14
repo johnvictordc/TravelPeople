@@ -6,9 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using TravelPeople.Commons;
 using TravelPeople.Commons.Objects;
 using TravelPeople.Commons.Utils;
 using TravelPeople.Web.Helpers;
+using PagedList;
 
 namespace TravelPeople.Web.Areas.OBT.Controllers
 {
@@ -19,16 +21,17 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
 
         //
         // GET: /OBT/Company/
-        public ActionResult Index()
+        public ActionResult Index(string search = "", int page = 1)
         {
             service = new APIHelper();
-            service.SetRequest(APIURL.COMPANY_ALL, Method.GET);
+            service.SetRequest(APIURL.COMPANY_SEARCH, Method.GET);
+            service.request.AddParameter("companyName", search);
             var response = service.Execute();
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                List<Company> model = JsonConvert.DeserializeObject<List<Company>>(response.Content);
-                return View(model);
+                List<Company> result = service.DeserializeResult<List<Company>>(response);
+                return View(result.ToPagedList<Company>(page, 10));
             }
             else
             {
@@ -51,12 +54,12 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
                 {
                     service = new APIHelper();
                     service.SetRequest(APIURL.COMPANY_CREATE, Method.POST);
-                    service.AddBody(model);
+                    service.request.AddBody(model);
                     var response = service.Execute();
 
                     if (response.StatusCode == HttpStatusCode.OK)
                     {
-                        long _id = (long) service.DeserializeResult(response);
+                        long _id = service.DeserializeResult<long>(response);
                         return RedirectToAction("Details", new { id = _id });
                     }
                     else
@@ -82,12 +85,12 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
 
             service = new APIHelper();
             service.SetRequest(APIURL.COMPANY_SINGLE, Method.GET);
-            service.AddParameter("id", id);
+            service.request.AddParameter("id", id);
             var response = service.Execute();
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                return View((Company) service.DeserializeResult(response));
+                return View(service.DeserializeResult<Company>(response));
             }
             else
             {
@@ -104,12 +107,12 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
 
             service = new APIHelper();
             service.SetRequest(APIURL.COMPANY_SINGLE, Method.GET);
-            service.AddParameter("id", id);
+            service.request.AddParameter("id", id);
             var response = service.Execute();
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                return View((Company)service.DeserializeResult(response));
+                return View(service.DeserializeResult<Company>(response));
             }
             else
             {
@@ -128,12 +131,12 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
                 {
                     service = new APIHelper();
                     service.SetRequest(APIURL.COMPANY_UPDATE, Method.POST);
-                    service.AddBody(model);
+                    service.request.AddBody(model);
                     var response = service.Execute();
 
                     if (response.StatusCode == HttpStatusCode.OK)
                     {
-                        long _id = (long) service.DeserializeResult(response);
+                        long _id = service.DeserializeResult<long>(response);
                         return RedirectToAction("Details", new { id = _id });
                     }
                     else
@@ -159,12 +162,12 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
 
             service = new APIHelper();
             service.SetRequest(APIURL.COMPANY_SINGLE, Method.GET);
-            service.AddParameter("id", id);
+            service.request.AddParameter("id", id);
             var response = service.Execute();
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                return View((Company) service.DeserializeResult(response));
+                return View(service.DeserializeResult<Company>(response));
             }
             else
             {
@@ -179,30 +182,18 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
 
             try
             {
-                if (ModelState.IsValid)
-                {
-                    service = new APIHelper();
-                    service.SetRequest(APIURL.COMPANY_DELETE, Method.POST);
-                    service.AddBody(model.companyID);
-                    var response = service.Execute();
+                service = new APIHelper();
+                service.SetRequest(APIURL.COMPANY_DELETE, Method.POST);
+                service.request.AddBody(model.companyID);
+                var response = service.Execute();
 
-                    if (response.StatusCode == HttpStatusCode.OK)
-                    {
-                        bool result = (bool) service.DeserializeResult(response);
-                        if (result == true)
-                        {
-                            return RedirectToAction("Index");
-                        }
-                        else
-                        {
-                            // tadaaaa
-                            return RedirectToAction("Index");
-                        }
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("", JsonConvert.DeserializeObject<Exception>(response.Content).Message);
-                    }
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError("", JsonConvert.DeserializeObject<Exception>(response.Content).Message);
                 }
             }
             catch (Exception ex)
@@ -213,6 +204,43 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult BatchDelete(IEnumerable<long> id)
+        {
+            service = new APIHelper();
+            service.SetRequest(APIURL.COMPANY_LIST_BY_ID, Method.POST);
+            service.request.AddBody(id);
+            var response = service.Execute();
 
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                var model = service.DeserializeResult<List<Company>>(response);
+                return View(model);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult BatchDeleteConfirm(IEnumerable<long> id)
+        {
+            service = new APIHelper();
+            service.SetRequest(APIURL.COMPANY_BATCH_DELETE, Method.POST);
+            service.request.AddBody(id);
+            var response = service.Execute();
+
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+        }
     }
 }

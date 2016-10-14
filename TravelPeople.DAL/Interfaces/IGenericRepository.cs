@@ -18,8 +18,6 @@ namespace TravelPeople.DAL.Interfaces
 
         T GetByID(long id);
         
-        IEnumerable<T> Get(Expression<Func<T, bool>> predicate);
-        
         IEnumerable<T> GetAll();
 
     }

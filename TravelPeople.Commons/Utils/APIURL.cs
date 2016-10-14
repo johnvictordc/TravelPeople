@@ -23,11 +23,17 @@ namespace TravelPeople.Commons.Utils
 
         public static string COMPANY_SINGLE = "api/company/getsingle";
 
+        public static string COMPANY_LIST_BY_ID = "api/company/getlistbyids";
+
         public static string COMPANY_CREATE = "api/company/create";
 
         public static string COMPANY_UPDATE = "api/company/update";
 
         public static string COMPANY_DELETE = "api/company/delete";
+        
+        public static string COMPANY_BATCH_DELETE = "api/company/batchdelete";
+
+        public static string COMPANY_SEARCH = "api/company/search";
 
     }
 }
