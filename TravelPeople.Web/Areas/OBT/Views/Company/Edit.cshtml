@@ -1,0 +1,99 @@
+﻿@using TravelPeople.Web.Helpers
+@model TravelPeople.Commons.Objects.Company
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm()) 
+            {
+                @Html.AntiForgeryToken()
+    
+                <div class="form-horizontal">
+                    <h4>Edit Company @Html.DisplayFor(model => model.companyName)</h4>
+                    <hr />
+                    @Html.MyValidationSummary()
+                    @Html.HiddenFor(model => model.companyID)
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.companyName, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.companyName)
+                            @Html.ValidationMessageFor(model => model.companyName)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.otherName, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.otherName)
+                            @Html.ValidationMessageFor(model => model.otherName)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.address, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.address)
+                            @Html.ValidationMessageFor(model => model.address)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.city, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.city)
+                            @Html.ValidationMessageFor(model => model.city)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.stateProvince, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.stateProvince)
+                            @Html.ValidationMessageFor(model => model.stateProvince)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.zipPostal, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.zipPostal)
+                            @Html.ValidationMessageFor(model => model.zipPostal)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.street, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.street)
+                            @Html.ValidationMessageFor(model => model.street)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.webSite, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.webSite)
+                            @Html.ValidationMessageFor(model => model.webSite)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Create" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    
+</div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

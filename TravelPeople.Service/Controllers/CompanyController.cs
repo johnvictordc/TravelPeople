@@ -78,7 +78,7 @@ namespace TravelPeople.Service.Controllers
 
         [AcceptVerbs("GET")]
         [HttpGet]
-        public IHttpActionResult GetByID(long id)
+        public IHttpActionResult GetSingle(long id)
         {
             try
             {
