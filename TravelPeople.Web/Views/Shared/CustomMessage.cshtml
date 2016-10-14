@@ -1,0 +1,18 @@
+﻿@model TravelPeople.Commons.Utils.CustomException
+
+<div class="container">
+    <div class="jumbotron remove-bg remove-margin-bottom">
+        <h1>@Model.Header()</h1>
+        @*<p>@Model.type.ToString()</p>*@
+        <p>@Html.Raw(Model.Message)</p>
+        @if (Model.AdditionalMessage != null)
+        {
+            <p>Additional Information: @Html.Raw(Html.Encode(Model.AdditionalMessage))</p>
+        }
+
+        @if (ViewBag.AdditionalMessage != null)
+        {
+            <p>@Html.Raw(ViewBag.AdditionalMessage)</p>
+        }
+    </div>
+</div>

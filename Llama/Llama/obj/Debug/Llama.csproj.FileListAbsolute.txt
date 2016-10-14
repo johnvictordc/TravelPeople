@@ -5,6 +5,5 @@ D:\Projects\C#\Llama\Llama\obj\Debug\Llama.dll
 D:\Projects\C#\Llama\Llama\obj\Debug\Llama.pdb
 C:\Users\SHINRA\Source\Repos\TravelPeople\Llama\Llama\bin\Debug\Llama.dll
 C:\Users\SHINRA\Source\Repos\TravelPeople\Llama\Llama\bin\Debug\Llama.pdb
-C:\Users\SHINRA\Source\Repos\TravelPeople\Llama\Llama\obj\Debug\Llama.csprojResolveAssemblyReference.cache
 C:\Users\SHINRA\Source\Repos\TravelPeople\Llama\Llama\obj\Debug\Llama.dll
 C:\Users\SHINRA\Source\Repos\TravelPeople\Llama\Llama\obj\Debug\Llama.pdb

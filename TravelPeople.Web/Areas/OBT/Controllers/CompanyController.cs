@@ -11,10 +11,11 @@ using TravelPeople.Commons.Objects;
 using TravelPeople.Commons.Utils;
 using TravelPeople.Web.Helpers;
 using PagedList;
+using TravelPeople.Web.Controllers;
 
 namespace TravelPeople.Web.Areas.OBT.Controllers
 {
-    public class CompanyController : Controller
+    public class CompanyController : BaseController
     {
 
         private APIHelper service;
@@ -23,20 +24,26 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
         // GET: /OBT/Company/
         public ActionResult Index(string search = "", int page = 1)
         {
+            if (search == null)
+            {
+                search = "";
+                page = 1;
+            }
+
             service = new APIHelper();
             service.SetRequest(APIURL.COMPANY_SEARCH, Method.GET);
-            service.request.AddParameter("companyName", search);
+            service.request.AddParameter("search", search);
             var response = service.Execute();
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
+                ViewBag.CurrentFilter = search;
                 List<Company> result = service.DeserializeResult<List<Company>>(response);
                 return View(result.ToPagedList<Company>(page, 10));
             }
             else
             {
-                //CustomException message = JsonConvert.DeserializeObject<CustomException>(message);
-                return View();
+                return CustomMessage(response.Content);
             }
         }
 

@@ -39,6 +39,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,7 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mappers\MenuMapper.cs" />
+    <Compile Include="Interfaces\IContent.cs" />
+    <Compile Include="Interfaces\ICreator.cs" />
+    <Compile Include="Interfaces\IMenu.cs" />
+    <Compile Include="Interfaces\IMenuItem.cs" />
+    <Compile Include="Interfaces\INode.cs" />
+    <Compile Include="Interfaces\IUser.cs" />
+    <Compile Include="Mappers.cs" />
     <Compile Include="Objects\Company.cs" />
     <Compile Include="Objects\Content.cs" />
     <Compile Include="Objects\Menu.cs" />
@@ -59,6 +66,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\APIURL.cs" />
     <Compile Include="Utils\Constants.cs" />
+    <Compile Include="Utils\CustomException.cs" />
+    <Compile Include="Utils\Message.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

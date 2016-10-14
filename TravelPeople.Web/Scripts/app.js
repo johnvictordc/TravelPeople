@@ -13,4 +13,13 @@
         CKFinder.setupCKEditor(null, '@Url.Content("~/Scripts/ckfinder/")');
         x++;
     });
+
+    $(document).on('change', '#check-all', function () {
+        // DETERMINE IF CHECK ALL
+        var value = $('#check-all').prop('checked');
+
+        $('.multi-check').each(function () {
+            $(this).prop('checked', value);
+        });
+    });
 });

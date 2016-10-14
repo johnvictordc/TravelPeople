@@ -1,0 +1,40 @@
+2016-10-14 19:52:23,586 [6] ERROR TravelPeople.Service.Controllers.CompanyController [(null)] - Error
+System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
+   at TravelPeople.DAL.Repositories.CompanyRepository.Search(String companyName) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\CompanyRepository.cs:line 50
+   at TravelPeople.Service.Controllers.CompanyController.Search(String search) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\CompanyController.cs:line 131
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2016-10-14 19:53:52,072 [5] ERROR TravelPeople.Service.Controllers.CompanyController [(null)] - Error
+System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
+   at TravelPeople.DAL.Repositories.CompanyRepository.Search(String companyName) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\CompanyRepository.cs:line 50
+   at TravelPeople.Service.Controllers.CompanyController.Search(String search) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\CompanyController.cs:line 131
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2016-10-14 19:55:26,664 [5] ERROR TravelPeople.Service.Controllers.CompanyController [(null)] - Error
+System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
+   at TravelPeople.DAL.Repositories.CompanyRepository.Search(String companyName) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\CompanyRepository.cs:line 50
+   at TravelPeople.Service.Controllers.CompanyController.Search(String search) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\CompanyController.cs:line 131
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2016-10-14 19:56:30,841 [6] ERROR TravelPeople.Service.Controllers.CompanyController [(null)] - Error
+System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
+   at TravelPeople.DAL.Repositories.CompanyRepository.Search(String companyName) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\CompanyRepository.cs:line 50
+   at TravelPeople.Service.Controllers.CompanyController.Search(String search) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\CompanyController.cs:line 131
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2016-10-14 20:03:46,296 [6] ERROR TravelPeople.Service.Controllers.CompanyController [(null)] - Error
+System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
+   at TravelPeople.DAL.Repositories.CompanyRepository.Search(String companyName) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\CompanyRepository.cs:line 50
+   at TravelPeople.Service.Controllers.CompanyController.Search(String search) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\CompanyController.cs:line 131
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2016-10-14 20:08:16,331 [6] ERROR TravelPeople.Service.Controllers.CompanyController [(null)] - Error
+System.InvalidOperationException: Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached.
+   at TravelPeople.DAL.Repositories.CompanyRepository.Search(String companyName) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\CompanyRepository.cs:line 50
+   at TravelPeople.Service.Controllers.CompanyController.Search(String search) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\CompanyController.cs:line 131
+2016-10-14 20:08:32,816 [7] ERROR TravelPeople.Service.Controllers.CompanyController [(null)] - Error
+System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
+   at TravelPeople.DAL.Repositories.CompanyRepository.Search(String companyName) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\CompanyRepository.cs:line 50
+   at TravelPeople.Service.Controllers.CompanyController.Search(String search) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\CompanyController.cs:line 131
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20

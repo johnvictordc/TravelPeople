@@ -37,7 +37,8 @@ namespace TravelPeople.Service.Controllers
         {
             try
             {
-                return Ok(repo.Update(model));
+                repo.Update(model);
+                return Ok(model.companyID);
             }
             catch (Exception ex)
             {
@@ -83,6 +84,52 @@ namespace TravelPeople.Service.Controllers
             try
             {
                 return Ok(repo.GetByID(id));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Error", ex);
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [AcceptVerbs("POST")]
+        [HttpPost]
+        public IHttpActionResult GetListByIDs(IEnumerable<long> id)
+        {
+            try
+            {
+                return Ok(repo.GetByIDs(id));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Error", ex);
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [AcceptVerbs("POST")]
+        [HttpPost]
+        public IHttpActionResult BatchDelete([FromBody] IEnumerable<long> id)
+        {
+            try
+            {
+                repo.BatchDelete(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Error", ex);
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        public IHttpActionResult Search(string search)
+        {
+            try
+            {
+                return Ok(repo.Search(search));
             }
             catch (Exception ex)
             {

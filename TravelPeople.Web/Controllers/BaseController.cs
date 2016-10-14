@@ -10,7 +10,7 @@ using TravelPeople.Commons.Utils;
 
 namespace TravelPeople.Web.Controllers
 {
-    public class BaseController : Controller, CustomException
+    public class BaseController : Controller
     {
         #region UTILITIES
         public ActionResult CustomMessage(CustomException message)
