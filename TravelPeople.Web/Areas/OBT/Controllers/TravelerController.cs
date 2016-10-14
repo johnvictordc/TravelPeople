@@ -6,32 +6,26 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using TravelPeople.Commons;
 using TravelPeople.Commons.Objects;
 using TravelPeople.Commons.Utils;
 using TravelPeople.Web.Helpers;
-using PagedList;
 
 namespace TravelPeople.Web.Areas.OBT.Controllers
 {
-    public class CompanyController : Controller
+    public class TravelerController : Controller
     {
-
         private APIHelper service;
 
-        //
-        // GET: /OBT/Company/
-        public ActionResult Index(string search = "", int page = 1)
+        public ActionResult Index()
         {
             service = new APIHelper();
-            service.SetRequest(APIURL.COMPANY_SEARCH, Method.GET);
-            service.request.AddParameter("companyName", search);
+            service.SetRequest(APIURL.TRAVELER_ALL, Method.GET);
             var response = service.Execute();
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                List<Company> result = service.DeserializeResult<List<Company>>(response);
-                return View(result.ToPagedList<Company>(page, 10));
+                List<Traveler> model = service.DeserializeResult<List<Traveler>>(response);
+                return View(model);
             }
             else
             {
@@ -47,14 +41,14 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Company model)
+        public ActionResult Create(Traveler model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
                     service = new APIHelper();
-                    service.SetRequest(APIURL.COMPANY_CREATE, Method.POST);
+                    service.SetRequest(APIURL.TRAVELER_CREATE, Method.POST);
                     service.request.AddBody(model);
                     var response = service.Execute();
 
@@ -85,13 +79,13 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             }
 
             service = new APIHelper();
-            service.SetRequest(APIURL.COMPANY_SINGLE, Method.GET);
+            service.SetRequest(APIURL.TRAVELER_SINGLE, Method.GET);
             service.request.AddParameter("id", id);
             var response = service.Execute();
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                return View(service.DeserializeResult<Company>(response));
+                return View(service.DeserializeResult<Traveler>(response));
             }
             else
             {
@@ -107,13 +101,13 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             }
 
             service = new APIHelper();
-            service.SetRequest(APIURL.COMPANY_SINGLE, Method.GET);
+            service.SetRequest(APIURL.TRAVELER_SINGLE, Method.GET);
             service.request.AddParameter("id", id);
             var response = service.Execute();
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                return View(service.DeserializeResult<Company>(response));
+                return View(service.DeserializeResult<Traveler>(response));
             }
             else
             {
@@ -123,7 +117,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Company model)
+        public ActionResult Edit(Traveler model)
         {
 
             try
@@ -131,7 +125,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
                 if (ModelState.IsValid)
                 {
                     service = new APIHelper();
-                    service.SetRequest(APIURL.COMPANY_UPDATE, Method.POST);
+                    service.SetRequest(APIURL.TRAVELER_UPDATE, Method.POST);
                     service.request.AddBody(model);
                     var response = service.Execute();
 
@@ -162,13 +156,13 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             }
 
             service = new APIHelper();
-            service.SetRequest(APIURL.COMPANY_SINGLE, Method.GET);
+            service.SetRequest(APIURL.TRAVELER_SINGLE, Method.GET);
             service.request.AddParameter("id", id);
             var response = service.Execute();
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                return View(service.DeserializeResult<Company>(response));
+                return View(service.DeserializeResult<Traveler>(response));
             }
             else
             {
@@ -178,7 +172,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(Company model)
+        public ActionResult Delete(Traveler model)
         {
 
             try
@@ -186,7 +180,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
                 if (ModelState.IsValid)
                 {
                     service = new APIHelper();
-                    service.SetRequest(APIURL.COMPANY_DELETE, Method.POST);
+                    service.SetRequest(APIURL.TRAVELER_DELETE, Method.POST);
                     service.request.AddBody(model.companyID);
                     var response = service.Execute();
 
@@ -215,45 +209,6 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             }
 
             return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult BatchDelete(IEnumerable<long> id)
-        {
-            service = new APIHelper();
-            service.SetRequest(APIURL.COMPANY_LIST_BY_ID, Method.POST);
-            service.request.AddBody(id);
-            var response = service.Execute();
-
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
-                var model = service.DeserializeResult<List<Company>>(response);
-                return View(model);
-            }
-            else
-            {
-                return RedirectToAction("Index");
-            }
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult BatchDeleteConfirm(IEnumerable<long> id)
-        {
-            service = new APIHelper();
-            service.SetRequest(APIURL.COMPANY_BATCH_DELETE, Method.POST);
-            service.request.AddBody(id);
-            var response = service.Execute();
-
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                return RedirectToAction("Index");
-            }
         }
     }
 }

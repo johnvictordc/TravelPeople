@@ -221,7 +221,7 @@ namespace TravelPeople.Web.Areas.CMS.Controllers
                     if (response.StatusCode == HttpStatusCode.OK)
                     {
 
-                        return RedirectToAction("Details", new { id = model.id });
+                        return RedirectToAction("Index");
                     }
                     else
                     {

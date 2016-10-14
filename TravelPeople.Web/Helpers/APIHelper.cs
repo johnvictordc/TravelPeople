@@ -19,14 +19,14 @@ namespace TravelPeople.Web.Helpers
             {
                 return _request;
             }
-
-            set
+            
+            set 
             {
                 this._request = value;
             }
         }
 
-        public RestClient rest
+        public RestClient rest 
         {
             get
             {
@@ -36,7 +36,7 @@ namespace TravelPeople.Web.Helpers
             set
             {
                 this._rest = value;
-            }
+            } 
         }
 
         public APIHelper()

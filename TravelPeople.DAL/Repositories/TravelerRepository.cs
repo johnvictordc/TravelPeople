@@ -5,14 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using TravelPeople.Commons.Objects;
 
-namespace TravelPeople.DAL.Interfaces
+namespace TravelPeople.DAL.Repositories
 {
-    interface IUserRepository
+    public class TravelerRepository : GenericRepository<Traveler>
     {
-
-        List<User> GetAll();
-
-        User Login(User user);
 
     }
 }
