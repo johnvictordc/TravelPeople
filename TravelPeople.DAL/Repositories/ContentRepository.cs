@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using TravelPeople.Commons.Objects;
 using TravelPeople.DAL.Interfaces;
 using Dapper;
+using Llama.Helpers;
 
 namespace TravelPeople.DAL.Repositories
 {
-    public class ContentRepository : Repository, IContentRepository
+    public class ContentRepository : GenericRepository<Content>, IContentRepository
     {
         public ContentRepository() : base()
         {
@@ -27,14 +28,7 @@ namespace TravelPeople.DAL.Repositories
 
                 int count = _db.ExecuteScalar<int>("SELECT COUNT(*) FROM content WHERE name = @name", new {name = content.name});
 
-                if (count == 0)
-                {
-                    content.alias = content.name.ToLower().Replace(" ", "_");
-                }
-                else
-                {
-                    content.alias = content.name.ToLower().Replace(" ", "_") + "_" + count;
-                }
+                content.alias = StringHelpers.GetAlias(content.name);
 
                 content.type = 1;
 
