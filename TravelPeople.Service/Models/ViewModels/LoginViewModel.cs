@@ -4,11 +4,10 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using TravelPeople.Commons.Interfaces;
 
 namespace TravelPeople.Service.Models.ViewModels
 {
-    public class LoginViewModel : IUser
+    public class LoginViewModel
     {
         [Required(ErrorMessage = "Username is required.")]
         [DisplayName("Username")]

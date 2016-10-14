@@ -16,3 +16,16 @@ C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Debug\Dapp
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.DAL\obj\Debug\TravelPeople.DAL.csprojResolveAssemblyReference.cache
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.DAL\obj\Debug\TravelPeople.DAL.dll
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.DAL\obj\Debug\TravelPeople.DAL.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\obj\Debug\TravelPeople.DAL.csprojResolveAssemblyReference.cache
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Debug\TravelPeople.DAL.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Debug\TravelPeople.DAL.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Debug\Dapper.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Debug\DapperExtensions.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Debug\Llama.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Debug\TravelPeople.Commons.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Debug\Llama.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Debug\TravelPeople.Commons.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Debug\Dapper.xml
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Debug\DapperExtensions.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\obj\Debug\TravelPeople.DAL.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\obj\Debug\TravelPeople.DAL.pdb

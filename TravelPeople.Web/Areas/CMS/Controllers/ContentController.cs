@@ -180,7 +180,7 @@ namespace TravelPeople.Web.Areas.CMS.Controllers
             return View();
         }
 
-        public ActionResult Delete(long id)
+        public ActionResult Delete(long? id)
         {
             if (id == null)
             {
