@@ -12,22 +12,19 @@ using TravelPeople.Web.Helpers;
 
 namespace TravelPeople.Web.Areas.OBT.Controllers
 {
-    public class CompanyController : Controller
+    public class TravelerController : Controller
     {
-
         private APIHelper service;
 
-        //
-        // GET: /OBT/Company/
         public ActionResult Index()
         {
             service = new APIHelper();
-            service.SetRequest(APIURL.COMPANY_ALL, Method.GET);
+            service.SetRequest(APIURL.TRAVELER_ALL, Method.GET);
             var response = service.Execute();
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                List<Company> model = service.DeserializeResult<List<Company>>(response);
+                List<Traveler> model = service.DeserializeResult<List<Traveler>>(response);
                 return View(model);
             }
             else
@@ -44,14 +41,14 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Company model)
+        public ActionResult Create(Traveler model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
                     service = new APIHelper();
-                    service.SetRequest(APIURL.COMPANY_CREATE, Method.POST);
+                    service.SetRequest(APIURL.TRAVELER_CREATE, Method.POST);
                     service.request.AddBody(model);
                     var response = service.Execute();
 
@@ -82,13 +79,13 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             }
 
             service = new APIHelper();
-            service.SetRequest(APIURL.COMPANY_SINGLE, Method.GET);
+            service.SetRequest(APIURL.TRAVELER_SINGLE, Method.GET);
             service.request.AddParameter("id", id);
             var response = service.Execute();
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                return View(service.DeserializeResult<Company>(response));
+                return View(service.DeserializeResult<Traveler>(response));
             }
             else
             {
@@ -104,13 +101,13 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             }
 
             service = new APIHelper();
-            service.SetRequest(APIURL.COMPANY_SINGLE, Method.GET);
+            service.SetRequest(APIURL.TRAVELER_SINGLE, Method.GET);
             service.request.AddParameter("id", id);
             var response = service.Execute();
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                return View(service.DeserializeResult<Company>(response));
+                return View(service.DeserializeResult<Traveler>(response));
             }
             else
             {
@@ -120,7 +117,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Company model)
+        public ActionResult Edit(Traveler model)
         {
 
             try
@@ -128,7 +125,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
                 if (ModelState.IsValid)
                 {
                     service = new APIHelper();
-                    service.SetRequest(APIURL.COMPANY_UPDATE, Method.POST);
+                    service.SetRequest(APIURL.TRAVELER_UPDATE, Method.POST);
                     service.request.AddBody(model);
                     var response = service.Execute();
 
@@ -159,13 +156,13 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             }
 
             service = new APIHelper();
-            service.SetRequest(APIURL.COMPANY_SINGLE, Method.GET);
+            service.SetRequest(APIURL.TRAVELER_SINGLE, Method.GET);
             service.request.AddParameter("id", id);
             var response = service.Execute();
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                return View(service.DeserializeResult<Company>(response));
+                return View(service.DeserializeResult<Traveler>(response));
             }
             else
             {
@@ -175,7 +172,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(Company model)
+        public ActionResult Delete(Traveler model)
         {
 
             try
@@ -183,7 +180,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
                 if (ModelState.IsValid)
                 {
                     service = new APIHelper();
-                    service.SetRequest(APIURL.COMPANY_DELETE, Method.POST);
+                    service.SetRequest(APIURL.TRAVELER_DELETE, Method.POST);
                     service.request.AddBody(model.companyID);
                     var response = service.Execute();
 
@@ -213,7 +210,5 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
 
             return View();
         }
-
-
     }
 }

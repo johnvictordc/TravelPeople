@@ -8,22 +8,35 @@ using System.Web;
 
 namespace TravelPeople.Web.Helpers
 {
-    public class APIHelper : RestRequest
+    public class APIHelper
     {
 
         private RestRequest _request;
         private RestClient _rest;
 
         public RestRequest request 
-        { 
-            get; 
-            set; 
+        {
+            get
+            {
+                return _request;
+            }
+            
+            set 
+            {
+                this._request = value;
+            }
         }
 
         public RestClient rest 
-        { 
-            get; 
-            set; 
+        {
+            get
+            {
+                return _rest;
+            }
+            set
+            {
+                this._rest = value;
+            } 
         }
 
         public APIHelper()
@@ -46,19 +59,14 @@ namespace TravelPeople.Web.Helpers
             this.request.RequestFormat = format;
         }
 
-        public void AddBody(object obj)
-        {
-            this.request.AddBody(obj);
-        }
-
         public IRestResponse Execute()
         {
             return rest.Execute(this.request);
         }
 
-        public object DeserializeResult(IRestResponse response)
+        public T DeserializeResult<T>(IRestResponse response)
         {
-            return JsonConvert.DeserializeObject(response.Content);
+            return JsonConvert.DeserializeObject<T>(response.Content);
         }
 
     }

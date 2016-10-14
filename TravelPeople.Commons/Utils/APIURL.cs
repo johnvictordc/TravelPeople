@@ -29,5 +29,15 @@ namespace TravelPeople.Commons.Utils
 
         public static string COMPANY_DELETE = "api/company/delete";
 
+        public static string TRAVELER_ALL = "api/travelers/getall";
+
+        public static string TRAVELER_SINGLE = "api/travelers/getsingle";
+
+        public static string TRAVELER_CREATE = "api/travelers/create";
+
+        public static string TRAVELER_UPDATE = "api/travelers/update";
+
+        public static string TRAVELER_DELETE = "api/travelers/delete";
+
     }
 }
