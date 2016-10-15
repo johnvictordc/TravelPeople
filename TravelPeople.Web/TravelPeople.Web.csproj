@@ -206,6 +206,11 @@
     <Content Include="Areas\OBT\Views\Company\Index.cshtml" />
     <Content Include="Areas\OBT\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\OBT\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\OBT\Views\Traveler\Create.cshtml" />
+    <Content Include="Areas\OBT\Views\Traveler\Delete.cshtml" />
+    <Content Include="Areas\OBT\Views\Traveler\Details.cshtml" />
+    <Content Include="Areas\OBT\Views\Traveler\Edit.cshtml" />
+    <Content Include="Areas\OBT\Views\Traveler\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />

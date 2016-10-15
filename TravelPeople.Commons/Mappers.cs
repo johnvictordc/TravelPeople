@@ -22,4 +22,11 @@ namespace TravelPeople.Commons
         }
     }
 
+    public class TravelerMapper : PluralizedAutoClassMapper<Traveler>
+    {
+        public TravelerMapper()
+        {
+            base.Table("traveler");
+        }
+    }
 }
