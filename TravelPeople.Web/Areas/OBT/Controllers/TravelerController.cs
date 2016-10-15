@@ -29,7 +29,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             }
             else
             {
-                //CustomException message = JsonConvert.DeserializeObject<CustomException>(message);
+                
                 return View();
             }
         }
