@@ -1,0 +1,12 @@
+D:\Projects\Travel People\SACS-DotNet-master\SACS.Library\bin\Release\SACS.Library.dll.config
+D:\Projects\Travel People\SACS-DotNet-master\SACS.Library\bin\Release\SACS.Library.dll
+D:\Projects\Travel People\SACS-DotNet-master\SACS.Library\bin\Release\SACS.Library.pdb
+D:\Projects\Travel People\SACS-DotNet-master\SACS.Library\bin\Release\log4net.dll
+D:\Projects\Travel People\SACS-DotNet-master\SACS.Library\bin\Release\Newtonsoft.Json.dll
+D:\Projects\Travel People\SACS-DotNet-master\SACS.Library\bin\Release\System.Net.Http.Formatting.dll
+D:\Projects\Travel People\SACS-DotNet-master\SACS.Library\bin\Release\log4net.xml
+D:\Projects\Travel People\SACS-DotNet-master\SACS.Library\bin\Release\Newtonsoft.Json.xml
+D:\Projects\Travel People\SACS-DotNet-master\SACS.Library\bin\Release\System.Net.Http.Formatting.xml
+D:\Projects\Travel People\SACS-DotNet-master\SACS.Library\obj\Release\SACS.Library.csprojResolveAssemblyReference.cache
+D:\Projects\Travel People\SACS-DotNet-master\SACS.Library\obj\Release\SACS.Library.dll
+D:\Projects\Travel People\SACS-DotNet-master\SACS.Library\obj\Release\SACS.Library.pdb

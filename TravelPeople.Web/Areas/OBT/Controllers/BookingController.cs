@@ -1,8 +1,14 @@
-﻿using System;
+﻿using SACS.Library.Activities;
+using SACS.Library.Rest;
+using SACS.Library.Workflow;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using TravelPeople.Web.Factories;
+using TravelPeople.Web.Models;
 
 namespace TravelPeople.Web.Areas.OBT.Controllers
 {
@@ -10,9 +16,49 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
     {
         //
         // GET: /OBT/Booking/
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
+            InstaFlightModel model = new InstaFlightModel();
+
+            List<SelectListItem> items = new List<SelectListItem>();
+            for (int i = 1; i <= 10; i++) 
+            {
+                items.Add(new SelectListItem()
+                {
+                    Text = i.ToString(),
+                    Value = i.ToString()
+                });
+            }
+
+            ViewBag.Items = new SelectList(items, "Value", "Text");
+            ViewBag.Airports = await AirportCodesFactory.CreateAirportCodes();
+
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Index(InstaFlightModel model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    RestClient sabre = RestFactory.Sabre();
+                    IActivity activity = new InstaFlightsActivity(sabre, model);
+                    Workflow workflow = new Workflow(activity);
+                    SharedContext sharedContext = await workflow.RunAsync();
+                    InstaFlightResponse viewModel = ViewModelFactory.CreateInstaFlightsVM(sharedContext);
+                    return this.View("FlightsResult", viewModel);
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+            }
+
+
+            return View(model);
         }
     }
 }

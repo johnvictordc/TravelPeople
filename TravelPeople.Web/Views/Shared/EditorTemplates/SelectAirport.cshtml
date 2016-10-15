@@ -1,0 +1,4 @@
+﻿@using TravelPeople.Web.Models
+@model object
+
+@Html.DropDownListFor(m => m, new SelectList((IEnumerable<AirportModel>) ViewBag.Airports, "AirportCode", "AirportName"), new { @class = "form-control" })
