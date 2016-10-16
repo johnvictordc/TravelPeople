@@ -221,6 +221,9 @@
     </div>
 </div>
 
+@Html.Partial("_VisaList", Model.visas)
+@Html.Partial("_Passport", Model.passport)
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.travelID }) |
     @Html.ActionLink("Back to List", "Index")

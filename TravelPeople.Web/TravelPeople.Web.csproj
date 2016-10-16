@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -112,7 +113,7 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <Private>True</Private>
-      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -127,9 +128,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\CMS\Models\" />
     <Folder Include="Areas\OBT\Models\" />
-    <Folder Include="Areas\OBT\Views\Booking\" />
     <Folder Include="Filters\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
@@ -146,12 +145,20 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Factories\AirportCodesFactory.cs" />
+    <Compile Include="Factories\ConfigFactory.cs" />
+    <Compile Include="Factories\ServiceFactory.cs" />
+    <Compile Include="Factories\ViewModelFactory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\APIHelper.cs" />
     <Compile Include="Helpers\CustomHtmlHelper.cs" />
+    <Compile Include="Models\AirportModel.cs" />
+    <Compile Include="Models\InstaFlightModel.cs" />
+    <Compile Include="Models\InstaFlightResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\APIService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -162,6 +169,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\CMS\Views\web.config" />
@@ -211,6 +219,11 @@
     <Content Include="Areas\OBT\Views\Traveler\Details.cshtml" />
     <Content Include="Areas\OBT\Views\Traveler\Edit.cshtml" />
     <Content Include="Areas\OBT\Views\Traveler\Index.cshtml" />
+    <Content Include="Rest\SACSConfig.properties" />
+    <Content Include="Areas\OBT\Views\Booking\FlightsResult.cshtml" />
+    <Content Include="Areas\OBT\Views\Booking\Index.cshtml" />
+    <Content Include="Areas\OBT\Views\Traveler\_VisaList.cshtml" />
+    <Content Include="Areas\OBT\Views\Traveler\_Passport.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />
@@ -1173,11 +1186,24 @@
     <Content Include="Views\Shared\EditorTemplates\UploadMultiple.cshtml" />
     <Content Include="Views\Shared\_OBTLayout.cshtml" />
     <Content Include="Views\Shared\CustomMessage.cshtml" />
+    <Content Include="Soap\SACSConfig.properties" />
+    <Content Include="Views\Shared\EditorTemplates\SelectAirport.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TextDate4.cshtml" />
+    <Content Include="Views\Shared\Menus\OBT.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SelectTitle.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SelectCountry.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SelectGender.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SelectMaritalStatus.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SelectCompany.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Llama\Llama\Llama.csproj">
       <Project>{1e12d0f6-17fd-40d5-8d8f-a8bb6cbb3ac8}</Project>
       <Name>Llama</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SACS-DotNet-master\SACS.Library\SACS.Library.csproj">
+      <Project>{8d7f98de-162a-4269-bff3-166a68dc681b}</Project>
+      <Name>SACS.Library</Name>
     </ProjectReference>
     <ProjectReference Include="..\TravelPeople.Commons\TravelPeople.Commons.csproj">
       <Project>{8f81b98a-1d75-4652-9d72-f849ddc499c0}</Project>

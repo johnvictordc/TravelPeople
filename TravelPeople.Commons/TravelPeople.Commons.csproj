@@ -52,8 +52,10 @@
     <Compile Include="Interfaces\IMenu.cs" />
     <Compile Include="Interfaces\IMenuItem.cs" />
     <Compile Include="Interfaces\INode.cs" />
+    <Compile Include="Interfaces\ITraveler.cs" />
     <Compile Include="Interfaces\IUser.cs" />
     <Compile Include="Mappers.cs" />
+    <Compile Include="Objects\Country.cs" />
     <Compile Include="Objects\Company.cs" />
     <Compile Include="Objects\Content.cs" />
     <Compile Include="Objects\Menu.cs" />
@@ -68,6 +70,7 @@
     <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\CustomException.cs" />
     <Compile Include="Utils\Message.cs" />
+    <Compile Include="Utils\MockValues.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

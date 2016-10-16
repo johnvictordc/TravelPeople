@@ -26,7 +26,26 @@ namespace TravelPeople.Commons
     {
         public TravelerMapper()
         {
+            base.Map(m => m.passport).Ignore();
+            base.Map(m => m.visas).Ignore();
+            base.AutoMap();
             base.Table("traveler");
+        }
+    }
+
+    public class PassportMapper : PluralizedAutoClassMapper<Passport>
+    {
+        public PassportMapper()
+        {
+            base.Table("passport");
+        }
+    }
+
+    public class VisaMapper : PluralizedAutoClassMapper<Visa>
+    {
+        public VisaMapper()
+        {
+            base.Table("visa");
         }
     }
 }

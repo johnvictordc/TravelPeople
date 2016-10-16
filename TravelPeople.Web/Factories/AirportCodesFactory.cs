@@ -30,7 +30,7 @@ namespace TravelPeople.Web.Factories
         {
             if (airportCodes == null)
             {
-                IActivity activity = new TravelSeasonalityAirportLookupActivity(RestFactory.Sabre());
+                IActivity activity = new TravelSeasonalityAirportLookupActivity(ServiceFactory.Sabre());
                 Workflow workflow = new Workflow(activity);
                 SharedContext sharedContext = await workflow.RunAsync();
 

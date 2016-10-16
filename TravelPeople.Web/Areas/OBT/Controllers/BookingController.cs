@@ -33,7 +33,13 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             ViewBag.Items = new SelectList(items, "Value", "Text");
             ViewBag.Airports = await AirportCodesFactory.CreateAirportCodes();
 
-            return View();
+            model.Destination = "LAX";
+            model.Origin = "JFK";
+
+            model.limit = 10;
+            model.offset = 0;
+
+            return View(model);
         }
 
         [HttpPost]
@@ -44,7 +50,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    RestClient sabre = RestFactory.Sabre();
+                    RestClient sabre = ServiceFactory.Sabre();
                     IActivity activity = new InstaFlightsActivity(sabre, model);
                     Workflow workflow = new Workflow(activity);
                     SharedContext sharedContext = await workflow.RunAsync();

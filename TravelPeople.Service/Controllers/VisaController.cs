@@ -8,16 +8,16 @@ using TravelPeople.DAL.Repositories;
 
 namespace TravelPeople.Service.Controllers
 {
-    public class TravelerController : ApiController
+    public class VisaController : ApiController
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger
                (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        private TravelerRepository repo = new TravelerRepository();
+        private VisaRepository repo = new VisaRepository();
 
         [AcceptVerbs("POST")]
         [HttpPost]
-        public IHttpActionResult Create([FromBody] Traveler model)
+        public IHttpActionResult Create([FromBody] Visa model)
         {
             try
             {
@@ -32,12 +32,12 @@ namespace TravelPeople.Service.Controllers
 
         [AcceptVerbs("POST")]
         [HttpPost]
-        public IHttpActionResult Update([FromBody] Traveler model)
+        public IHttpActionResult Update([FromBody] Visa model)
         {
             try
             {
                 repo.Update(model);
-                return Ok(model.travelID);
+                return Ok(model.visaID);
             }
             catch (Exception ex)
             {
@@ -83,21 +83,6 @@ namespace TravelPeople.Service.Controllers
             try
             {
                 return Ok(repo.GetByID(id));
-            }
-            catch (Exception ex)
-            {
-                log.Error("Error", ex);
-                return BadRequest(ex.Message);
-            }
-        }
-
-        [AcceptVerbs("GET")]
-        [HttpGet]
-        public IHttpActionResult GetSingleWithPassportVisa(int id)
-        {
-            try
-            {
-                return Ok(repo.GetWithPassportVisa(id));
             }
             catch (Exception ex)
             {

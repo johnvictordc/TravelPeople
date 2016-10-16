@@ -30,7 +30,6 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
-        
         [StringLength(100)]
         [UIHint("TextBox")]
         [DisplayName("Other Name")]

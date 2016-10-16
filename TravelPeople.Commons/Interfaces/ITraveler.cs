@@ -8,9 +8,9 @@ namespace TravelPeople.Commons.Interfaces
 {
     public interface ITraveler
     {
-        long travelID { get; set; }
+        int travelID { get; set; }
 
-        long companyID { get; set; }
+        int companyID { get; set; }
 
         string LastName { get; set; }
 

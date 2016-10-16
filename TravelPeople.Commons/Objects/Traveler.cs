@@ -1,13 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TravelPeople.Commons.Interfaces;
 
 namespace TravelPeople.Commons.Objects
 {
-    public class Traveler
+    public class Traveler : ITraveler
     {
+
+        public Passport passport { get; set; }
+
+        public IEnumerable<Visa> visas { get; set; }
 
         public int travelID
         {
@@ -16,6 +23,9 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [Required(ErrorMessage = "Company is required.")]
+        [UIHint("SelectCompany")]
+        [DisplayName("Company")]
         public int companyID
         {
             get;
@@ -23,6 +33,10 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [Required(ErrorMessage = "Last Name is required.")]
+        [StringLength(50)]
+        [UIHint("TextBox")]
+        [DisplayName("Last Name")]
         public string LastName
         {
             get;
@@ -30,6 +44,10 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [Required(ErrorMessage = "First Name is required.")]
+        [StringLength(50)]
+        [UIHint("TextBox")]
+        [DisplayName("First Name")]
         public string FirstName
         {
             get;
@@ -37,6 +55,9 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [StringLength(50)]
+        [UIHint("TextBox")]
+        [DisplayName("Middle Name")]
         public string MiddleName
         {
             get;
@@ -44,6 +65,9 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [Required(ErrorMessage = "Title is required.")]
+        [UIHint("SelectTitle")]
+        [DisplayName("Title")]
         public string Title
         {
             get;
@@ -51,13 +75,20 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
-        public string Gender
+        [Required(ErrorMessage = "Gender is required.")]
+        [UIHint("SelectGender")]
+        [DisplayName("Gender")]
+        public int Gender
         {
             get;
 
             set;
         }
 
+        [Required(ErrorMessage = "Street 1 is required.")]
+        [StringLength(50)]
+        [UIHint("TextBox")]
+        [DisplayName("Street 1")]
         public string Street1
         {
             get;
@@ -65,6 +96,9 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [StringLength(50)]
+        [UIHint("TextBox")]
+        [DisplayName("Street 2")]
         public string Street2
         {
             get;
@@ -72,6 +106,10 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [Required(ErrorMessage = "City is required.")]
+        [StringLength(50)]
+        [UIHint("TextBox")]
+        [DisplayName("City")]
         public string City
         {
             get;
@@ -79,6 +117,9 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [StringLength(50)]
+        [UIHint("TextBox")]
+        [DisplayName("Province / State")]
         public string ProvinceState
         {
             get;
@@ -86,6 +127,10 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [Required(ErrorMessage = "Country is required.")]
+        [StringLength(50)]
+        [UIHint("SelectCountry")]
+        [DisplayName("Country")]
         public string Country
         {
             get;
@@ -93,6 +138,9 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [StringLength(50)]
+        [UIHint("TextBox")]
+        [DisplayName("Zip Code")]
         public string ZipCode
         {
             get;
@@ -100,6 +148,9 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [Required(ErrorMessage = "Birthday is required.")]
+        [UIHint("TextDate")]
+        [DisplayName("Birthday")]
         public DateTime DOB
         {
             get;
@@ -107,6 +158,10 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [Required(ErrorMessage = "Marital Status is required.")]
+        [StringLength(50)]
+        [UIHint("SelectMaritalStatus")]
+        [DisplayName("Marital Status")]
         public string MaritalStatus
         {
             get;
@@ -114,6 +169,10 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [Required(ErrorMessage = "Nationality is required.")]
+        [StringLength(50)]
+        [UIHint("SelectCountry")]
+        [DisplayName("Nationality")]
         public string Nationality
         {
             get;
@@ -121,6 +180,10 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [Required(ErrorMessage = "Job Title is required.")]
+        [StringLength(50)]
+        [UIHint("TextBox")]
+        [DisplayName("Job Title")]
         public string JobTitle
         {
             get;
@@ -128,6 +191,9 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [StringLength(120)]
+        [UIHint("TextArea")]
+        [DisplayName("Other Information")]
         public string OtherInfo
         {
             get;
@@ -135,6 +201,8 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [UIHint("CheckBox")]
+        [DisplayName("VIP")]
         public bool VIP
         {
             get;
@@ -142,6 +210,10 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [Required(ErrorMessage = "Mobile Phone is required.")]
+        [StringLength(25)]
+        [UIHint("TextBox")]
+        [DisplayName("Mobile Phone")]
         public string MobilePhone
         {
             get;
@@ -149,6 +221,9 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [StringLength(25)]
+        [UIHint("TextBox")]
+        [DisplayName("Home Phone")]
         public string HomePhone
         {
             get;
@@ -156,6 +231,9 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [StringLength(255)]
+        [UIHint("TextBox")]
+        [DisplayName("Email")]
         public string Email
         {
             get;
@@ -163,6 +241,9 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [StringLength(25)]
+        [UIHint("TextBox")]
+        [DisplayName("Office Phone")]
         public string OfficePhone
         {
             get;
@@ -170,6 +251,9 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [StringLength(25)]
+        [UIHint("TextBox")]
+        [DisplayName("Office Mobile")]
         public string OfficeMobile
         {
             get;
@@ -177,6 +261,9 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [StringLength(25)]
+        [UIHint("TextBox")]
+        [DisplayName("Office Fax")]
         public string OfficeFax
         {
             get;
@@ -184,6 +271,9 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [StringLength(255)]
+        [UIHint("TextBox")]
+        [DisplayName("Office Email")]
         public string OfficeEmail
         {
             get;
@@ -191,6 +281,9 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [StringLength(50)]
+        [UIHint("TextBox")]
+        [DisplayName("Manager Name")]
         public string ManagerName
         {
             get;
@@ -198,11 +291,19 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [StringLength(255)]
+        [UIHint("TextBox")]
+        [DisplayName("Manager Email")]
         public string ManagerEmail
         {
             get;
 
             set;
+        }
+
+        public string FullName()
+        {
+            return FirstName + " " + LastName;
         }
 
     }
