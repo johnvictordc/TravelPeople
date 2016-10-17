@@ -120,6 +120,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Content\" />
+    <Folder Include="Views\Traveler\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />

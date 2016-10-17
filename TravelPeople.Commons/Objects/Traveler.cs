@@ -205,5 +205,10 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        public string FullName()
+        {
+            return LastName + " " + FirstName;
+        }
+
     }
 }
