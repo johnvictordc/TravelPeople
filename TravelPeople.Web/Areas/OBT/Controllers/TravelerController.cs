@@ -32,7 +32,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             }
             else
             {   
-                return View(service.DeserializeResult<CustomException>(response));
+                return CustomMessage(service.DeserializeResult<CustomException>(response));
             }
         }
 
@@ -126,7 +126,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             }
             else
             {
-                return HttpNotFound();
+                return CustomMessage(service.DeserializeResult<CustomException>(response));
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using DapperExtensions;
 using DapperExtensions.Mapper;
+using System;
 using TravelPeople.Commons.Objects;
 
 namespace TravelPeople.Commons
@@ -14,28 +15,32 @@ namespace TravelPeople.Commons
         }
     }
 
-    public class CompanyMapper : PluralizedAutoClassMapper<Company>
+    public class TravelerMapper : ClassMapper<Traveler>
     {
-        public CompanyMapper()
+        public override void Table(string tableName)
         {
-            base.Table("company");
+            base.Table("travelers");
         }
-    }
 
-    public class TravelerMapper : PluralizedAutoClassMapper<Traveler>
-    {
         public TravelerMapper()
         {
             base.Map(m => m.passport).Ignore();
             base.Map(m => m.visas).Ignore();
             base.AutoMap();
-            base.Table("traveler");
+        }
+    }
+
+    public class CompanyMapper : PluralizedAutoClassMapper<Company>
+    {
+        public override void Table(string tableName)
+        {
+            base.Table("company");
         }
     }
 
     public class PassportMapper : PluralizedAutoClassMapper<Passport>
     {
-        public PassportMapper()
+        public override void Table(string tableName)
         {
             base.Table("passport");
         }
@@ -43,9 +48,10 @@ namespace TravelPeople.Commons
 
     public class VisaMapper : PluralizedAutoClassMapper<Visa>
     {
-        public VisaMapper()
+        public override void Table(string tableName)
         {
             base.Table("visa");
         }
     }
+
 }

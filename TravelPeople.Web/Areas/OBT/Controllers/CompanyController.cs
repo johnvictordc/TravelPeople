@@ -146,8 +146,15 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
 
                     if (response.StatusCode == HttpStatusCode.OK)
                     {
-                        long _id = service.DeserializeResult<long>(response);
-                        return RedirectToAction("Details", new { id = _id });
+                        bool success = service.DeserializeResult<bool>(response);
+                        if (success == true)
+                        {
+                            return RedirectToAction("Details", new { id = model.companyID });
+                        }
+                        else
+                        {
+                            ModelState.AddModelError("", "Don't know");
+                        }
                     }
                     else
                     {
@@ -192,7 +199,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
 
             try
             {
-                if (ModelState.IsValid)
+                if (model.companyID != 0)
                 {
                     service = ServiceFactory.API();
                     service.SetRequest(APIURL.COMPANY_DELETE, Method.POST);
@@ -208,7 +215,6 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
                         }
                         else
                         {
-                            // tadaaaa
                             return RedirectToAction("Index");
                         }
                     }
@@ -217,13 +223,17 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
                         ModelState.AddModelError("", JsonConvert.DeserializeObject<Exception>(response.Content).Message);
                     }
                 }
+                else
+                {
+                    ModelState.AddModelError("", "ID is required.");
+                }
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError("", ex.Message);
             }
 
-            return View();
+            return View(model);
         }
 
         [HttpPost]

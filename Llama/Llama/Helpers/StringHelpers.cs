@@ -100,5 +100,18 @@ namespace Llama.Helpers
                 return "";
             }
         }
+
+        public static string Default(string s)
+        {
+            if (s == null)
+            {
+                return "";
+            }
+            else
+            {
+                return s;
+            }
+        }
+
     }
 }
