@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +18,10 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [Required(ErrorMessage = "Passport Number is required.")]
+        [StringLength(20)]
+        [UIHint("TextBox")]
+        [DisplayName("Passport Number")]
         public string PassportNumber
         {
             get;
@@ -23,6 +29,9 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [Required(ErrorMessage = "Country is required.")]
+        [UIHint("SelectCountry")]
+        [DisplayName("Country")]
         public int Country
         {
             get;
@@ -30,6 +39,9 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [Required(ErrorMessage = "Nationality is required.")]
+        [UIHint("SelectCountry")]
+        [DisplayName("Nationality")]
         public int Nationality
         {
             get;
@@ -37,6 +49,10 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [Required(ErrorMessage = "Place Issued is required.")]
+        [StringLength(50)]
+        [UIHint("TextBox")]
+        [DisplayName("Place Issued")]
         public string PlaceIssue
         {
             get;
@@ -44,6 +60,9 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [Required(ErrorMessage = "Date Issued is required.")]
+        [UIHint("TextDate")]
+        [DisplayName("DateIssued")]
         public DateTime DateIssued
         {
             get;
@@ -51,6 +70,9 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [Required(ErrorMessage = "Expiry Date is required.")]
+        [UIHint("TextDate")]
+        [DisplayName("Expiry Date")]
         public DateTime ExpiryDate
         {
             get;
@@ -58,6 +80,8 @@ namespace TravelPeople.Commons.Objects
             set;
         }
 
+        [UIHint("CheckBox")]
+        [DisplayName("Dual Citizen")]
         public bool DualCitizen
         {
             get;

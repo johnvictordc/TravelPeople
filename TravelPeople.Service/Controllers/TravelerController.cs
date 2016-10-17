@@ -36,7 +36,8 @@ namespace TravelPeople.Service.Controllers
         {
             try
             {
-                return Ok(repo.Update(model));
+                repo.Update(model);
+                return Ok(model.travelID);
             }
             catch (Exception ex)
             {
@@ -82,6 +83,36 @@ namespace TravelPeople.Service.Controllers
             try
             {
                 return Ok(repo.GetByID(id));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Error", ex);
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        public IHttpActionResult GetSingleWithPassportVisa(int id)
+        {
+            try
+            {
+                return Ok(repo.GetWithPassportVisa(id));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Error", ex);
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        public IHttpActionResult Search(string search)
+        {
+            try
+            {
+                return Ok(repo.Search(search));
             }
             catch (Exception ex)
             {

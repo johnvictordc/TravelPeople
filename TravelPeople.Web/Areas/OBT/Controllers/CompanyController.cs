@@ -12,13 +12,15 @@ using TravelPeople.Commons.Utils;
 using TravelPeople.Web.Helpers;
 using PagedList;
 using TravelPeople.Web.Controllers;
+using TravelPeople.Web.Services;
+using TravelPeople.Web.Factories;
 
 namespace TravelPeople.Web.Areas.OBT.Controllers
 {
     public class CompanyController : BaseController
     {
 
-        private APIHelper service;
+        private APIService service;
 
         //
         // GET: /OBT/Company/
@@ -30,7 +32,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
                 page = 1;
             }
 
-            service = new APIHelper();
+            service = ServiceFactory.API();
             service.SetRequest(APIURL.COMPANY_SEARCH, Method.GET);
             service.request.AddParameter("search", search);
             var response = service.Execute();
@@ -60,7 +62,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    service = new APIHelper();
+                    service = ServiceFactory.API();
                     service.SetRequest(APIURL.COMPANY_CREATE, Method.POST);
                     service.request.AddBody(model);
                     var response = service.Execute();
@@ -91,7 +93,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
                 return HttpNotFound();
             }
 
-            service = new APIHelper();
+            service = ServiceFactory.API();
             service.SetRequest(APIURL.COMPANY_SINGLE, Method.GET);
             service.request.AddParameter("id", id);
             var response = service.Execute();
@@ -113,7 +115,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
                 return HttpNotFound();
             }
 
-            service = new APIHelper();
+            service = ServiceFactory.API();
             service.SetRequest(APIURL.COMPANY_SINGLE, Method.GET);
             service.request.AddParameter("id", id);
             var response = service.Execute();
@@ -137,7 +139,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    service = new APIHelper();
+                    service = ServiceFactory.API();
                     service.SetRequest(APIURL.COMPANY_UPDATE, Method.POST);
                     service.request.AddBody(model);
                     var response = service.Execute();
@@ -168,7 +170,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
                 return HttpNotFound();
             }
 
-            service = new APIHelper();
+            service = ServiceFactory.API();
             service.SetRequest(APIURL.COMPANY_SINGLE, Method.GET);
             service.request.AddParameter("id", id);
             var response = service.Execute();
@@ -192,7 +194,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    service = new APIHelper();
+                    service = ServiceFactory.API();
                     service.SetRequest(APIURL.COMPANY_DELETE, Method.POST);
                     service.request.AddBody(model.companyID);
                     var response = service.Execute();
@@ -228,7 +230,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult BatchDelete(IEnumerable<long> id)
         {
-            service = new APIHelper();
+            service = ServiceFactory.API();
             service.SetRequest(APIURL.COMPANY_LIST_BY_ID, Method.POST);
             service.request.AddBody(id);
             var response = service.Execute();
@@ -248,7 +250,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult BatchDeleteConfirm(IEnumerable<long> id)
         {
-            service = new APIHelper();
+            service = ServiceFactory.API();
             service.SetRequest(APIURL.COMPANY_BATCH_DELETE, Method.POST);
             service.request.AddBody(id);
             var response = service.Execute();

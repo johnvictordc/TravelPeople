@@ -8,35 +8,68 @@ using System.Web;
 using System.Web.Mvc;
 using TravelPeople.Commons.Objects;
 using TravelPeople.Commons.Utils;
+using TravelPeople.Web.Controllers;
+using TravelPeople.Web.Factories;
 using TravelPeople.Web.Helpers;
+using TravelPeople.Web.Services;
+using PagedList;
 
 namespace TravelPeople.Web.Areas.OBT.Controllers
 {
-    public class TravelerController : Controller
+    public class TravelerController : BaseController
     {
-        private APIHelper service;
+        private APIService service;
 
-        public ActionResult Index()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="search">For searching</param>
+        /// <param name="page">Default page</param>
+        /// <returns></returns>
+        public ActionResult Index(string search = "", int page = 1)
         {
-            service = new APIHelper();
+            if (search == null) {
+                search = "";
+                page = 1;
+            }
+            service = ServiceFactory.API();
             service.SetRequest(APIURL.TRAVELER_ALL, Method.GET);
+            service.request.AddParameter("search", search);
             var response = service.Execute();
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
+                ViewBag.CurrentFilter = search;
                 List<Traveler> model = service.DeserializeResult<List<Traveler>>(response);
-                return View(model);
+                return View(model.ToPagedList<Traveler>(page, 10));
             }
             else
-            {
-                
-                return View();
+            {   
+                return CustomMessage(service.DeserializeResult<CustomException>(response));
             }
         }
 
         public ActionResult Create()
         {
-            return View();
+            // Get List of Companies
+            service = ServiceFactory.API();
+            service.SetRequest(APIURL.COMPANY_ALL, Method.GET);
+            var response = service.Execute();
+
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                List<Company> companies = service.DeserializeResult<List<Company>>(response);
+                ViewBag.Companies = new SelectList(companies, "companyID", "companyName");
+                ViewBag.Countries = new SelectList(MockValues.Countries(), "code", "name");
+                ViewBag.Genders = new SelectList(Constants.GENDERS, "Key", "Value");
+                ViewBag.MaritalStatus = new SelectList(Constants.MARITAL_STATUS);
+                ViewBag.Titles = new SelectList(Constants.TITLES);
+                return View();
+            }
+            else
+            {
+                return CustomMessage(service.DeserializeResult<CustomException>(response));
+            }
         }
 
         [HttpPost]
@@ -47,7 +80,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    service = new APIHelper();
+                    service = ServiceFactory.API();
                     service.SetRequest(APIURL.TRAVELER_CREATE, Method.POST);
                     service.request.AddBody(model);
                     var response = service.Execute();
@@ -68,7 +101,24 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
                 ModelState.AddModelError("", ex.Message);
             }
 
-            return View(model);
+            service = ServiceFactory.API();
+            service.SetRequest(APIURL.COMPANY_ALL, Method.GET);
+            var r = service.Execute();
+
+            if (r.StatusCode == HttpStatusCode.OK)
+            {
+                List<Company> companies = service.DeserializeResult<List<Company>>(r);
+                ViewBag.Companies = new SelectList(companies, "companyID", "companyName", model.companyID);
+                ViewBag.Countries = new SelectList(MockValues.Countries(), "code", "name", model.Country);
+                ViewBag.Genders = new SelectList(Constants.GENDERS, "Key", "Value", model.Gender);
+                ViewBag.MaritalStatus = new SelectList(Constants.MARITAL_STATUS, model.MaritalStatus);
+                ViewBag.Titles = new SelectList(Constants.TITLES, model.Title);
+                return View(model);
+            }
+            else
+            {
+                return CustomMessage(service.DeserializeResult<CustomException>(r));
+            }
         }
 
         public ActionResult Details(long? id)
@@ -78,8 +128,8 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
                 return HttpNotFound();
             }
 
-            service = new APIHelper();
-            service.SetRequest(APIURL.TRAVELER_SINGLE, Method.GET);
+            service = ServiceFactory.API();
+            service.SetRequest(APIURL.TRAVELER_SINGLE_WITH_PASSPORT_VISA, Method.GET);
             service.request.AddParameter("id", id);
             var response = service.Execute();
 
@@ -89,7 +139,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             }
             else
             {
-                return HttpNotFound();
+                return CustomMessage(service.DeserializeResult<CustomException>(response));
             }
         }
 
@@ -100,18 +150,38 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
                 return HttpNotFound();
             }
 
-            service = new APIHelper();
+            // CHANGE THIS
+            service = ServiceFactory.API();            
             service.SetRequest(APIURL.TRAVELER_SINGLE, Method.GET);
             service.request.AddParameter("id", id);
             var response = service.Execute();
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                return View(service.DeserializeResult<Traveler>(response));
+                var model = service.DeserializeResult<Traveler>(response);
+
+                service = ServiceFactory.API();
+                service.SetRequest(APIURL.COMPANY_ALL, Method.GET);
+                var r = service.Execute();
+
+                if (r.StatusCode == HttpStatusCode.OK)
+                {
+                    List<Company> companies = service.DeserializeResult<List<Company>>(r);
+                    ViewBag.Companies = new SelectList(companies, "companyID", "companyName", model.companyID);
+                    ViewBag.Countries = new SelectList(MockValues.Countries(), "code", "name", model.Country);
+                    ViewBag.Genders = new SelectList(Constants.GENDERS, "Key", "Value", model.Gender);
+                    ViewBag.MaritalStatus = new SelectList(Constants.MARITAL_STATUS, model.MaritalStatus);
+                    ViewBag.Titles = new SelectList(Constants.TITLES, model.Title);
+                    return View(model);
+                }
+                else
+                {
+                    return View(service.DeserializeResult<CustomException>(r));
+                }
             }
             else
             {
-                return HttpNotFound();
+                return View(service.DeserializeResult<CustomException>(response));
             }
         }
 
@@ -124,7 +194,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    service = new APIHelper();
+                    service = ServiceFactory.API();
                     service.SetRequest(APIURL.TRAVELER_UPDATE, Method.POST);
                     service.request.AddBody(model);
                     var response = service.Execute();
@@ -145,7 +215,24 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
                 ModelState.AddModelError("", ex.Message);
             }
 
-            return View();
+            service = ServiceFactory.API();
+            service.SetRequest(APIURL.COMPANY_ALL, Method.GET);
+            var r = service.Execute();
+
+            if (r.StatusCode == HttpStatusCode.OK)
+            {
+                List<Company> companies = service.DeserializeResult<List<Company>>(r);
+                ViewBag.Companies = new SelectList(companies, "companyID", "companyName", model.companyID);
+                ViewBag.Countries = new SelectList(MockValues.Countries(), "code", "name", model.Country);
+                ViewBag.Genders = new SelectList(Constants.GENDERS, "Key", "Value", model.Gender);
+                ViewBag.MaritalStatus = new SelectList(Constants.MARITAL_STATUS, model.MaritalStatus);
+                ViewBag.Titles = new SelectList(Constants.TITLES, model.Title);
+                return View(model);
+            }
+            else
+            {
+                return View(service.DeserializeResult<CustomException>(r));
+            }
         }
 
         public ActionResult Delete(long? id)
@@ -155,7 +242,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
                 return HttpNotFound();
             }
 
-            service = new APIHelper();
+            service = ServiceFactory.API();
             service.SetRequest(APIURL.TRAVELER_SINGLE, Method.GET);
             service.request.AddParameter("id", id);
             var response = service.Execute();
@@ -179,7 +266,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    service = new APIHelper();
+                    service = ServiceFactory.API();
                     service.SetRequest(APIURL.TRAVELER_DELETE, Method.POST);
                     service.request.AddBody(model.companyID);
                     var response = service.Execute();

@@ -52,8 +52,10 @@
     <Compile Include="Repositories\CompanyRepository.cs" />
     <Compile Include="Repositories\ContentRepository.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="Repositories\PassportRepository.cs" />
     <Compile Include="Repositories\TravelerRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\VisaRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

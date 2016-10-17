@@ -45,5 +45,27 @@ namespace TravelPeople.Commons.Utils
 
         public static string TRAVELER_DELETE = "api/traveler/delete";
 
+        public static string TRAVELER_SINGLE_WITH_PASSPORT_VISA = "api/traveler/getsinglewithpassportvisa";
+
+        public static string VISA_ALL = "api/visa/getall";
+
+        public static string VISA_SINGLE = "api/visa/getsingle";
+
+        public static string VISA_CREATE = "api/visa/create";
+
+        public static string VISA_UPDATE = "api/visa/update";
+
+        public static string VISA_DELETE = "api/visa/delete";
+
+        public static string PASSPORT_ALL = "api/passport/getall";
+
+        public static string PASSPORT_SINGLE = "api/passport/getsingle";
+
+        public static string PASSPORT_CREATE = "api/passport/create";
+
+        public static string PASSPORT_UPDATE = "api/passport/update";
+
+        public static string PASSPORT_DELETE = "api/passport/delete";
+
     }
 }

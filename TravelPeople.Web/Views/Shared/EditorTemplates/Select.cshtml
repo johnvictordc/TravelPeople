@@ -1,1 +1,3 @@
-﻿
+﻿@model object
+
+@Html.DropDownListFor(m => m, (SelectList) ViewBag.Items, new { @class = "form-control"})

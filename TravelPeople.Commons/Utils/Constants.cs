@@ -74,6 +74,13 @@ namespace TravelPeople.Commons.Utils
             "PH",
         };
 
+        public static Dictionary<string, string> OBT_MENU = new Dictionary<string, string>()
+        {
+           {"Booking", "booking"},
+           {"Companies", "company"},
+           {"Travelers", "traveler"}
+        };
+
     }
 }
  

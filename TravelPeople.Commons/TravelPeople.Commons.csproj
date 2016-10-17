@@ -62,6 +62,7 @@
     <Compile Include="Mappers.cs" />
     <Compile Include="Objects\Company.cs" />
     <Compile Include="Objects\Content.cs" />
+    <Compile Include="Objects\Country.cs" />
     <Compile Include="Objects\Menu.cs" />
     <Compile Include="Objects\MenuItem.cs" />
     <Compile Include="Objects\Node.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\CustomException.cs" />
     <Compile Include="Utils\Message.cs" />
+    <Compile Include="Utils\MockValues.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

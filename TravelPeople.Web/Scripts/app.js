@@ -22,4 +22,18 @@
             $(this).prop('checked', value);
         });
     });
+
+    function dateInit() {
+        // INITIALIZE DATEPICKER
+        var d = new Date();
+        $('.datepicker').each(function() {
+            $(this).datepicker({
+                format: 'yyyy-mm-dd'
+            });
+        });
+    }
+
+
+    dateInit();
+
 });
