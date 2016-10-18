@@ -78,7 +78,8 @@ namespace TravelPeople.Commons.Utils
         {
            {"Booking", "booking"},
            {"Companies", "company"},
-           {"Travelers", "traveler"}
+           {"Travelers", "traveler"},
+           {"Employees", "employee"}
         };
 
     }

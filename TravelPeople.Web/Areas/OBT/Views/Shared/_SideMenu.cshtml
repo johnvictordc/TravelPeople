@@ -1,0 +1,36 @@
+﻿<div class="cms-links hidden-sm hidden-xs">
+    <div class="panel panel-primary">
+        <!-- Default panel contents -->
+        <div class="panel-heading">CMS</div>
+
+        <!-- List group -->
+        <div class="list-group">
+            @foreach (var link in TravelPeople.Commons.Utils.Constants.OBT_MENU as Dictionary<string, string>)
+            {
+                <a class="list-group-item" href="@Url.Action(string.Empty, link.Value, new { Area = "OBT" })">@Llama.Helpers.StringHelpers.UppercaseFirst(link.Key)</a>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="hidden-md hidden-lg">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-primary">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <div class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="white">
+                        OBT
+                    </a>
+                </div>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="list-group">
+                    @foreach (var link in TravelPeople.Commons.Utils.Constants.OBT_MENU as Dictionary<string, string>)
+                    {
+                        <a class="list-group-item" href="@Url.Action(string.Empty, link.Value, new { Area = "OBT" })">@Llama.Helpers.StringHelpers.UppercaseFirst(link.Key)</a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

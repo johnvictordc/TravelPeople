@@ -140,6 +140,7 @@
     <Compile Include="Areas\CMS\Controllers\SliderController.cs" />
     <Compile Include="Areas\OBT\Controllers\BookingController.cs" />
     <Compile Include="Areas\OBT\Controllers\CompanyController.cs" />
+    <Compile Include="Areas\OBT\Controllers\EmployeeController.cs" />
     <Compile Include="Areas\OBT\Controllers\TravelerController.cs" />
     <Compile Include="Areas\OBT\OBTAreaRegistration.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -224,6 +225,12 @@
     <Content Include="Areas\OBT\Views\Booking\Index.cshtml" />
     <Content Include="Areas\OBT\Views\Traveler\_VisaList.cshtml" />
     <Content Include="Areas\OBT\Views\Traveler\_Passport.cshtml" />
+    <Content Include="Areas\OBT\Views\Shared\_SideMenu.cshtml" />
+    <Content Include="Areas\OBT\Views\Employee\Edit.cshtml" />
+    <Content Include="Areas\OBT\Views\Employee\Index.cshtml" />
+    <Content Include="Areas\OBT\Views\Employee\Details.cshtml" />
+    <Content Include="Areas\OBT\Views\Employee\Delete.cshtml" />
+    <Content Include="Areas\OBT\Views\Employee\Create.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />

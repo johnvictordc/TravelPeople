@@ -474,3 +474,15 @@ System.Data.SqlClient.SqlException (0x80131904): Connection Timeout Expired.  Th
    at TravelPeople.Service.Controllers.TravelerController.GetAll() in c:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\TravelerController.cs:line 70
 ClientConnectionId:eee66d73-b7e9-4514-8587-da23676c7765
 Error Number:-2,State:0,Class:11
+2016-10-18 12:48:48,837 [21] ERROR TravelPeople.Service.Controllers.GenericController`1 [(null)] - Error
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Employee'.
+   at TravelPeople.DAL.Repositories.EmployeeRepository.Search(String name) in c:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\EmployeeRepository.cs:line 49
+   at TravelPeople.Service.Controllers.EmployeeController.Search(String search) in c:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\EmployeeController.cs:line 53
+ClientConnectionId:a1183299-c98a-417f-ba24-2632a5768de3
+Error Number:208,State:1,Class:16
+2016-10-18 13:36:15,903 [11] ERROR TravelPeople.Service.Controllers.GenericController`1 [(null)] - Error
+System.Data.SqlClient.SqlException (0x80131904): Connection Timeout Expired.  The timeout period elapsed while attempting to consume the pre-login handshake acknowledgement.  This could be because the pre-login handshake failed or the server was unable to respond back in time.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=2382; handshake=310;  ---> System.ComponentModel.Win32Exception (0x80004005): The wait operation timed out
+   at TravelPeople.DAL.Repositories.EmployeeRepository.Search(String name) in c:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\EmployeeRepository.cs:line 49
+   at TravelPeople.Service.Controllers.EmployeeController.Search(String search) in c:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\EmployeeController.cs:line 53
+ClientConnectionId:f26815ed-874d-4eef-9199-f5016e955c9f
+Error Number:-2,State:0,Class:11

@@ -124,3 +124,9 @@ C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\bin\Dapper.xml
 C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\bin\Llama.pdb
 C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\obj\Debug\TravelPeople.Service.dll
 C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\obj\Debug\TravelPeople.Service.pdb
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\bin\PagedList.dll
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\bin\DapperExtensions.dll
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\bin\Llama.dll
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\bin\PagedList.xml
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\bin\DapperExtensions.pdb
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\bin\Llama.pdb
