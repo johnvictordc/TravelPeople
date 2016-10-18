@@ -1,4 +1,5 @@
-﻿using DapperExtensions;
+﻿using Dapper;
+using DapperExtensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,30 @@ namespace TravelPeople.DAL.Repositories
                 traveler.visas = visaRepo.GetByTraveler(id);
 
                 return traveler;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void BatchDelete(IEnumerable<long> id)
+        {
+            try
+            {
+                _db.Execute("DELETE FROM travelers WHERE travelerID IN @id", new { id = id });
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public IEnumerable<Company> GetByIDs(IEnumerable<long> id)
+        {
+            try
+            {
+                return _db.Query<Company>("SELECT * FROM travelers WHERE travelerID IN @id", new { id = id });
             }
             catch (Exception ex)
             {

@@ -54,4 +54,12 @@ namespace TravelPeople.Commons
         }
     }
 
+    public class EmployeeMapper : PluralizedAutoClassMapper<Employee>
+    {
+        public override void Table(string tableName)
+        {
+            base.Table("employee");
+        }
+    }
+
 }

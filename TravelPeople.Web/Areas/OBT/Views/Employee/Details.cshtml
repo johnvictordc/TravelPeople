@@ -1,0 +1,75 @@
+﻿@model TravelPeople.Commons.Objects.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.lastName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.lastName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.firstName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.firstName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.position)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.position)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.fullAddress)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.fullAddress)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.country)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.country)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.dob)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.dob)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.gender)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.gender)
+                </dd>
+
+            </dl>
+        </div>
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

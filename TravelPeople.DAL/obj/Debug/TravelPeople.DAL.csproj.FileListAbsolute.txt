@@ -29,3 +29,7 @@ C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Debug\Dapper.xml
 C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Debug\DapperExtensions.pdb
 C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\obj\Debug\TravelPeople.DAL.dll
 C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\obj\Debug\TravelPeople.DAL.pdb
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Debug\DapperExtensions.dll
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Debug\Llama.dll
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Debug\Llama.pdb
+C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Debug\DapperExtensions.pdb

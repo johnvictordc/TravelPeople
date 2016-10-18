@@ -33,7 +33,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
                 page = 1;
             }
             service = ServiceFactory.API();
-            service.SetRequest(APIURL.TRAVELER_ALL, Method.GET);
+            service.SetRequest(APIURL.TRAVELER_SEARCH, Method.GET);
             service.request.AddParameter("search", search);
             var response = service.Execute();
 
@@ -296,6 +296,45 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             }
 
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult BatchDelete(IEnumerable<long> id)
+        {
+            service = ServiceFactory.API();
+            service.SetRequest(APIURL.TRAVELER_LIST_BY_ID, Method.POST);
+            service.request.AddBody(id);
+            var response = service.Execute();
+
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                var model = service.DeserializeResult<List<Traveler>>(response);
+                return View(model);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult BatchDeleteConfirm(IEnumerable<long> id)
+        {
+            service = ServiceFactory.API();
+            service.SetRequest(APIURL.TRAVELER_BATCH_DELETE, Method.POST);
+            service.request.AddBody(id);
+            var response = service.Execute();
+
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
         }
     }
 }
