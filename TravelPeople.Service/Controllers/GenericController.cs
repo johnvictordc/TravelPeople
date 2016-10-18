@@ -10,11 +10,10 @@ namespace TravelPeople.Service.Controllers
 {
     public class GenericController<T> : ApiController where T : class
     {
-
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger
+        protected static readonly log4net.ILog log = log4net.LogManager.GetLogger
                (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        protected GenericRepository<T> repo = new GenericRepository<T>();
+        private GenericRepository<T> repo = new GenericRepository<T>();
 
         [AcceptVerbs("POST")]
         [HttpPost]

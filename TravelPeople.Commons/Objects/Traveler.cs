@@ -303,7 +303,7 @@ namespace TravelPeople.Commons.Objects
 
         public string FullName()
         {
-            return FirstName + " " + LastName;
+            return LastName + ", " + FirstName + " " + MiddleName;
         }
 
     }

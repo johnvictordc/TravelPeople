@@ -1,4 +1,5 @@
-﻿using SACS.Library.Activities;
+﻿using Newtonsoft.Json;
+using SACS.Library.Activities;
 using SACS.Library.Rest;
 using SACS.Library.Workflow;
 using System;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using TravelPeople.Commons.Objects.Sabre;
 using TravelPeople.Web.Factories;
 using TravelPeople.Web.Models;
 
@@ -55,6 +57,10 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
                     Workflow workflow = new Workflow(activity);
                     SharedContext sharedContext = await workflow.RunAsync();
                     InstaFlightResponse viewModel = ViewModelFactory.CreateInstaFlightsVM(sharedContext);
+
+                    Flight flight = JsonConvert.DeserializeObject<Flight>(viewModel.ResponseJson);
+                    Console.WriteLine(flight);
+
                     return this.View("FlightsResult", viewModel);
                 }
             }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DapperExtensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,22 @@ namespace TravelPeople.DAL.Repositories
                 traveler.visas = visaRepo.GetByTraveler(id);
 
                 return traveler;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public IEnumerable<Traveler> Search(string name)
+        {
+            try
+            {
+                var pg = new PredicateGroup { Operator = GroupOperator.Or, Predicates = new List<IPredicate>() };
+                pg.Predicates.Add(Predicates.Field<Traveler>(c => c.LastName, Operator.Like, "%" + name + "%"));
+                pg.Predicates.Add(Predicates.Field<Traveler>(c => c.FirstName, Operator.Like, "%" + name + "%"));
+                pg.Predicates.Add(Predicates.Field<Traveler>(c => c.MiddleName, Operator.Like, "%" + name + "%"));
+                return _db.GetList<Traveler>(pg);
             }
             catch (Exception ex)
             {

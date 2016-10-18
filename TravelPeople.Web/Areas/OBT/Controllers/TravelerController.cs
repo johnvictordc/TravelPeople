@@ -12,6 +12,7 @@ using TravelPeople.Web.Controllers;
 using TravelPeople.Web.Factories;
 using TravelPeople.Web.Helpers;
 using TravelPeople.Web.Services;
+using PagedList;
 
 namespace TravelPeople.Web.Areas.OBT.Controllers
 {
@@ -19,16 +20,28 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
     {
         private APIService service;
 
-        public ActionResult Index()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="search">For searching</param>
+        /// <param name="page">Default page</param>
+        /// <returns></returns>
+        public ActionResult Index(string search = "", int page = 1)
         {
+            if (search == null) {
+                search = "";
+                page = 1;
+            }
             service = ServiceFactory.API();
             service.SetRequest(APIURL.TRAVELER_ALL, Method.GET);
+            service.request.AddParameter("search", search);
             var response = service.Execute();
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
+                ViewBag.CurrentFilter = search;
                 List<Traveler> model = service.DeserializeResult<List<Traveler>>(response);
-                return View(model);
+                return View(model.ToPagedList<Traveler>(page, 10));
             }
             else
             {   
@@ -55,7 +68,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             }
             else
             {
-                return View(service.DeserializeResult<CustomException>(response));
+                return CustomMessage(service.DeserializeResult<CustomException>(response));
             }
         }
 
@@ -104,7 +117,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             }
             else
             {
-                return View(service.DeserializeResult<CustomException>(r));
+                return CustomMessage(service.DeserializeResult<CustomException>(r));
             }
         }
 

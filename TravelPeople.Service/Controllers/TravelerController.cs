@@ -105,5 +105,20 @@ namespace TravelPeople.Service.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        public IHttpActionResult Search(string search)
+        {
+            try
+            {
+                return Ok(repo.Search(search));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Error", ex);
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
