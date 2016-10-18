@@ -10,7 +10,7 @@ namespace TravelPeople.Commons.Objects.Sabre
 
         public string DirectionInd { get; set; }
 
-        public OriginDestinationOptions MyProperty { get; set; }
+        public OriginDestinationOptions OriginDestinationOptions { get; set; }
 
     }
 }

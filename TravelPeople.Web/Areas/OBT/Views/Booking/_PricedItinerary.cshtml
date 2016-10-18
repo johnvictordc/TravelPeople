@@ -1,0 +1,39 @@
+﻿@using Llama.Helpers
+@model SACS.Library.Rest.Models.Common.PricedItinerary
+
+<div class="container">
+    <div class="col-md-12">
+        <table class="table table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th>Departure Airport</th>
+                    <th>Departure Time</th>
+                    <th>Arrival Airport</th>
+                    <th>Arrival Time</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model.AirItinerary.OriginDestinationOptions.OriginDestinationOption)
+                {
+                    foreach (var segment in item.FlightSegment)
+                    {
+                        <tr>
+                            <td>@segment.DepartureAirport.LocationCode</td>
+                            <td>@MiscHelpers.FormatDate((DateTime)segment.DepartureDateTime, "MMMM dd, yyyy hh:mm tt")</td>
+                            <td>@segment.ArrivalAirport.LocationCode</td>
+                            <td>@MiscHelpers.FormatDate((DateTime)segment.ArrivalDateTime, "MMMM dd, yyyy hh:mm tt")</td>
+                        </tr>
+                    }
+                    
+                    
+                }
+
+                <tr>
+                    <td colspan="3" class="text-right">Price</td>
+                    <td>@Model.AirItineraryPricingInfo[0].ItinTotalFare.TotalFare.Amount</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

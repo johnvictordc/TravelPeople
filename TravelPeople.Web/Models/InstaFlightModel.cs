@@ -1,4 +1,5 @@
 ﻿using SACS.Library.Activities.InputData;
+using SACS.Library.Rest.Models.InstaFlight;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,6 +45,8 @@ namespace TravelPeople.Web.Models
         [DisplayName("No. of Passengers")]
         [UIHint("Select")]
         public int passengercount { get; set; }
+
+        public InstaFlightRS result { get; set; }
 
     }
 }

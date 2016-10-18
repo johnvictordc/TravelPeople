@@ -1,0 +1,44 @@
+﻿@model TravelPeople.Web.Models.InstaFlightModel
+
+@{
+	ViewBag.Title = "Flights";
+}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+
+			@Html.Partial("_FlightSearchForm", Model)
+
+			<h3>Flight Results</h3>
+
+			<table class="table table-condensed table-bordered">
+				<thead>
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.result.OriginLocation)</th>
+						<th>@Html.DisplayNameFor(model => model.result.DepartureDateTime)</th>
+						<th>@Html.DisplayNameFor(model => model.result.DestinationLocation)</th>
+						<th>@Html.DisplayNameFor(model => model.result.ReturnDateTime)</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>@Html.DisplayFor(model => model.result.OriginLocation)</td>
+						<td>@Html.DisplayFor(model => model.result.DepartureDateTime)</td>
+						<td>@Html.DisplayFor(model => model.result.DestinationLocation)</td>
+						<td>@Html.DisplayFor(model => model.result.ReturnDateTime)</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<h3>Itineraries</h3>
+
+			@Html.Partial("_Itineraries", Model.result.PricedItineraries)
+		</div>
+	</div>
+</div>
