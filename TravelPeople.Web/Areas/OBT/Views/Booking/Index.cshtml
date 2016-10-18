@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿@using TravelPeople.Web.Helpers
 @model TravelPeople.Web.Models.InstaFlightModel
 
@@ -110,3 +111,112 @@
     </div>
 </div>
 
+=======
+﻿@using TravelPeople.Web.Helpers
+@model TravelPeople.Web.Models.InstaFlightModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm()) 
+            {
+                @Html.AntiForgeryToken()
+    
+                <div class="form-horizontal">
+                    <h4>InstaFlightViewModel</h4>
+                    <hr />
+                    @Html.MyValidationSummary()
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Origin, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Origin)
+                            @Html.ValidationMessageFor(model => model.Origin)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Destination, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Destination)
+                            @Html.ValidationMessageFor(model => model.Destination)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.DepartureDate, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.DepartureDate)
+                            @Html.ValidationMessageFor(model => model.DepartureDate)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ReturnDate, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.ReturnDate)
+                            @Html.ValidationMessageFor(model => model.ReturnDate)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.limit, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.limit)
+                            @Html.ValidationMessageFor(model => model.limit)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.offset, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.offset)
+                            @Html.ValidationMessageFor(model => model.offset)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.sortby, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.sortby)
+                            @Html.ValidationMessageFor(model => model.sortby)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.order, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.order)
+                            @Html.ValidationMessageFor(model => model.order)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.passengercount, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.passengercount)
+                            @Html.ValidationMessageFor(model => model.passengercount)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Create" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+
+        </div>
+    </div>
+</div>
+
+>>>>>>> 93de4f031350f07a49f936c1f9665e0f559f4e12

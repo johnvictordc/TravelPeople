@@ -1,4 +1,5 @@
-﻿using DapperExtensions;
+﻿using Dapper;
+using DapperExtensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +16,9 @@ namespace TravelPeople.DAL.Repositories
         {
             try
             {
-                var predicate = Predicates.Field<Passport>(p => p.travelerID, Operator.Eq, traveler);
-                return _db.Get<Passport>(predicate);
+                return _db.QuerySingleOrDefault<Passport>("SELECT * FROM passports WHERE travelerID = @id", new { id = traveler});
+                //var predicate = Predicates.Field<Passport>(p => p.travelerID, Operator.Eq, traveler);
+                //return _db.Get<Passport>(predicate);
             }
             catch (Exception ex)
             {

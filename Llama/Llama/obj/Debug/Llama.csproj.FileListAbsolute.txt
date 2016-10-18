@@ -7,8 +7,3 @@ C:\Users\SHINRA\Source\Repos\TravelPeople\Llama\Llama\bin\Debug\Llama.dll
 C:\Users\SHINRA\Source\Repos\TravelPeople\Llama\Llama\bin\Debug\Llama.pdb
 C:\Users\SHINRA\Source\Repos\TravelPeople\Llama\Llama\obj\Debug\Llama.dll
 C:\Users\SHINRA\Source\Repos\TravelPeople\Llama\Llama\obj\Debug\Llama.pdb
-C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\Llama\Llama\bin\Debug\Llama.dll
-C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\Llama\Llama\bin\Debug\Llama.pdb
-C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\Llama\Llama\obj\Debug\Llama.csprojResolveAssemblyReference.cache
-C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\Llama\Llama\obj\Debug\Llama.dll
-C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\Llama\Llama\obj\Debug\Llama.pdb

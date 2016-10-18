@@ -30,7 +30,6 @@ namespace TravelPeople.Commons
         }
     }
 
-
     public class CompanyMapper : PluralizedAutoClassMapper<Company>
     {
         public override void Table(string tableName)

@@ -224,8 +224,6 @@
     <Content Include="Areas\OBT\Views\Booking\Index.cshtml" />
     <Content Include="Areas\OBT\Views\Traveler\_VisaList.cshtml" />
     <Content Include="Areas\OBT\Views\Traveler\_Passport.cshtml" />
-    <Content Include="Areas\CMS\Views\Shared\_SideMenu.cshtml" />
-    <Content Include="Areas\OBT\Views\Shared\_SideMenu.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />

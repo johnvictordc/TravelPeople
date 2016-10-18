@@ -10,13 +10,3 @@ D:\Projects\Travel People\SACS-DotNet-master\SACS.Library\bin\Debug\System.Net.H
 D:\Projects\Travel People\SACS-DotNet-master\SACS.Library\obj\Debug\SACS.Library.csprojResolveAssemblyReference.cache
 D:\Projects\Travel People\SACS-DotNet-master\SACS.Library\obj\Debug\SACS.Library.dll
 D:\Projects\Travel People\SACS-DotNet-master\SACS.Library\obj\Debug\SACS.Library.pdb
-C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\bin\Debug\SACS.Library.dll.config
-C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\bin\Debug\SACS.Library.dll
-C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\bin\Debug\SACS.Library.pdb
-C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\bin\Debug\log4net.dll
-C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\bin\Debug\log4net.xml
-C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\obj\Debug\SACS.Library.csprojResolveAssemblyReference.cache
-C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\obj\Debug\SACS.Library.dll
-C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\obj\Debug\SACS.Library.pdb

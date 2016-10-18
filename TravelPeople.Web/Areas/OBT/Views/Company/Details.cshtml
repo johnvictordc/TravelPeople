@@ -1,88 +1,83 @@
 ﻿@model TravelPeople.Commons.Objects.Company
 
 @{
-    ViewBag.Title = "Details";
+	ViewBag.Title = "Details";
 }
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            @Html.Partial("../Shared/_SideMenu", ViewData)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-9">
-            <dl class="dl-horizontal">
-                <dt>
-                    @Html.DisplayNameFor(model => model.companyName)
-                </dt>
+	<div class="row">
+		<div class="col-md-12">
+			<dl class="dl-horizontal">
+				<dt>
+					@Html.DisplayNameFor(model => model.companyName)
+				</dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.companyName)
-                </dd>
+				<dd>
+					@Html.DisplayFor(model => model.companyName)
+				</dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.otherName)
-                </dt>
+				<dt>
+					@Html.DisplayNameFor(model => model.otherName)
+				</dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.otherName)
-                </dd>
+				<dd>
+					@Html.DisplayFor(model => model.otherName)
+				</dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.address)
-                </dt>
+				<dt>
+					@Html.DisplayNameFor(model => model.address)
+				</dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.address)
-                </dd>
+				<dd>
+					@Html.DisplayFor(model => model.address)
+				</dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.city)
-                </dt>
+				<dt>
+					@Html.DisplayNameFor(model => model.city)
+				</dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.city)
-                </dd>
+				<dd>
+					@Html.DisplayFor(model => model.city)
+				</dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.stateProvince)
-                </dt>
+				<dt>
+					@Html.DisplayNameFor(model => model.stateProvince)
+				</dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.stateProvince)
-                </dd>
+				<dd>
+					@Html.DisplayFor(model => model.stateProvince)
+				</dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.zipPostal)
-                </dt>
+				<dt>
+					@Html.DisplayNameFor(model => model.zipPostal)
+				</dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.zipPostal)
-                </dd>
+				<dd>
+					@Html.DisplayFor(model => model.zipPostal)
+				</dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.street)
-                </dt>
+				<dt>
+					@Html.DisplayNameFor(model => model.street)
+				</dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.street)
-                </dd>
+				<dd>
+					@Html.DisplayFor(model => model.street)
+				</dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.webSite)
-                </dt>
+				<dt>
+					@Html.DisplayNameFor(model => model.webSite)
+				</dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.webSite)
-                </dd>
+				<dd>
+					@Html.DisplayFor(model => model.webSite)
+				</dd>
 
-            </dl>
-        </div>
-    </div>
+			</dl>
+		</div>
+	</div>
 </div>
 
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.companyID }) |
-    @Html.ActionLink("Back to List", "Index")
+	@Html.ActionLink("Edit", "Edit", new { id = Model.companyID }) |
+	@Html.ActionLink("Back to List", "Index")
 </p>

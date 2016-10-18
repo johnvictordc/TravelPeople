@@ -6,12 +6,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-3">
-            @Html.Partial("../Shared/_SideMenu", ViewData)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-12">
             <h3>Are you sure you want to delete this?</h3>
 
             <dl class="dl-horizontal">
@@ -228,11 +223,11 @@
     </div>
 
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-12">
             @using (Html.BeginForm()) 
             {
                 @Html.AntiForgeryToken()
-                @Html.HiddenFor(model => model.travelID)
+
                 <div class="form-actions no-color">
                     <input type="submit" value="Delete" class="btn btn-default" /> |
                     @Html.ActionLink("Back to List", "Index")
