@@ -61,6 +61,7 @@
     <Compile Include="Interfaces\ITraveler.cs" />
     <Compile Include="Interfaces\IUser.cs" />
     <Compile Include="Mappers.cs" />
+    <Compile Include="Objects\Block.cs" />
     <Compile Include="Objects\Company.cs" />
     <Compile Include="Objects\Content.cs" />
     <Compile Include="Objects\Country.cs" />
