@@ -11,6 +11,19 @@ namespace TravelPeople.Commons.Objects
     public class Visa
     {
 
+        public Visa() 
+        { 
+            this.ExpiryDate = DateTime.Now;
+            this.DateIssued = DateTime.Now;
+        }
+
+        public Visa(int travelerID)
+        {
+            this.ExpiryDate = DateTime.Now;
+            this.DateIssued = DateTime.Now;
+            this.travelerID = travelerID;
+        }
+
         public int visaID
         { 
             get; 
@@ -50,7 +63,7 @@ namespace TravelPeople.Commons.Objects
         }
 
         [Required(ErrorMessage = "Length Days is required.")]
-        [UIHint("TextBox")]
+        [UIHint("TextInteger")]
         [DisplayName("Length Days")]
         public int LengthDays
         {
@@ -70,7 +83,7 @@ namespace TravelPeople.Commons.Objects
         }
 
         [Required(ErrorMessage = "Entry Type is required.")]
-        [UIHint("SelectEntyType")]
+        [UIHint("SelectEntryType")]
         [DisplayName("Entry Type")]
         public string EntryType
         {

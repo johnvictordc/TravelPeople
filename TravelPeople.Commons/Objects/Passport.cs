@@ -11,6 +11,19 @@ namespace TravelPeople.Commons.Objects
     public class Passport
     {
 
+        public Passport() 
+        {
+            this.DateIssued = DateTime.Now;
+            this.ExpiryDate = DateTime.Now;
+        }
+
+        public Passport(int travelerID)
+        {
+            this.travelerID = travelerID;
+            this.DateIssued = DateTime.Now;
+            this.ExpiryDate = DateTime.Now;
+        }
+
         public int passportID
         {
             get;

@@ -73,6 +73,8 @@ namespace TravelPeople.Commons.Utils
 
         public static string PASSPORT_DELETE = "api/passport/delete";
 
+        public static string PASSPORT_HAS_PASSPORT = "api/passport/haspassport";
+
         public static string EMPLOYEE_ALL = "api/employee/getall";
 
         public static string EMPLOYEE_SINGLE = "api/employee/getsingle";
@@ -88,5 +90,9 @@ namespace TravelPeople.Commons.Utils
         public static string EMPLOYEE_LIST_BY_ID = "api/employee/getlistbyids";
 
         public static string EMPLOYEE_BATCH_DELETE = "api/employee/batchdelete";
+        
+        public static string SEARCH_HEADER_CREATE = "api/searchheader/create";
+        
+        public static string SEARCH_DETAIL_CREATE = "api/searchdetail/create";
     }
 }

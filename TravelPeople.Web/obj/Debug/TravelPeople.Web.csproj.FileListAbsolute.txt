@@ -86,3 +86,9 @@ C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Web\bin\DapperExte
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Web\obj\Debug\TravelPeople.Web.csprojResolveAssemblyReference.cache
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Web\obj\Debug\TravelPeople.Web.dll
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Web\obj\Debug\TravelPeople.Web.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Web\bin\SACS.Library.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Web\bin\log4net.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Web\bin\System.Net.Http.Formatting.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Web\bin\SACS.Library.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Web\bin\log4net.xml
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Web\bin\System.Net.Http.Formatting.xml

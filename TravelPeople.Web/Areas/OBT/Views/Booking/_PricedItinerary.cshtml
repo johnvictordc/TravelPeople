@@ -31,7 +31,12 @@
 
                 <tr>
                     <td colspan="3" class="text-right">Price</td>
-                    <td>@Model.AirItineraryPricingInfo[0].ItinTotalFare.TotalFare.Amount</td>
+                    <td>
+                        <strong>
+                            @Model.AirItineraryPricingInfo[0].ItinTotalFare.TotalFare.CurrencyCode
+                            @Model.AirItineraryPricingInfo[0].ItinTotalFare.TotalFare.Amount
+                        </strong>
+                    </td>
                 </tr>
             </tbody>
         </table>

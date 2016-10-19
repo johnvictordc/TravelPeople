@@ -90,5 +90,29 @@ namespace TravelPeople.Service.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        public IHttpActionResult HasPassport(int id)
+        {
+            try
+            {
+                Passport passport = repo.GetByTraveler(id);
+
+                if (passport.passportID == 0)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    throw new Exception("Traveler can only have one passport");
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Error", ex);
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

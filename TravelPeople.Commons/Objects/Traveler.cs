@@ -11,10 +11,15 @@ namespace TravelPeople.Commons.Objects
 {
     public class Traveler : ITraveler
     {
+        public Traveler()
+        {
+            this.Passport = new Passport();
+            this.Visas = new List<Visa>();
+        }
 
-        public Passport passport { get; set; }
+        public Passport Passport { get; set; }
 
-        public IEnumerable<Visa> visas { get; set; }
+        public IEnumerable<Visa> Visas { get; set; }
 
         public int travelID
         {

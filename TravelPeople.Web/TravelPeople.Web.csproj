@@ -130,6 +130,7 @@
     <Folder Include="Areas\OBT\Models\" />
     <Folder Include="Filters\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\Shared\Menus\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -222,8 +223,6 @@
     <Content Include="Areas\OBT\Views\Traveler\Index.cshtml" />
     <Content Include="Rest\SACSConfig.properties" />
     <Content Include="Areas\OBT\Views\Booking\FlightsResult.cshtml" />
-    <Content Include="Areas\OBT\Views\Booking\Index.cshtml" />
-    <Content Include="Areas\OBT\Views\Traveler\_VisaList.cshtml" />
     <Content Include="Areas\OBT\Views\Traveler\_Passport.cshtml" />
     <Content Include="Areas\OBT\Views\Shared\_SideMenu.cshtml" />
     <Content Include="Areas\OBT\Views\Employee\Edit.cshtml" />
@@ -231,6 +230,22 @@
     <Content Include="Areas\OBT\Views\Employee\Details.cshtml" />
     <Content Include="Areas\OBT\Views\Employee\Delete.cshtml" />
     <Content Include="Areas\OBT\Views\Employee\Create.cshtml" />
+    <Content Include="Areas\OBT\Views\Booking\Flights.cshtml" />
+    <Content Include="Areas\OBT\Views\Booking\_AirItinerary.cshtml" />
+    <Content Include="Areas\OBT\Views\Booking\_FlightSearchForm.cshtml" />
+    <Content Include="Areas\OBT\Views\Booking\_FlightSegments.cshtml" />
+    <Content Include="Areas\OBT\Views\Booking\_Itineraries.cshtml" />
+    <Content Include="Areas\OBT\Views\Booking\_Price.cshtml" />
+    <Content Include="Areas\OBT\Views\Booking\_PricedItinerary.cshtml" />
+    <Content Include="Areas\OBT\Views\Booking\_Prices.cshtml" />
+    <Content Include="Areas\OBT\Views\Booking\Index.cshtml" />
+    <Content Include="Areas\OBT\Views\Traveler\_VisaList.cshtml" />
+    <Content Include="Areas\OBT\Views\Traveler\CreatePassport.cshtml" />
+    <Content Include="Areas\OBT\Views\Traveler\EditPassport.cshtml" />
+    <Content Include="Areas\OBT\Views\Traveler\DeletePassport.cshtml" />
+    <Content Include="Areas\OBT\Views\Traveler\CreateVisa.cshtml" />
+    <Content Include="Areas\OBT\Views\Traveler\DeleteVisa.cshtml" />
+    <Content Include="Areas\OBT\Views\Traveler\EditVisa.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />
@@ -1196,12 +1211,13 @@
     <Content Include="Soap\SACSConfig.properties" />
     <Content Include="Views\Shared\EditorTemplates\SelectAirport.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\TextDate4.cshtml" />
-    <Content Include="Views\Shared\Menus\OBT.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\SelectTitle.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\SelectCountry.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\SelectGender.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\SelectMaritalStatus.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\SelectCompany.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SelectVisaType.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SelectEntryType.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Llama\Llama\Llama.csproj">

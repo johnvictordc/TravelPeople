@@ -54,6 +54,8 @@
     <Compile Include="Repositories\EmployeeRepository.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\PassportRepository.cs" />
+    <Compile Include="Repositories\SearchDetailsRepository.cs" />
+    <Compile Include="Repositories\SearchHeaderRepository.cs" />
     <Compile Include="Repositories\TravelerRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Repositories\VisaRepository.cs" />

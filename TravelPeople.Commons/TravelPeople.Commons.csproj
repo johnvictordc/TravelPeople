@@ -39,7 +39,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.WebPages.Administration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -61,7 +61,7 @@
     <Compile Include="Interfaces\ITraveler.cs" />
     <Compile Include="Interfaces\IUser.cs" />
     <Compile Include="Mappers.cs" />
-    <Compile Include="Objects\Booking\SearchDetails.cs" />
+    <Compile Include="Objects\Booking\SearchDetail.cs" />
     <Compile Include="Objects\Booking\SearchHeader.cs" />
     <Compile Include="Objects\Company.cs" />
     <Compile Include="Objects\Content.cs" />

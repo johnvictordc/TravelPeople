@@ -16,9 +16,15 @@ namespace TravelPeople.DAL.Repositories
         {
             try
             {
-                return _db.QuerySingleOrDefault<Passport>("SELECT * FROM passports WHERE travelerID = @id", new { id = traveler});
-                //var predicate = Predicates.Field<Passport>(p => p.travelerID, Operator.Eq, traveler);
-                //return _db.Get<Passport>(predicate);
+                Passport passport = _db.QuerySingleOrDefault<Passport>("SELECT * FROM passports WHERE travelerID = @id", new { id = traveler});
+                if (passport == null)
+                {
+                    return new Passport();
+                }
+                else
+                {
+                    return passport;
+                }
             }
             catch (Exception ex)
             {

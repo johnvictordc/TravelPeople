@@ -3,6 +3,7 @@ using DapperExtensions;
 using DapperExtensions.Mapper;
 using System;
 using TravelPeople.Commons.Objects;
+using TravelPeople.Commons.Objects.Booking;
 
 namespace TravelPeople.Commons
 {
@@ -24,8 +25,35 @@ namespace TravelPeople.Commons
 
         public TravelerMapper()
         {
-            base.Map(m => m.passport).Ignore();
-            base.Map(m => m.visas).Ignore();
+            base.Map(m => m.Passport).Ignore();
+            base.Map(m => m.Visas).Ignore();
+            base.AutoMap();
+        }
+    }
+
+    public class SearchHeaderMapper : ClassMapper<SearchHeader>
+    {
+        public override void Table(string tableName)
+        {
+            base.Table("bkgSearchHeader");
+        }
+
+        public SearchHeaderMapper() 
+        {
+            base.Map(m => m.details).Ignore();
+            base.AutoMap();
+        }
+    }
+
+    public class SearchDetailsMapper : ClassMapper<SearchDetail>
+    {
+        public override void Table(string tableName)
+        {
+            base.Table("bkgSearchDetails");
+        }
+
+        public SearchDetailsMapper()
+        {
             base.AutoMap();
         }
     }

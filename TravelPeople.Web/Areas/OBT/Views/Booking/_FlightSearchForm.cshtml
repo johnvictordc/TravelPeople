@@ -10,6 +10,8 @@
 
         @Html.MyValidationSummary()
 
+        @Html.HiddenFor(model => model.BookingReference)
+
         <div class="form-group">
             @Html.LabelFor(model => model.Origin)
             @Html.Partial("~/Views/Shared/EditorTemplates/SelectAirport.cshtml", new TravelPeople.Web.Models.AirportModel("Origin", "JFK"))
@@ -40,6 +42,8 @@
             @Html.ValidationMessageFor(model => model.passengercount)
         </div>
 
-        <input type="submit" value="Create" class="btn btn-default" />
+        <div class="form-group">
+            <input type="submit" value="Search" class="btn btn-default" />
+        </div>
     </div>
 }

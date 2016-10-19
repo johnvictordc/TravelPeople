@@ -486,3 +486,161 @@ System.Data.SqlClient.SqlException (0x80131904): Connection Timeout Expired.  Th
    at TravelPeople.Service.Controllers.EmployeeController.Search(String search) in c:\Users\Fujitsu AH530\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\EmployeeController.cs:line 53
 ClientConnectionId:f26815ed-874d-4eef-9199-f5016e955c9f
 Error Number:-2,State:0,Class:11
+2016-10-19 05:13:03,565 [7] ERROR TravelPeople.Service.Controllers.GenericController`1 [(null)] - Error
+System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+   at System.Data.SqlClient.TdsParser.TdsExecuteRPC(SqlCommand cmd, _SqlRPC[] rpcArray, Int32 timeout, Boolean inSchema, SqlNotificationRequest notificationRequest, TdsParserStateObject stateObj, Boolean isCommandProc, Boolean sync, TaskCompletionSource`1 completion, Int32 startRpc, Int32 startParam)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader)
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at DapperExtensions.DapperImplementor.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperImplementor.cs:line 106
+   at DapperExtensions.DapperExtensions.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperExtensions.cs:line 159
+   at TravelPeople.DAL.Repositories.GenericRepository`1.Insert(T entity) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\GenericRepository.cs:line 27
+   at TravelPeople.Service.Controllers.GenericController`1.Create(T model) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\GenericController.cs:line 24
+2016-10-19 05:14:46,253 [6] ERROR TravelPeople.Service.Controllers.GenericController`1 [(null)] - Error
+System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+   at System.Data.SqlClient.TdsParser.TdsExecuteRPC(SqlCommand cmd, _SqlRPC[] rpcArray, Int32 timeout, Boolean inSchema, SqlNotificationRequest notificationRequest, TdsParserStateObject stateObj, Boolean isCommandProc, Boolean sync, TaskCompletionSource`1 completion, Int32 startRpc, Int32 startParam)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader)
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at DapperExtensions.DapperImplementor.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperImplementor.cs:line 106
+   at DapperExtensions.DapperExtensions.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperExtensions.cs:line 159
+   at TravelPeople.DAL.Repositories.GenericRepository`1.Insert(T entity) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\GenericRepository.cs:line 27
+   at TravelPeople.Service.Controllers.GenericController`1.Create(T model) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\GenericController.cs:line 24
+2016-10-19 05:16:58,403 [6] ERROR TravelPeople.Service.Controllers.GenericController`1 [(null)] - Error
+System.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'bkgSearchHeader' when IDENTITY_INSERT is set to OFF.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader)
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at DapperExtensions.DapperImplementor.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperImplementor.cs:line 106
+   at DapperExtensions.DapperExtensions.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperExtensions.cs:line 159
+   at TravelPeople.DAL.Repositories.GenericRepository`1.Insert(T entity) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\GenericRepository.cs:line 27
+   at TravelPeople.Service.Controllers.GenericController`1.Create(T model) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\GenericController.cs:line 24
+ClientConnectionId:992a7a17-6f08-4ac3-b284-619ed1fb9c39
+Error Number:544,State:1,Class:16
+2016-10-19 05:25:20,429 [6] ERROR TravelPeople.Service.Controllers.GenericController`1 [(null)] - Error
+System.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'bkgSearchHeader' when IDENTITY_INSERT is set to OFF.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader)
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at DapperExtensions.DapperImplementor.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperImplementor.cs:line 106
+   at DapperExtensions.DapperExtensions.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperExtensions.cs:line 159
+   at TravelPeople.DAL.Repositories.GenericRepository`1.Insert(T entity) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\GenericRepository.cs:line 27
+   at TravelPeople.Service.Controllers.GenericController`1.Create(T model) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\GenericController.cs:line 24
+ClientConnectionId:77105eb5-c657-46f8-851b-755219f7f6af
+Error Number:544,State:1,Class:16
+2016-10-19 05:34:36,577 [7] ERROR TravelPeople.Service.Controllers.GenericController`1 [(null)] - Error
+System.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'bkgSearchHeader' when IDENTITY_INSERT is set to OFF.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader)
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at DapperExtensions.DapperImplementor.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperImplementor.cs:line 106
+   at DapperExtensions.DapperExtensions.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperExtensions.cs:line 159
+   at TravelPeople.DAL.Repositories.GenericRepository`1.Insert(T entity) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\GenericRepository.cs:line 27
+   at TravelPeople.Service.Controllers.GenericController`1.Create(T model) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\GenericController.cs:line 24
+ClientConnectionId:1108a33e-8b0e-4ee1-a19a-36bde2a64da4
+Error Number:544,State:1,Class:16
+2016-10-19 05:35:56,500 [6] ERROR TravelPeople.Service.Controllers.GenericController`1 [(null)] - Error
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'System.Dynamic.ExpandoObject' to 'long'
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at TravelPeople.DAL.Repositories.GenericRepository`1.Insert(T entity) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\GenericRepository.cs:line 27
+   at TravelPeople.Service.Controllers.GenericController`1.Create(T model) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\GenericController.cs:line 24
+2016-10-19 05:36:42,865 [7] ERROR TravelPeople.Service.Controllers.GenericController`1 [(null)] - Error
+System.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'bkgSearchHeader' when IDENTITY_INSERT is set to OFF.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader)
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at DapperExtensions.DapperImplementor.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperImplementor.cs:line 106
+   at DapperExtensions.DapperExtensions.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperExtensions.cs:line 159
+   at TravelPeople.DAL.Repositories.GenericRepository`1.Insert(T entity) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\GenericRepository.cs:line 27
+   at TravelPeople.Service.Controllers.GenericController`1.Create(T model) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\GenericController.cs:line 24
+ClientConnectionId:1108a33e-8b0e-4ee1-a19a-36bde2a64da4
+Error Number:544,State:1,Class:16
+2016-10-19 05:41:23,457 [6] ERROR TravelPeople.Service.Controllers.GenericController`1 [(null)] - Error
+System.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'bkgSearchHeader' when IDENTITY_INSERT is set to OFF.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader)
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at DapperExtensions.DapperImplementor.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperImplementor.cs:line 106
+   at DapperExtensions.DapperExtensions.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperExtensions.cs:line 159
+   at TravelPeople.DAL.Repositories.GenericRepository`1.Insert(T entity) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\GenericRepository.cs:line 27
+   at TravelPeople.Service.Controllers.GenericController`1.Create(T model) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\GenericController.cs:line 24
+ClientConnectionId:5d307732-f61d-457c-bd6d-f6210c509777
+Error Number:544,State:1,Class:16
+2016-10-19 05:46:55,840 [7] ERROR TravelPeople.Service.Controllers.GenericController`1 [(null)] - Error
+System.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'bkgSearchHeader' when IDENTITY_INSERT is set to OFF.
+   at TravelPeople.DAL.Repositories.SearchHeaderRepository.Insert(SearchHeader header) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\SearchHeaderRepository.cs:line 24
+   at TravelPeople.Service.Controllers.SearchHeaderController.Create(SearchHeader model) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\SearchHeaderController.cs:line 22
+ClientConnectionId:45db3ff6-25e7-47f6-8c1e-b26c94964902
+Error Number:544,State:1,Class:16
+2016-10-19 05:54:30,476 [7] ERROR TravelPeople.Service.Controllers.GenericController`1 [(null)] - Error
+System.ArgumentException: No columns were mapped.
+   at DapperExtensions.Sql.SqlGeneratorImpl.Insert(IClassMapper classMap) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\Sql\SqlGenerator.cs:line 145
+   at DapperExtensions.DapperImplementor.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperImplementor.cs:line 83
+   at DapperExtensions.DapperExtensions.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperExtensions.cs:line 159
+   at TravelPeople.DAL.Repositories.GenericRepository`1.Insert(T entity) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\GenericRepository.cs:line 27
+   at TravelPeople.Service.Controllers.GenericController`1.Create(T model) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\GenericController.cs:line 24
+2016-10-19 05:56:29,501 [13] ERROR TravelPeople.Service.Controllers.GenericController`1 [(null)] - Error
+System.ArgumentException: No columns were mapped.
+   at DapperExtensions.Sql.SqlGeneratorImpl.Insert(IClassMapper classMap) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\Sql\SqlGenerator.cs:line 145
+   at DapperExtensions.DapperImplementor.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperImplementor.cs:line 83
+   at DapperExtensions.DapperExtensions.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperExtensions.cs:line 159
+   at TravelPeople.DAL.Repositories.GenericRepository`1.Insert(T entity) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\GenericRepository.cs:line 27
+   at TravelPeople.Service.Controllers.GenericController`1.Create(T model) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\GenericController.cs:line 24
+2016-10-19 07:28:39,947 [5] ERROR TravelPeople.Service.Controllers.GenericController`1 [(null)] - Error
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TravelPeople.DAL.Repositories.TravelerRepository.GetWithPassportVisa(Int32 id) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\TravelerRepository.cs:line 29
+   at TravelPeople.Service.Controllers.TravelerController.GetSingleWithPassportVisa(Int32 id) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\TravelerController.cs:line 68

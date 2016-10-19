@@ -19,8 +19,8 @@ namespace TravelPeople.DAL.Repositories
                 VisaRepository visaRepo = new VisaRepository();
 
                 Traveler traveler = base.GetByID(id);
-                traveler.passport = passportRepo.GetByTraveler(id);
-                traveler.visas = visaRepo.GetByTraveler(id);
+                traveler.Passport = passportRepo.GetByTraveler(id);
+                traveler.Visas = visaRepo.GetByTraveler(id);
 
                 return traveler;
             }
