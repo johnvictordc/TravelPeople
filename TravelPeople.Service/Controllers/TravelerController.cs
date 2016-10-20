@@ -59,5 +59,20 @@ namespace TravelPeople.Service.Controllers
             }
         }
 
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        public IHttpActionResult GetSingleWithPassportVisa(int id)
+        {
+            try
+            {
+                return Ok(repo.GetWithPassportVisa(id));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Error", ex);
+                return BadRequest(ex.Message);
+            }
+        }
+
     }
 }

@@ -10,6 +10,16 @@ namespace TravelPeople.Web.Models
     /// </summary>
     public class AirportModel
     {
+
+        public AirportModel() { }
+
+
+        public AirportModel(string name, string airportCode)
+        {
+            this.AirportName = name;
+            this.AirportCode = airportCode;
+        }
+
         /// <summary>
         /// Gets or sets the airport code.
         /// </summary>

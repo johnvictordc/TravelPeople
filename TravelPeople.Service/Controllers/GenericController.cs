@@ -17,7 +17,7 @@ namespace TravelPeople.Service.Controllers
 
         [AcceptVerbs("POST")]
         [HttpPost]
-        public IHttpActionResult Create([FromBody] T model)
+        public virtual IHttpActionResult Create([FromBody] T model)
         {
             try
             {

@@ -1,22 +1,58 @@
-﻿/*
- * Created by SharpDevelop.
- * User: Fujitsu AH530
- * Date: 19/10/2016
- * Time: 10:09 AM
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
- */
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using TravelPeople.Commons.Interfaces;
 
 namespace TravelPeople.Commons.Objects
 {
-	/// <summary>
-	/// Description of Block.
-	/// </summary>
-	public class Block
+	public class Block : Node, IBlock
 	{
-		public Block()
+		[Required(ErrorMessage = "Block name is required.")]
+		[StringLength(50)]
+		[UIHint("TextBox")]
+		[DisplayName("Block Name")]
+		public string name
 		{
+			get;
+
+			set;
+		}
+		
+		[UIHint("CKEditor")]
+		[DisplayName("Body")]
+		public string content
+		{
+			get;
+
+			set;
+		}
+
+		public string alias
+		{
+			get;
+
+			set;
+		}
+
+		public string position
+		{
+			get;
+
+			set;
+		}
+
+		[StringLength(50)]
+		[UIHint("TextBox")]
+		[DisplayName("Header Text")]
+		public string headerText
+		{
+			get;
+
+			set;
 		}
 	}
 }

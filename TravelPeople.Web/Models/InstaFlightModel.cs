@@ -1,10 +1,12 @@
 ﻿using SACS.Library.Activities.InputData;
+using SACS.Library.Rest.Models.InstaFlight;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using TravelPeople.Commons.Objects.Booking;
 
 namespace TravelPeople.Web.Models
 {
@@ -31,6 +33,10 @@ namespace TravelPeople.Web.Models
         [UIHint("TextDate4")]
         public DateTime ReturnDate { get; set; }
 
+        [DisplayName("Round Trip")]
+        [UIHint("CheckBox")]
+        public bool RoundTrip { get; set; }
+
         public int limit { get; set; }
 
         public int offset { get; set; }
@@ -44,6 +50,10 @@ namespace TravelPeople.Web.Models
         [DisplayName("No. of Passengers")]
         [UIHint("Select")]
         public int passengercount { get; set; }
+
+        public InstaFlightRS result { get; set; }
+
+        public int BookingReference { get; set; }
 
     }
 }

@@ -16,8 +16,6 @@ namespace TravelPeople.DAL.Repositories
             try
             {
                 return _db.Query<Visa>("SELECT * FROM visas WHERE travelerID = @id", new { id = traveler }).ToList();
-                //var predicate = Predicates.Field<Visa>(p => p.travelerID, Operator.Eq, traveler);
-                //return _db.GetList<Visa>(predicate);
             }
             catch (Exception ex)
             {

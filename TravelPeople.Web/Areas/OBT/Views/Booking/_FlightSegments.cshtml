@@ -1,0 +1,12 @@
+﻿@using Llama.Helpers
+@model SACS.Library.Rest.Models.Common.OriginDestinationOption
+
+@foreach (var segment in Model.FlightSegment)
+{
+    <tr>
+        <td>@segment.DepartureAirport.LocationCode</td>
+        <td>@MiscHelpers.FormatDate((DateTime)segment.DepartureDateTime, "MMMM dd, yyyy hh:mm tt")</td>
+        <td>@segment.ArrivalAirport.LocationCode</td>
+        <td>@MiscHelpers.FormatDate((DateTime)segment.ArrivalDateTime, "MMMM dd, yyyy hh:mm tt")</td>
+    </tr>
+}

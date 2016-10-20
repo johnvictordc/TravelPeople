@@ -25,6 +25,8 @@ namespace TravelPeople.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/datepicker3.css",
+                      "~/Content/PagedList.css",
                       "~/Content/site.css"));
         }
     }

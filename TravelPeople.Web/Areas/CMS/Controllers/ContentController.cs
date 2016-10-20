@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using PagedList;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -9,11 +10,17 @@ using System.Web;
 using System.Web.Mvc;
 using TravelPeople.Commons.Objects;
 using TravelPeople.Commons.Utils;
+using TravelPeople.Web.Controllers;
+using TravelPeople.Web.Factories;
+using TravelPeople.Web.Services;
 
 namespace TravelPeople.Web.Areas.CMS.Controllers
 {
-    public class ContentController : Controller
+    public class ContentController : BaseController
     {
+    	
+    	private APIService service;
+    	
         private Content _GetContent(long id)
         {
             RestClient rest = new RestClient();
@@ -38,26 +45,28 @@ namespace TravelPeople.Web.Areas.CMS.Controllers
 
         //
         // GET: /CMS/Content/
-        public ActionResult Index()
+        public ActionResult Index(string search = "", int page = 1)
         {
-            RestClient rest = new RestClient();
-            RestRequest request = new RestRequest();
+            if (search == null)
+            {
+                search = "";
+                page = 1;
+            }
 
-            rest.BaseUrl = new Uri(ConfigurationManager.AppSettings["base_url"].ToString());
-
-            request = new RestRequest(APIURL.CONTENT_ALL, Method.GET);
-            request.RequestFormat = DataFormat.Json;
-
-            var response = rest.Execute(request);
+            service = ServiceFactory.API();
+            service.SetRequest(APIURL.CONTENT_SEARCH, Method.GET);
+            service.request.AddParameter("search", search);
+            var response = service.Execute();
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                List<Content> model = JsonConvert.DeserializeObject<List<Content>>(response.Content);
-                return View(model);
+                ViewBag.CurrentFilter = search;
+                List<Content> result = service.DeserializeResult<List<Content>>(response);
+                return View(result.ToPagedList<Content>(page, 10));
             }
             else
             {
-                return HttpNotFound();
+            	return CustomMessage(response.Content);
             }
         }
 
@@ -205,28 +214,33 @@ namespace TravelPeople.Web.Areas.CMS.Controllers
 
             try
             {
-                if (ModelState.IsValid)
+                if (model.id != 0)
                 {
-                    RestClient rest = new RestClient();
-                    RestRequest request = new RestRequest();
-
-                    rest.BaseUrl = new Uri(ConfigurationManager.AppSettings["base_url"].ToString());
-
-                    request = new RestRequest(APIURL.CONTENT_DELETE, Method.POST);
-                    request.RequestFormat = DataFormat.Json;
-                    request.AddBody(model);
-
-                    var response = rest.Execute(request);
+                    service = ServiceFactory.API();
+                    service.SetRequest(APIURL.CONTENT_DELETE, Method.POST);
+                    service.request.AddBody(model.id);
+                    var response = service.Execute();
 
                     if (response.StatusCode == HttpStatusCode.OK)
                     {
-
-                        return RedirectToAction("Index");
+                        bool result = service.DeserializeResult<bool>(response);
+                        if (result == true)
+                        {
+                            return RedirectToAction("Index");
+                        }
+                        else
+                        {
+                            return RedirectToAction("Index");
+                        }
                     }
                     else
                     {
                         ModelState.AddModelError("", JsonConvert.DeserializeObject<Exception>(response.Content).Message);
                     }
+                }
+                else
+                {
+                    ModelState.AddModelError("", "ID is required.");
                 }
             }
             catch (Exception ex)
@@ -234,7 +248,7 @@ namespace TravelPeople.Web.Areas.CMS.Controllers
                 ModelState.AddModelError("", ex.Message);
             }
 
-            return View();
+            return View(model);
         }
 
     }

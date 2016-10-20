@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace TravelPeople.Commons.Utils
 {
     public static class MockValues
     {
+        public static string Agent = "ncuenza";
 
         public static IEnumerable<Country> Countries()
         {
@@ -21,7 +23,6 @@ namespace TravelPeople.Commons.Utils
 
             return countries;
         }
-
 
     }
 }
