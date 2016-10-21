@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿@model TravelPeople.Commons.Objects.Employee
 
 @{
@@ -85,3 +86,91 @@
         </div>
     </div>
 </div>
+=======
+﻿@model TravelPeople.Commons.Objects.Employee
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Are you sure you want to delete this?</h3>
+
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.lastName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.lastName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.firstName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.firstName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.position)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.position)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.fullAddress)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.fullAddress)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.country)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.country)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.dob)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.dob)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.gender)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.gender)
+                </dd>
+
+            </dl>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm()) 
+            {
+                @Html.AntiForgeryToken()
+				@Html.HiddenFor(model => model.UserID)
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+        </div>
+    </div>
+</div>
+>>>>>>> refs/remotes/origin/master

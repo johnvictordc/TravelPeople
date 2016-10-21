@@ -18,6 +18,8 @@ namespace TravelPeople.Commons.Utils
         public static string CONTENT_UPDATE = "api/content/update";
 
         public static string CONTENT_DELETE = "api/content/delete";
+        
+        public static string CONTENT_SEARCH = "api/content/search";
 
         public static string COMPANY_ALL = "api/company/getall";
 
@@ -94,5 +96,37 @@ namespace TravelPeople.Commons.Utils
         public static string SEARCH_HEADER_CREATE = "api/searchheader/create";
         
         public static string SEARCH_DETAIL_CREATE = "api/searchdetail/create";
+
+        public static string BLOCK_ALL = "api/block/getall";
+
+        public static string BLOCK_SINGLE = "api/block/getsingle";
+
+        public static string BLOCK_CREATE = "api/block/create";
+
+        public static string BLOCK_UPDATE = "api/block/update";
+
+        public static string BLOCK_DELETE = "api/block/delete";
+
+        public static string BLOCK_SEARCH = "api/block/search";
+
+        public static string BLOCK_LIST_BY_ID = "api/block/getlistbyids";
+        
+        public static string BLOCK_BATCH_DELETE = "api/block/batchdelete";
+        
+        public static string SLIDER_ALL = "api/slider/getall";
+
+        public static string SLIDER_SINGLE = "api/slider/getsingle";
+
+        public static string SLIDER_CREATE = "api/slider/create";
+
+        public static string SLIDER_UPDATE = "api/slider/update";
+
+        public static string SLIDER_DELETE = "api/slider/delete";
+
+        public static string SLIDER_SEARCH = "api/slider/search";
+
+        public static string SLIDER_LIST_BY_ID = "api/slider/getlistbyids";
+        
+        public static string SLIDER_BATCH_DELETE = "api/slider/batchdelete";
     }
 }

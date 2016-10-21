@@ -81,6 +81,14 @@ namespace TravelPeople.Commons.Utils
            {"Travelers", "traveler"},
            {"Employees", "employee"}
         };
+        
+        public static Dictionary<string, string> CMS_MENU = new Dictionary<string, string>()
+        {
+           {"Content", "content"},
+           {"Blocks", "block"},
+           {"Sliders", "slider"},
+           {"Menu", "menu"}
+        };
 
     }
 }

@@ -31,6 +31,20 @@ namespace TravelPeople.DAL.Repositories
                 throw ex;
             }
         }
+        
+        public IEnumerable<Content> Search(string contentName)
+        {
+            try
+            {
+                var pg = new PredicateGroup { Operator = GroupOperator.Or, Predicates = new List<IPredicate>() };
+                pg.Predicates.Add(Predicates.Field<Content>(c => c.name, Operator.Like, "%" + contentName + "%"));
+                return _db.GetList<Content>(pg);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
 //        public void Create(Content content)
 //        {

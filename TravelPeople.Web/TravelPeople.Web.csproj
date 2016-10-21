@@ -127,6 +127,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\CMS\Models\" />
+    <Folder Include="Areas\CMS\Views\Block" />
     <Folder Include="Areas\OBT\Models\" />
     <Folder Include="Filters\" />
     <Folder Include="Views\Base\" />
@@ -137,6 +138,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\CMS\CMSAreaRegistration.cs" />
+    <Compile Include="Areas\CMS\Controllers\BlockController.cs" />
     <Compile Include="Areas\CMS\Controllers\ContentController.cs" />
     <Compile Include="Areas\CMS\Controllers\SliderController.cs" />
     <Compile Include="Areas\OBT\Controllers\BookingController.cs" />
@@ -163,6 +165,11 @@
     <Compile Include="Services\APIService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\CMS\Views\Block\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\Block\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\Block\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\Block\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\Block\Index.cshtml" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
@@ -200,8 +207,13 @@
     <Content Include="Scripts\ckeditor\skins\moono\readme.md" />
     <Content Include="Scripts\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
     <Content Include="Scripts\ckfinder\userfiles\.htaccess" />
+    <Content Include="Areas\CMS\Views\Menu\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\Menu\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\Menu\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\Menu\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\Menu\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\Menu\_MenuItem.cshtml" />
     <Content Include="Areas\OBT\Views\web.config" />
-    <Content Include="Areas\CMS\Views\Slider\Index.cshtml" />
     <Content Include="Areas\OBT\Views\Company\BatchDelete.cshtml" />
     <Content Include="Areas\OBT\Views\Company\Create.cshtml" />
     <Content Include="Areas\OBT\Views\Company\Delete.cshtml" />
@@ -240,7 +252,12 @@
     <Content Include="Areas\OBT\Views\Traveler\CreateVisa.cshtml" />
     <Content Include="Areas\OBT\Views\Traveler\DeleteVisa.cshtml" />
     <Content Include="Areas\OBT\Views\Traveler\EditVisa.cshtml" />
-    <None Include="Properties\PublishProfiles\TravelPeople.Web.pubxml" />
+    <None Include="Areas\CMS\Views\Shared\_SideMenu.cshtml" />
+    <None Include="Areas\CMS\Views\Slider\Create.cshtml" />
+    <None Include="Areas\CMS\Views\Slider\Delete.cshtml" />
+    <None Include="Areas\CMS\Views\Slider\Details.cshtml" />
+    <None Include="Areas\CMS\Views\Slider\Edit.cshtml" />
+    <None Include="Areas\CMS\Views\Slider\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />

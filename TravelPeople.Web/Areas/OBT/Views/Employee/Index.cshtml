@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿@using PagedList.Mvc
 @model PagedList.IPagedList<TravelPeople.Commons.Objects.Employee>
 
@@ -109,3 +110,117 @@
         </div>
     </div>
 </div>
+=======
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<TravelPeople.Commons.Objects.Employee>
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			@using (Html.BeginForm(
+						null, null,
+						null,
+						FormMethod.Get,
+						new { @class = "form-inline" }))
+			{
+				<div class="form-group">
+					<label for="search">Filter Contents</label>
+					@Html.TextBox("search", ViewBag.CurrentFilter as string, new { @class = "form-control", placeholder = "Search", id = "search" })
+				</div>
+				
+				<div class="form-group">
+					<input type="submit" class="btn btn-default form-control" value="Search" />
+				</div>
+				
+				<div class="form-group">
+					@Html.ActionLink("Reset Filter", "Index", null, new { @class = "btn btn-default" })
+				</div>
+
+			}
+
+			<h2>Index</h2>
+
+			<p>
+				@Html.ActionLink("Create New", "Create")
+			</p>
+			@using (Html.BeginForm("BatchDelete", "Employee", FormMethod.Post, new { name = "multiDelete" }))
+			{
+				<div class="col-md-3">
+					<div class="form-group">
+						<button id="multiDelete" type="submit" class="btn btn-danger form-control">Delete Selected</button>
+					</div>
+				</div>
+				@Html.AntiForgeryToken()
+				<table class="table">
+					<tr>
+						<th>
+							@Html.CheckBox("CheckAll", false, new { @id = "check-all" })
+						</th>
+						<th>
+							Full Name
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.FirstOrDefault().position)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.FirstOrDefault().country)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.FirstOrDefault().gender)
+						</th>
+						<th></th>
+					</tr>
+
+					@foreach (var item in Model)
+					{
+						<tr>
+							<td>
+								<input type="checkbox" name="id" class="multi-check" value="@item.UserID">
+							</td>
+							<td>
+								@item.FullName()
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.position)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.country)
+							</td>
+							<td>
+								@ViewBag.Genders
+							</td>
+							<td>
+								@Html.ActionLink("Edit", "Edit", new { id = item.UserID }) |
+								@Html.ActionLink("Details", "Details", new { id = item.UserID }) |
+								@Html.ActionLink("Delete", "Delete", new { id = item.UserID })
+							</td>
+						</tr>
+					}
+
+				</table>
+			}
+
+
+			@if (Model.PageCount > 1)
+			{
+				<div class="text-center">
+					@Html.PagedListPager(Model,
+						page => Url.Action("Index",
+									new
+									{
+										page,
+									}
+								),
+								PagedList.Mvc.PagedListRenderOptions.OnlyShowFivePagesAtATime
+							)
+				</div>
+			}
+
+		</div>
+	</div>
+</div>
+>>>>>>> refs/remotes/origin/master

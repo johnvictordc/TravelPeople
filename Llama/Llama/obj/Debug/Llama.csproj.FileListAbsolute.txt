@@ -3,6 +3,14 @@ D:\Projects\C#\Llama\Llama\bin\Debug\Llama.pdb
 D:\Projects\C#\Llama\Llama\obj\Debug\Llama.csprojResolveAssemblyReference.cache
 D:\Projects\C#\Llama\Llama\obj\Debug\Llama.dll
 D:\Projects\C#\Llama\Llama\obj\Debug\Llama.pdb
+<<<<<<< HEAD
+=======
+C:\Users\SHINRA\Source\Repos\TravelPeople\Llama\Llama\bin\Debug\Llama.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\Llama\Llama\bin\Debug\Llama.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\Llama\Llama\obj\Debug\Llama.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\Llama\Llama\obj\Debug\Llama.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\Llama\Llama\obj\Debug\Llama.csprojResolveAssemblyReference.cache
+>>>>>>> refs/remotes/origin/master
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\Llama\Llama\bin\Debug\Llama.dll
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\Llama\Llama\bin\Debug\Llama.pdb
 C:\Users\Fujitsu AH530\Source\Repos\TravelPeople\Llama\Llama\obj\Debug\Llama.csprojResolveAssemblyReference.cache

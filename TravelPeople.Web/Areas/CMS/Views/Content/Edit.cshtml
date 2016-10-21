@@ -1,4 +1,4 @@
-﻿@model TravelPeople.Web.Models.Nodes.ContentViewModel
+﻿@model TravelPeople.Commons.Objects.Content
 
 @{
     ViewBag.Title = "Edit";
@@ -49,18 +49,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.meta_description, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.metaDescription, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.meta_description)
-                @Html.ValidationMessageFor(model => model.meta_description)
+                @Html.EditorFor(model => model.metaDescription)
+                @Html.ValidationMessageFor(model => model.metaDescription)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.meta_tags, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.metaTags, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.meta_tags)
-                @Html.ValidationMessageFor(model => model.meta_tags)
+                @Html.EditorFor(model => model.metaTags)
+                @Html.ValidationMessageFor(model => model.metaTags)
             </div>
         </div>
 

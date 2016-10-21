@@ -39,7 +39,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.WebPages.Administration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -52,15 +52,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IBlock.cs" />
     <Compile Include="Interfaces\IContent.cs" />
     <Compile Include="Interfaces\ICreator.cs" />
     <Compile Include="Interfaces\IEmployee.cs" />
     <Compile Include="Interfaces\IMenu.cs" />
     <Compile Include="Interfaces\IMenuItem.cs" />
     <Compile Include="Interfaces\INode.cs" />
+    <Compile Include="Interfaces\ISlider.cs" />
     <Compile Include="Interfaces\ITraveler.cs" />
     <Compile Include="Interfaces\IUser.cs" />
     <Compile Include="Mappers.cs" />
+    <Compile Include="Objects\Block.cs" />
     <Compile Include="Objects\Booking\SearchDetail.cs" />
     <Compile Include="Objects\Booking\SearchHeader.cs" />
     <Compile Include="Objects\Company.cs" />
@@ -71,6 +74,7 @@
     <Compile Include="Objects\MenuItem.cs" />
     <Compile Include="Objects\Node.cs" />
     <Compile Include="Objects\Passport.cs" />
+    <Compile Include="Objects\Slider.cs" />
     <Compile Include="Objects\Traveler.cs" />
     <Compile Include="Objects\User.cs" />
     <Compile Include="Objects\Visa.cs" />
