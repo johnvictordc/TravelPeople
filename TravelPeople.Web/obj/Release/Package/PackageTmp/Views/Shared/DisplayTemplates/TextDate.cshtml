@@ -1,0 +1,9 @@
+﻿@using Llama.Helpers
+@model DateTime?
+
+<div class="date-value">
+@if (Model.HasValue == true)
+{
+    @MiscHelpers.FormatDate((DateTime)Model)
+}
+</div>

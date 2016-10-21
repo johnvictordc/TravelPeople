@@ -1,0 +1,14 @@
+﻿@model DateTime?
+
+<div class="datepicker-wrapper">
+@Html.TextBox(string.Empty, 
+            (Model.HasValue ? Model.Value.ToString("MM/dd/yyyy") : DateTime.Now.ToString("MM/dd/yyyy")), 
+            new { 
+                @class = "form-control datepicker", 
+                @type = "text", 
+                @readonly = "readonly", 
+                placeholder = ViewData.ModelMetadata.DisplayName,
+                data_format = "MM/DD/YYYY",
+                data_template="MMMM D YYYY" 
+            })
+</div>

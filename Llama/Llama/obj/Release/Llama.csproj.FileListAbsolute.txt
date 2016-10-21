@@ -1,0 +1,4 @@
+C:\Users\SHINRA\Source\Repos\TravelPeople\Llama\Llama\bin\Release\Llama.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\Llama\Llama\bin\Release\Llama.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\Llama\Llama\obj\Release\Llama.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\Llama\Llama\obj\Release\Llama.pdb

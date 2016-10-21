@@ -1,0 +1,9 @@
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Commons\bin\Release\TravelPeople.Commons.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Commons\bin\Release\TravelPeople.Commons.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Commons\bin\Release\Dapper.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Commons\bin\Release\DapperExtensions.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Commons\bin\Release\Dapper.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Commons\bin\Release\Dapper.xml
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Commons\bin\Release\DapperExtensions.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Commons\obj\Release\TravelPeople.Commons.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Commons\obj\Release\TravelPeople.Commons.pdb

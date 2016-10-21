@@ -644,3 +644,82 @@ System.ArgumentException: No columns were mapped.
 System.NullReferenceException: Object reference not set to an instance of an object.
    at TravelPeople.DAL.Repositories.TravelerRepository.GetWithPassportVisa(Int32 id) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\TravelerRepository.cs:line 29
    at TravelPeople.Service.Controllers.TravelerController.GetSingleWithPassportVisa(Int32 id) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\TravelerController.cs:line 68
+2016-10-19 10:55:09,670 [5] ERROR TravelPeople.Service.Controllers.GenericController`1 [(null)] - Error
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TravelPeople.DAL.Repositories.TravelerRepository.GetWithPassportVisa(Int32 id) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\TravelerRepository.cs:line 29
+   at TravelPeople.Service.Controllers.TravelerController.GetSingleWithPassportVisa(Int32 id) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\TravelerController.cs:line 68
+2016-10-19 11:06:00,994 [5] ERROR TravelPeople.Service.Controllers.GenericController`1 [(null)] - Error
+System.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.employees' with unique index 'IK_Username'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at DapperExtensions.DapperImplementor.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperImplementor.cs:line 99
+   at DapperExtensions.DapperExtensions.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperExtensions.cs:line 159
+   at TravelPeople.DAL.Repositories.GenericRepository`1.Insert(T entity) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\GenericRepository.cs:line 27
+   at TravelPeople.Service.Controllers.GenericController`1.Create(T model) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\GenericController.cs:line 24
+ClientConnectionId:7c3e0bf7-8ff5-4dfe-95b6-15b5e5c8c3bb
+Error Number:2601,State:1,Class:14
+2016-10-19 11:07:24,081 [8] ERROR TravelPeople.Service.Controllers.GenericController`1 [(null)] - Error
+System.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.employees' with unique index 'IK_Username'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at DapperExtensions.DapperImplementor.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperImplementor.cs:line 99
+   at DapperExtensions.DapperExtensions.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperExtensions.cs:line 159
+   at TravelPeople.DAL.Repositories.GenericRepository`1.Insert(T entity) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\GenericRepository.cs:line 27
+   at TravelPeople.Service.Controllers.GenericController`1.Create(T model) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\GenericController.cs:line 24
+ClientConnectionId:c419e078-7043-4b4e-a536-ae75c56a8da8
+Error Number:2601,State:1,Class:14
+2016-10-19 11:08:06,490 [6] ERROR TravelPeople.Service.Controllers.GenericController`1 [(null)] - Error
+System.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.employees' with unique index 'IK_Username'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   at Dapper.SqlMapper.<QueryImpl>d__125`1.MoveNext()
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at DapperExtensions.DapperImplementor.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperImplementor.cs:line 99
+   at DapperExtensions.DapperExtensions.Insert[T](IDbConnection connection, T entity, IDbTransaction transaction, Nullable`1 commandTimeout) in c:\Projects\Nuget\PhenixDev\DapperExtensions\DapperExtensions\DapperExtensions.cs:line 159
+   at TravelPeople.DAL.Repositories.GenericRepository`1.Insert(T entity) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\Repositories\GenericRepository.cs:line 27
+   at TravelPeople.Service.Controllers.GenericController`1.Create(T model) in c:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.Service\Controllers\GenericController.cs:line 24
+ClientConnectionId:c419e078-7043-4b4e-a536-ae75c56a8da8
+Error Number:2601,State:1,Class:14

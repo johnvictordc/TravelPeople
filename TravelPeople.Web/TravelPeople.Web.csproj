@@ -200,12 +200,6 @@
     <Content Include="Scripts\ckeditor\skins\moono\readme.md" />
     <Content Include="Scripts\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
     <Content Include="Scripts\ckfinder\userfiles\.htaccess" />
-    <Content Include="Areas\CMS\Views\Menu\Index.cshtml" />
-    <Content Include="Areas\CMS\Views\Menu\Create.cshtml" />
-    <Content Include="Areas\CMS\Views\Menu\Details.cshtml" />
-    <Content Include="Areas\CMS\Views\Menu\Edit.cshtml" />
-    <Content Include="Areas\CMS\Views\Menu\Delete.cshtml" />
-    <Content Include="Areas\CMS\Views\Menu\_MenuItem.cshtml" />
     <Content Include="Areas\OBT\Views\web.config" />
     <Content Include="Areas\CMS\Views\Slider\Index.cshtml" />
     <Content Include="Areas\OBT\Views\Company\BatchDelete.cshtml" />
@@ -246,6 +240,7 @@
     <Content Include="Areas\OBT\Views\Traveler\CreateVisa.cshtml" />
     <Content Include="Areas\OBT\Views\Traveler\DeleteVisa.cshtml" />
     <Content Include="Areas\OBT\Views\Traveler\EditVisa.cshtml" />
+    <None Include="Properties\PublishProfiles\TravelPeople.Web.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />

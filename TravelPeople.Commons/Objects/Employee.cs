@@ -12,7 +12,13 @@ namespace TravelPeople.Commons.Objects
     public class Employee : IEmployee
     {
         public int UserID { get; set; }
-        
+
+        [Required(ErrorMessage = "Username is required.")]
+        [StringLength(50)]
+        [UIHint("TextBox")]
+        [DisplayName("Username")]
+        public string userName { get; set; }
+
         [Required(ErrorMessage = "Company is required.")]
         [UIHint("SelectCompany")]
         [DisplayName("Company")]

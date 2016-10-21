@@ -1,74 +1,66 @@
 ﻿@model TravelPeople.Commons.Objects.Passport
 
-<div>
-	<h4>Passport</h4>
-    @Html.ActionLink("Edit Passport", "EditPassport", new { id = Model.passportID }) | 
-    @Html.ActionLink("Delete Passport", "DeletePassport", new { id = Model.passportID })
-	<hr />
-	<dl class="dl-horizontal">
-		<dt>
-			@Html.DisplayNameFor(model => model.PassportNumber)
-		</dt>
+@if (Model.passportID == 0)
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.ActionLink("Add Passport", "CreatePassport", new { id = ViewBag.TravelerID }, new { @class = "btn btn-primary" })  
+        </div>
+    </div>
+}
+else
+{
+    <div class="row">
+	    <hr />
+	    <dl class="dl-horizontal">
+		    <dt>
+			    @Html.DisplayNameFor(model => model.PassportNumber)
+		    </dt>
 
-		<dd>
-			@Html.DisplayFor(model => model.PassportNumber)
-		</dd>
+		    <dd>
+			    @Html.DisplayFor(model => model.PassportNumber)
+		    </dd>
 
-		<dt>
-			@Html.DisplayNameFor(model => model.Country)
-		</dt>
+		    <dt>
+			    @Html.DisplayNameFor(model => model.PlaceIssue)
+		    </dt>
 
-		<dd>
-			@Html.DisplayFor(model => model.Country)
-		</dd>
+		    <dd>
+			    @Html.DisplayFor(model => model.PlaceIssue)
+		    </dd>
 
-		<dt>
-			@Html.DisplayNameFor(model => model.Nationality)
-		</dt>
+		    <dt>
+			    @Html.DisplayNameFor(model => model.DateIssued)
+		    </dt>
 
-		<dd>
-			@Html.DisplayFor(model => model.Nationality)
-		</dd>
+		    <dd>
+			    @Html.DisplayFor(model => model.DateIssued)
+		    </dd>
 
-		<dt>
-			@Html.DisplayNameFor(model => model.PlaceIssue)
-		</dt>
+		    <dt>
+			    @Html.DisplayNameFor(model => model.ExpiryDate)
+		    </dt>
 
-		<dd>
-			@Html.DisplayFor(model => model.PlaceIssue)
-		</dd>
+		    <dd>
+			    @Html.DisplayFor(model => model.ExpiryDate)
+		    </dd>
 
-		<dt>
-			@Html.DisplayNameFor(model => model.DateIssued)
-		</dt>
+		    <dt>
+			    @Html.DisplayNameFor(model => model.DualCitizen)
+		    </dt>
 
-		<dd>
-			@Html.DisplayFor(model => model.DateIssued)
-		</dd>
+		    <dd>
+			    @Html.DisplayFor(model => model.DualCitizen)
+		    </dd>
 
-		<dt>
-			@Html.DisplayNameFor(model => model.ExpiryDate)
-		</dt>
+	    </dl>
 
-		<dd>
-			@Html.DisplayFor(model => model.ExpiryDate)
-		</dd>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            @Html.ActionLink("Edit Passport", "EditPassport", new { id = Model.passportID }, new { @class = "btn btn-default" })  
+            @Html.ActionLink("Delete Passport", "DeletePassport", new { id = Model.passportID }, new { @class = "btn btn-danger" })
+        </div>
+    </div>
 
-		<dt>
-			@Html.DisplayNameFor(model => model.DualCitizen)
-		</dt>
-
-		<dd>
-			@Html.DisplayFor(model => model.DualCitizen)
-		</dd>
-
-		<dt>
-			@Html.DisplayNameFor(model => model.travelerID)
-		</dt>
-
-		<dd>
-			@Html.DisplayFor(model => model.travelerID)
-		</dd>
-
-	</dl>
-</div>
+}

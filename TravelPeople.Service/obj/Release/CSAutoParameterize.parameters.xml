@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="TravelPeople-Web.config Connection String" description="TravelPeople Connection String used in web.config by the application to access the database." defaultValue="Data Source=DESKTOP-PRIPUGV\SQLEXPRESS;Initial Catalog=travel_people;persist security info=True;user id=sa;password=sa1234;MultipleActiveResultSets=True;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\SHINRA\\Source\\Repos\\TravelPeople\\TravelPeople\.Service\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TravelPeople']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,3 @@
+﻿@model string
+
+@Html.TextArea(string.Empty, (Model == null ? string.Empty : Model.Replace("&lt;", "<").Replace("&gt;", ">")), new { @id = "ckeditor", @class="form-control editor-ckeditor", @rows = "5"})

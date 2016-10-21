@@ -1,0 +1,6 @@
+﻿@model IList<SACS.Library.Rest.Models.Common.AirItineraryPricingInfo>
+
+@foreach (var item in Model)
+{
+    @item.ItinTotalFare.TotalFare.Amount
+}

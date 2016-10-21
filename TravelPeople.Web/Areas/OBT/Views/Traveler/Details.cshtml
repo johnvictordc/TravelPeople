@@ -45,7 +45,7 @@
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => model.Gender)
+                    @TravelPeople.Commons.Utils.Constants.GENDERS[Model.Gender]
                 </dd>
 
                 <dt>
@@ -221,10 +221,22 @@
     </div>
 </div>
 
-@Html.Partial("_VisaList", Model.Visas)
-@Html.Partial("_Passport", Model.Passport)
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            @Html.ActionLink("Edit Employee", "Edit", new { id = Model.travelID }, new { @class = "btn btn-default" })
+        </div>
+    </div>
+</div>
 
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.travelID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Visas</h3>
+            @Html.Partial("_VisaList", Model.Visas)
+
+            <h3>Passport</h3>
+            @Html.Partial("_Passport", Model.Passport)
+        </div>
+    </div>
+</div>

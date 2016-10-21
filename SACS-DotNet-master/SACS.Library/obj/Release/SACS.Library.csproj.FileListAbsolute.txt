@@ -10,3 +10,15 @@ D:\Projects\Travel People\SACS-DotNet-master\SACS.Library\bin\Release\System.Net
 D:\Projects\Travel People\SACS-DotNet-master\SACS.Library\obj\Release\SACS.Library.csprojResolveAssemblyReference.cache
 D:\Projects\Travel People\SACS-DotNet-master\SACS.Library\obj\Release\SACS.Library.dll
 D:\Projects\Travel People\SACS-DotNet-master\SACS.Library\obj\Release\SACS.Library.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\bin\Release\SACS.Library.dll.config
+C:\Users\SHINRA\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\bin\Release\SACS.Library.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\bin\Release\SACS.Library.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\bin\Release\log4net.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\bin\Release\Newtonsoft.Json.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\bin\Release\System.Net.Http.Formatting.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\bin\Release\log4net.xml
+C:\Users\SHINRA\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\bin\Release\Newtonsoft.Json.xml
+C:\Users\SHINRA\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\bin\Release\System.Net.Http.Formatting.xml
+C:\Users\SHINRA\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\obj\Release\SACS.Library.csprojResolveAssemblyReference.cache
+C:\Users\SHINRA\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\obj\Release\SACS.Library.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\SACS-DotNet-master\SACS.Library\obj\Release\SACS.Library.pdb

@@ -136,6 +136,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
+                ViewBag.TravelerID = id;
                 return View(service.DeserializeResult<Traveler>(response));
             }
             else
@@ -351,7 +352,7 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
             {
                 Traveler traveler = service.DeserializeResult<Traveler>(response);
 
-                if (traveler.Passport != null)
+                if (traveler.Passport.passportID != 0)
                 {
                     return RedirectToAction("Details", new { id = id });
                 }
@@ -548,8 +549,13 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
                 ViewBag.Countries = new SelectList(MockValues.Countries(), "id", "name");
                 ViewBag.VisaTypes = new SelectList(Constants.VISA_TYPES);
                 ViewBag.EntryTypes = new SelectList(Constants.ENTRY_TYPES);
-                
-                var model = new Visa(id);
+
+                if (traveler.Passport == null)
+                {
+                    return RedirectToAction("CreatePassport", new { id = id });
+                }
+
+                var model = new Visa(id, traveler.Passport.PassportNumber);
                 return View(model);
             }
             else

@@ -1,0 +1,13 @@
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Release\TravelPeople.DAL.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Release\TravelPeople.DAL.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Release\Dapper.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Release\DapperExtensions.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Release\Llama.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Release\TravelPeople.Commons.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Release\Llama.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Release\TravelPeople.Commons.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Release\Dapper.xml
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\bin\Release\DapperExtensions.pdb
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\obj\Release\TravelPeople.DAL.csprojResolveAssemblyReference.cache
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\obj\Release\TravelPeople.DAL.dll
+C:\Users\SHINRA\Source\Repos\TravelPeople\TravelPeople.DAL\obj\Release\TravelPeople.DAL.pdb

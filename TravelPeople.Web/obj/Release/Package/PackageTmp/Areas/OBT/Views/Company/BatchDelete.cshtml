@@ -1,0 +1,58 @@
+﻿@model IEnumerable<TravelPeople.Commons.Objects.Company>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="remove-margin-top">
+                        Are you sure you want to delete these contents?"
+                    </h3>
+                    <hr />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <ul>
+                        @foreach (var item in Model)
+                        {
+                            <li>@Html.Raw(item.companyName)</li>
+                        }
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <hr />
+                    @using (Html.BeginForm("BatchDeleteConfirm", "Company"))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="row">
+                            @foreach (var item in Model)
+                            {
+                                <input type="hidden" name="id" value="@item.companyID">
+                            }
+
+                            <div class="col-md-6">
+                                <input type="submit" value="Delete" class="btn btn-default btn-block" />
+                            </div>
+
+                            <div class="col-md-6">
+                                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default btn-block" })
+                            </div>
+
+                        </div>
+                    }
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

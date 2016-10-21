@@ -99,7 +99,22 @@ namespace TravelPeople.Web.Areas.OBT.Controllers
                 ModelState.AddModelError("", ex.Message);
             }
 
-            return View(model);
+            service = ServiceFactory.API();
+            service.SetRequest(APIURL.COMPANY_ALL, Method.GET);
+            var r = service.Execute();
+
+            if (r.StatusCode == HttpStatusCode.OK)
+            {
+                List<Company> companies = service.DeserializeResult<List<Company>>(r);
+                ViewBag.Companies = new SelectList(companies, "companyID", "companyName", model.companyID);
+                ViewBag.Countries = new SelectList(MockValues.Countries(), "code", "name", model.country);
+                ViewBag.Genders = new SelectList(Constants.GENDERS, "Key", "Value", model.gender);
+                return View(model);
+            }
+            else
+            {
+                return CustomMessage(service.DeserializeResult<CustomException>(r));
+            }
         }
 
         public ActionResult Details(long? id)

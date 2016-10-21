@@ -17,11 +17,12 @@ namespace TravelPeople.Commons.Objects
             this.DateIssued = DateTime.Now;
         }
 
-        public Visa(int travelerID)
+        public Visa(int travelerID, string passportNumber)
         {
             this.ExpiryDate = DateTime.Now;
             this.DateIssued = DateTime.Now;
             this.travelerID = travelerID;
+            this.PassportNumber = passportNumber;
         }
 
         public int visaID

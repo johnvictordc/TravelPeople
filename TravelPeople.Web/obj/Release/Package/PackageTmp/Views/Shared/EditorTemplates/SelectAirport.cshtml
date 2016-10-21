@@ -1,0 +1,17 @@
+﻿@using TravelPeople.Web.Models
+
+@if (ViewBag.Airports != null && ((IEnumerable<AirportModel>)ViewBag.Airports).Count() > 0)
+{
+    <select id="@Model.AirportName" name="@Model.AirportName" class="form-control">
+        @foreach (var airport in (IEnumerable<AirportModel>)ViewBag.Airports)
+        {
+            <option value="@airport.AirportCode" @(airport.AirportCode == Model.AirportCode ? "selected" : string.Empty)>
+                @airport.AirportCode @airport.AirportName
+            </option>
+        }
+    </select>
+} 
+else 
+{
+    <input id="@Model.AirportName" name="@Model.AirportName" class="form-control" />
+}

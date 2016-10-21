@@ -1,0 +1,66 @@
+﻿@model TravelPeople.Commons.Objects.Passport
+
+@if (Model.passportID == 0)
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.ActionLink("Add Passport", "CreatePassport", new { id = ViewBag.TravelerID }, new { @class = "btn btn-primary" })  
+        </div>
+    </div>
+}
+else
+{
+    <div class="row">
+	    <hr />
+	    <dl class="dl-horizontal">
+		    <dt>
+			    @Html.DisplayNameFor(model => model.PassportNumber)
+		    </dt>
+
+		    <dd>
+			    @Html.DisplayFor(model => model.PassportNumber)
+		    </dd>
+
+		    <dt>
+			    @Html.DisplayNameFor(model => model.PlaceIssue)
+		    </dt>
+
+		    <dd>
+			    @Html.DisplayFor(model => model.PlaceIssue)
+		    </dd>
+
+		    <dt>
+			    @Html.DisplayNameFor(model => model.DateIssued)
+		    </dt>
+
+		    <dd>
+			    @Html.DisplayFor(model => model.DateIssued)
+		    </dd>
+
+		    <dt>
+			    @Html.DisplayNameFor(model => model.ExpiryDate)
+		    </dt>
+
+		    <dd>
+			    @Html.DisplayFor(model => model.ExpiryDate)
+		    </dd>
+
+		    <dt>
+			    @Html.DisplayNameFor(model => model.DualCitizen)
+		    </dt>
+
+		    <dd>
+			    @Html.DisplayFor(model => model.DualCitizen)
+		    </dd>
+
+	    </dl>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            @Html.ActionLink("Edit Passport", "EditPassport", new { id = Model.passportID }, new { @class = "btn btn-default" })  
+            @Html.ActionLink("Delete Passport", "DeletePassport", new { id = Model.passportID }, new { @class = "btn btn-danger" })
+        </div>
+    </div>
+
+}

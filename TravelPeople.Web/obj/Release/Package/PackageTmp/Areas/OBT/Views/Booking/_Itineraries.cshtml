@@ -1,0 +1,26 @@
+﻿@model IEnumerable<SACS.Library.Rest.Models.Common.PricedItinerary>
+
+<div class="container">
+    <div class="row">
+        @*@foreach (var item in Model)
+        {
+            <div class="col-md-12">
+                @Html.Partial("_AirItinerary", item.AirItinerary)
+            </div>
+        }
+
+        @foreach (var _items in Model)
+        {
+            <div class="col-md-12">
+                @Html.Partial("_Prices", _items.AirItineraryPricingInfo)
+            </div>
+        }*@
+
+        @foreach (var item in Model)
+        {
+            <div class="col-md-12">
+                @Html.Partial("_PricedItinerary", item)
+            </div>
+        }
+    </div>
+</div>
